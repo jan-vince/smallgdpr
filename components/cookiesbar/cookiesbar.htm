@@ -1,0 +1,43 @@
+<div id="cookies-bar">
+
+    {% if cookiesSettingsGet('cookies_bar_title', null) %}
+
+        <h3 class="title">{{ cookiesSettingsGet('cookies_bar_title') }}</h3>
+
+    {% endif %}
+
+    {% if cookiesSettingsGet('cookies_bar_content', null) %}
+
+        <div class="content">{{ cookiesSettingsGet('cookies_bar_content')|raw }}</div>
+
+    {% endif %}
+
+    {% if cookiesSettingsGet('cookies_bar_buttons', null)|length %}
+
+        <div class="buttons">
+
+            {% for button in cookiesSettingsGet('cookies_bar_buttons') %}
+
+                <a href="{{ button.url_external ? button.url_external : button.url|app }}" class="{{ button.accept_all_cookies_btn ? 'btn-accept-all'}} {{ button.css_class ? button.css_class : 'btn btn-primary' }}">{{ button.title }}</a>
+
+            {% endfor %}
+
+        </div>
+
+    {% endif %}
+
+</div>
+
+
+<script>
+
+    $('#cookies-bar .btn-accept-all').click(function(e) {
+        e.preventDefault();
+
+        {% partial '@setCookies' %}
+
+        $('#cookies-bar').hide();
+        location.reload(true);
+    });
+
+</script>

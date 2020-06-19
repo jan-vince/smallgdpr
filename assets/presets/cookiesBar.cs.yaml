@@ -1,0 +1,37 @@
+cookies_manage_title: "Správa cookies"
+cookies_manage_content: "Pro zlepšení služeb používáme cookies. Přečtěte si více o tom, jak cookies používáme a jak je můžete případně odmítnout."
+
+cookies_bar_title: "Tato webová stránka používá cookies"
+cookies_bar_add_styles: "1"
+cookies_bar_content: "<p>Pro zlepšení služeb používáme cookies. Přečtěte si více o tom, jak cookies používáme a jak je můžete případně odmítnout.</p>"
+
+cookies:
+-   title: "Nezbytná cookies"
+    description: "<p>Nezbytná cookies pomáhají, aby webová stránka v pořádku fungovala.</p>"
+    slug: "nezbytne"
+    required: 1
+    default_active: 1
+-   title: "Statistická cookies"
+    description: "<p>Statistická cookies pomáhají porozumět tomu, jak návštěvníci používají webové stránky.</p>"
+    slug: "statisticke"
+    required: 0
+    default_active: 0
+-   title: "Marketingová cookies"
+    description: "<p>Marketingová cookies jsou používány pro zobrazení reklamy, která je relevantní a zajímavá pro konkrétního užívatele.</p>"
+    slug: "marketingove"
+    required: 0
+    default_active: 0
+
+cookies_bar_buttons:
+-   title: "Přijmout"
+    accept_all_cookies_btn: 1
+    url: "#"
+    url_external: 0
+    css_class: "btn btn-primary"
+-   title: "Nastavení"
+    accept_all_cookies_btn: 0
+    url: "gdpr"
+    url_external: 0
+    css_class: "btn btn-secondary"
+
+set_cookies_lifetime_days: 365

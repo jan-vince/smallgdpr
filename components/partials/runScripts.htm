@@ -1,0 +1,22 @@
+{% if cookiesSettingsGet('cookies',null)|length %}
+
+    {% for cookie in cookiesSettingsGet('cookies') %}
+
+        {% if cookie.required or sgCookies[cookie.slug] %}
+
+            {% put scripts %}
+
+                <script>
+
+                    // SG script group: {{ cookie.slug }}
+                    {{ cookie.scripts_code|raw }}
+
+                </script>
+
+            {% endput %}
+
+        {% endif %}
+
+    {% endfor %}
+
+{% endif %}

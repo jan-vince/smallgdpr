@@ -1,0 +1,157 @@
+fields: { }
+tabs:
+    icons:
+    fields:
+
+        ## Cookies
+
+        cookies:
+            prompt: 'janvince.smallgdpr::lang.settings.form_fields.cookies_list_prompt'
+            span: full
+            type: repeater
+            style: collapsed
+            tab: 'janvince.smallgdpr::lang.settings.tabs.cookies_list'
+            form:
+                fields:
+                    title:
+                        label: 'janvince.smallgdpr::lang.settings.form_fields.title'
+                        type: text
+                        span: left
+                        required: true
+                    description:
+                        label: 'janvince.smallgdpr::lang.settings.form_fields.description'
+                        type: richeditor
+                        span: right
+                        size: large
+                    slug:
+                        label: 'janvince.smallgdpr::lang.settings.form_fields.slug'
+                        type: text
+                        span: left
+                        preset: 
+                            field: title
+                            type: slug
+                        required: true
+                    required:
+                        label: 'janvince.smallgdpr::lang.settings.form_fields.cookie_required'
+                        comment: 'janvince.smallgdpr::lang.settings.form_fields.cookie_required_description'
+                        type: checkbox
+                        span: left
+                        default: false
+                        cssClass: m-t
+                    default_active:
+                        label: 'janvince.smallgdpr::lang.settings.form_fields.default_active'
+                        comment: 'janvince.smallgdpr::lang.settings.form_fields.default_active_description'
+                        type: checkbox
+                        span: left
+                        default: false
+                    scripts_code_section:
+                        type: section
+                    scripts_code:
+                        label: 'janvince.smallgdpr::lang.settings.form_fields.scripts_code'
+                        comment: 'janvince.smallgdpr::lang.settings.form_fields.scripts_code_description'
+                        type: codeeditor
+                        size: large
+                        language: javascript
+                        fontSize: 12px
+
+
+        ## Cookies bar
+
+        cookies_bar_title:
+            span: left
+            label: 'janvince.smallgdpr::lang.settings.form_fields.title'
+            type: text
+            tab: 'janvince.smallgdpr::lang.settings.tabs.cookies_bar'
+
+        cookies_bar_content:
+            span: right
+            label: 'janvince.smallgdpr::lang.settings.form_fields.content'
+            type: richeditor
+            size: large
+            tab: 'janvince.smallgdpr::lang.settings.tabs.cookies_bar'
+
+        cookies_bar_add_styles:
+            label: 'janvince.smallgdpr::lang.settings.form_fields.add_css'
+            comment: 'janvince.smallgdpr::lang.settings.form_fields.add_css_description'
+            type: checkbox
+            span: left
+            default: false
+            cssClass: m-t
+            tab: 'janvince.smallgdpr::lang.settings.tabs.cookies_bar'
+
+        cookies_bar_buttons_section:
+            label: 'janvince.smallgdpr::lang.settings.form_fields.cookies_bar_buttons'
+            type: section
+            span: full
+            cssClass: m-t
+            tab: 'janvince.smallgdpr::lang.settings.tabs.cookies_bar'
+
+        cookies_bar_buttons:
+            prompt: 'janvince.smallgdpr::lang.settings.form_fields.cookies_bar_buttons_prompt'
+            span: full
+            type: repeater
+            style: collapsed
+            tab: 'janvince.smallgdpr::lang.settings.tabs.cookies_bar'
+            form:
+                fields:
+                    title:
+                        label: 'janvince.smallgdpr::lang.settings.form_fields.title'
+                        type: text
+                        span: left
+                        required: true
+                    accept_all_cookies_btn:
+                        label: 'janvince.smallgdpr::lang.settings.form_fields.accept_all_cookies_btn'
+                        comment: 'janvince.smallgdpr::lang.settings.form_fields.accept_all_cookies_btn_description'
+                        type: checkbox
+                        span: right
+                        cssClass: m-t
+                    url:
+                        label: 'janvince.smallgdpr::lang.settings.form_fields.url'
+                        type: text
+                        span: left
+                    url_external:
+                        label: 'janvince.smallgdpr::lang.settings.form_fields.url_external'
+                        comment: 'janvince.smallgdpr::lang.settings.form_fields.url_external_description'
+                        type: checkbox
+                        span: right
+                    css_class:
+                        label: 'janvince.smallgdpr::lang.settings.form_fields.css_class'
+                        type: text
+                        span: left
+
+        ## Cookies manage
+
+        cookies_manage_title:
+            label: 'janvince.smallgdpr::lang.settings.form_fields.title'
+            type: text
+            span: left
+            tab: 'janvince.smallgdpr::lang.settings.tabs.cookies_manage'
+
+        cookies_manage_content:
+            label: 'janvince.smallgdpr::lang.settings.form_fields.content'
+            type: richeditor
+            span: full
+            size: large
+            tab: 'janvince.smallgdpr::lang.settings.tabs.cookies_manage'
+
+
+        ## Settings
+
+        set_cookies_lifetime_days:
+            label: 'janvince.smallgdpr::lang.settings.form_fields.cookies_lifetime_days'
+            comment: 'janvince.smallgdpr::lang.settings.form_fields.cookies_lifetime_days_comment'
+            default: 365
+            step: 1
+            min: 1
+            type: number
+            span: left
+            tab: 'janvince.smallgdpr::lang.settings.tabs.settings'
+
+
+        ## Import
+
+        import_preset_btn:
+            label: 'janvince.smallgdpr::lang.settings.form_fields.import'
+            type: importpreset
+            span: full
+            tab: 'janvince.smallgdpr::lang.settings.tabs.import'

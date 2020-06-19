@@ -1,0 +1,10 @@
+plugin:
+    name: 'janvince.smallgdpr::lang.plugin.name'
+    description: 'janvince.smallgdpr::lang.plugin.description'
+    author: Jan Vince
+    icon: icon-university
+    homepage: 'https://github.com/jan-vince/smallgdpr'
+permissions:
+    janvince.smallgdpr.access_cookiesbar_settings:
+        label: 'janvince.smallgdpr::lang.permissions.access_cookiesbar_settings'
+        tab: 'janvince.smallgdpr::lang.permissions.plugin.name'

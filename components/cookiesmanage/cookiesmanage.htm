@@ -1,0 +1,73 @@
+<div id="cookies-manage" class="panel panel-default">
+
+    <div class="panel-heading">
+
+        {% if cookiesSettingsGet('cookies_manage_title', null) %}
+
+            <h2 class="panel-title title"><strong>{{ cookiesSettingsGet('cookies_manage_title') }}</strong></h2>
+            
+        {% endif %}
+
+    </div>
+
+    <div class="panel-body">
+
+        {% if cookiesSettingsGet('cookies_manage_content', null) %}
+
+            <div class="content">{{ cookiesSettingsGet('cookies_manage_content')|raw }}</div>
+
+            <hr>
+
+        {% endif %}
+
+        {% if cookiesSettingsGet('cookies', null)|length %}
+            
+
+            <form class="form">
+
+                {% for cookie in cookiesSettingsGet('cookies') %}
+
+                    <div class="checkbox {{ cookie.required ? 'disabled' : ''  }}">
+                    
+                        <label>
+
+                            <input type="checkbox" id="sg-cookies-{{cookie.slug}}" {{ sgCookies[cookie.slug] or (cookie.required) ? 'checked' : '' }} {{ cookie.required ? 'disabled' : ''  }}> <strong>{{ cookie.title }}</strong>
+                        
+                        </label>
+                            
+                        {% if cookie.description %}
+
+                            <span class="description help-block">{{ cookie.description|raw }}</span>
+
+                        {% endif %}
+
+                    </div>
+
+                {% endfor %}
+
+                <button type="button" id="cookies-manage-save" class="btn btn-primary">{{ trans('janvince.smallgdpr::lang.settings.form_fields.save_settings') }}</button>
+
+            </form>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+
+{% put scripts %}
+
+<script>
+
+    $('#cookies-manage-save').click(function() {
+       
+        {% partial '@setCookies' setOnlyManageCookies = true %}
+
+        location.reload(true);
+
+    });
+
+</script>
+
+{% endput %}

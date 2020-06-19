@@ -1,0 +1,11 @@
+<div id="sg-{{ __SELF__ }}">
+
+    {% if sgCookies.consent is empty %}
+    
+        {% partial __SELF__ ~ '::cookiesbar' %}
+
+    {% endif %}
+
+    {% partial '@runScripts' %}
+
+</div>
