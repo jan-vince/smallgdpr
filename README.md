@@ -33,7 +33,7 @@ You can set permissions to restrict access to *Settings > Small plugins > Small 
 
 * Go to CMS part of October.
   * Add new Layout (or use your existing)
-  * Add component Small GDPR > Cookies bar (inside of your `<body></body>` tags).
+  * Add component Small GDPR > Cookies bar (inside of your `body` tag).
 
 * Go to CMS part of October.
   * Add new Page with URL `/gdpr`
@@ -106,7 +106,7 @@ Users will be able to change cookies settings.
 ----
 > My thanks goes to:    
 > [OctoberCMS](http://www.octobercms.com) team members and supporters for this great system.   
-> []() for his photo.   
+> [Brooke Cagle](https://unsplash.com/@brookecagle) for her photo.   
 > [Font Awesome](http://fontawesome.io/icons/) for nice icons.
 > [OFFLINE](https://github.com/OFFLINE-GmbH) for inspiration from [his GDPR plugin](https://github.com/OFFLINE-GmbH/oc-gdpr-plugin)
 
