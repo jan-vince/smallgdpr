@@ -39,6 +39,7 @@ You can set permissions to restrict access to *Settings > Small plugins > Small 
   * Add new Page with URL `/gdpr`
   * Add component Small GDPR > Manage cookies (inside any of your tags)
 
+> Do not forget to add `{% scripts %}` tag to your layout page just before closing `body` tag! More info [in October docs](https://octobercms.com/docs/markup/tag-scripts).
 
 
 * Open your website - cookies bar should be visible :)
