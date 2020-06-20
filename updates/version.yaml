@@ -9,3 +9,5 @@
     - Fixed sgCookies array to reflect required cookies group state
 1.1.3:
     - Fixed scripts
+1.1.4:
+    - Fixed sgCookies array
