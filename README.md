@@ -67,8 +67,9 @@ You can add one or more buttons to your cookies bar.
 
 One (or more) buttons can be set to `Allow all cookies`. Clicking on these buttons will set all cookies groups to be enabled.
 
-*User can change this later on page with Manage cookies component (like /gdpr).*
+> *Users can change cookies settings later on CMS page with Manage cookies component (like /gdpr).*
 
+One (or more) buttons can be set to `Open modal window` (currently supported only for Bootstrap UI style when set on Settings tab).
 
 ### Manage cookies
 
@@ -77,7 +78,15 @@ Just add title and content and those will be shown above cookies groups listing 
 
 ### Settings
 
-Fwe general settings to be set.
+Few general settings to be set.
+
+#### Cookies expiration
+
+Number of days for cookies to live in browser.
+
+#### UI style
+
+Change formating of output HTML code.
 
 ### Import
 
