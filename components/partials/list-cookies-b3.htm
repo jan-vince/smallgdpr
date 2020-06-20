@@ -10,13 +10,11 @@
 
                     <input type="checkbox" id="sg-cookies-{{cookie.slug}}{{customId}}" {{ sgCookies[cookie.slug] or (cookie.required) ? 'checked' : '' }} {{ cookie.required ? 'disabled' : ''  }}> <strong>{{ cookie.title }}</strong>
                 
-                </label>
+                    {% if cookie.description %}
+                        <div class="description help-block">{{ cookie.description|raw }}</div>
+                    {% endif %}
                     
-                {% if cookie.description %}
-
-                    <span class="description help-block">{{ cookie.description|raw }}</span>
-
-                {% endif %}
+                </label>
 
             </div>
 
@@ -26,7 +24,7 @@
 
             <button type="button" 
                     id="cookies-manage-save" 
-                    class="btn btn-primary">{{ trans('janvince.smallgdpr::lang.settings.form_fields.save_settings') }}</button>
+                    class="btn btn-primary">{{ 'janvince.smallgdpr::lang.settings.form_fields.save_settings'|trans }}</button>
 
         {% endif %}
 
