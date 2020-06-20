@@ -55,6 +55,10 @@ One or more groups can be set as `Required`. User cannot disable these groups in
 
 One or more groups can be set as `Active without consent`. Scripts in these groups will always run.
 
+You can add your custom JS code to be executed when a cookies group is allowed (or required).
+
+> But you can use your own code whenever you want (in lyout, page, partial) - just check if a group is allowed by `{% if sgCookies['necessary']  }`
+
 ### Cookies bar 
 
 You can edit title and content of cookies bar.

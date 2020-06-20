@@ -5,3 +5,5 @@
     - Added Bootrap 3 styling
 1.1.1:
     - Updated default presets and README
+1.1.2:
+    - Fixed sgCookies array to reflect required cookies group state
