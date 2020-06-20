@@ -56,14 +56,17 @@ tabs:
             label: 'janvince.smallgdpr::lang.settings.form_fields.title'
             type: text
             tab: 'janvince.smallgdpr::lang.settings.tabs.cookies_bar'
-
         cookies_bar_content:
             span: right
             label: 'janvince.smallgdpr::lang.settings.form_fields.content'
             type: richeditor
             size: large
             tab: 'janvince.smallgdpr::lang.settings.tabs.cookies_bar'
-
+        cookies_bar_css_class:
+            label: 'janvince.smallgdpr::lang.settings.form_fields.css_class'
+            type: text
+            span: left
+            tab: 'janvince.smallgdpr::lang.settings.tabs.cookies_bar'
         cookies_bar_add_styles:
             label: 'janvince.smallgdpr::lang.settings.form_fields.add_css'
             comment: 'janvince.smallgdpr::lang.settings.form_fields.add_css_description'
@@ -72,14 +75,12 @@ tabs:
             default: false
             cssClass: m-t
             tab: 'janvince.smallgdpr::lang.settings.tabs.cookies_bar'
-
         cookies_bar_buttons_section:
             label: 'janvince.smallgdpr::lang.settings.form_fields.cookies_bar_buttons'
             type: section
             span: full
             cssClass: m-t
             tab: 'janvince.smallgdpr::lang.settings.tabs.cookies_bar'
-
         cookies_bar_buttons:
             prompt: 'janvince.smallgdpr::lang.settings.form_fields.cookies_bar_buttons_prompt'
             span: full
@@ -133,7 +134,11 @@ tabs:
             type: text
             span: left
             tab: 'janvince.smallgdpr::lang.settings.tabs.cookies_manage'
-
+        cookies_manage_css_class:
+            label: 'janvince.smallgdpr::lang.settings.form_fields.css_class'
+            type: text
+            span: right
+            tab: 'janvince.smallgdpr::lang.settings.tabs.cookies_manage'
         cookies_manage_content:
             label: 'janvince.smallgdpr::lang.settings.form_fields.content'
             type: richeditor

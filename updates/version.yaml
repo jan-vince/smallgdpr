@@ -17,3 +17,8 @@
     - Fixed default active cookies group to be active even without explicit consent
 1.1.7:
     - Removed option Default active
+1.1.8:
+    - Added Static Pages snippet for Cookies manage component
+    - Changed trans function usage
+    - Changed default CSS style
+    - Added custom CSS class for Manage cookies and Cookies bar

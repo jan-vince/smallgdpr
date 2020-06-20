@@ -1,6 +1,6 @@
 {% set showModal = null %}
 
-<div id="cookies-bar">
+<div id="cookies-bar" class="cookies-bar {{ cookiesSettingsGet('cookies_bar_css_class') }}">
 
     {% if cookiesSettingsGet('cookies_bar_title', null) %}
 
