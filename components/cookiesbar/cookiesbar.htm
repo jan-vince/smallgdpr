@@ -42,15 +42,19 @@
     
 {% endif %}
 
-<script>
+{% put scripts %}
 
-    $('#cookies-bar .btn-accept-all').click(function(e) {
-        e.preventDefault();
+    <script>
 
-        {% partial '@set-cookies' %}
+        $('#cookies-bar .btn-accept-all').click(function(e) {
+            e.preventDefault();
 
-        $('#cookies-bar').hide();
-        location.reload(true);
-    });
+            {% partial '@set-cookies' %}
 
-</script>
+            $('#cookies-bar').hide();
+            location.reload(true);
+        });
+
+    </script>
+
+{% endput %}

@@ -57,7 +57,7 @@ One or more groups can be set as `Active without consent`. Scripts in these grou
 
 You can add your custom JS code to be executed when a cookies group is allowed (or required).
 
-> But you can use your own code whenever you want (in lyout, page, partial) - just check if a group is allowed by `{% if sgCookies['necessary']  }`
+> But you can use your own code whenever you want (in layout, page or partial) - just check if a group is allowed by `{% if sgCookies.necessary  }` where `necessary` is a code of your cookies groups.
 
 ### Cookies bar 
 

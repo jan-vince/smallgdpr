@@ -21,16 +21,16 @@
 
 {% put scripts %}
 
-<script>
+    <script>
 
-    $('#cookies-manage-save').click(function() {
-       
-        {% partial '@set-cookies' setOnlyManageCookies = true %}
+        $('#cookies-manage-save').click(function() {
+        
+            {% partial '@set-cookies' setOnlyManageCookies = true %}
 
-        location.reload(true);
+            location.reload(true);
 
-    });
+        });
 
-</script>
+    </script>
 
 {% endput %}
