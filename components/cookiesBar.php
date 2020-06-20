@@ -46,7 +46,7 @@ class cookiesBar extends ComponentBase
 
         foreach(CookiesSettings::get('cookies') as $cookie) {
 
-            if ($cookie['required'] or !empty($_COOKIE[($this->sgCookiesPrefix . '-' . $cookie['slug'])])) {
+            if ($cookie['required'] or $cookie['default_active'] or !empty($_COOKIE[($this->sgCookiesPrefix . '-' . $cookie['slug'])])) {
 
                 $sgCookies[$cookie['slug']] = 1;
 
