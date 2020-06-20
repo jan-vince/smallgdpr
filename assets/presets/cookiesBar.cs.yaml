@@ -32,6 +32,6 @@ cookies_bar_buttons:
     accept_all_cookies_btn: 0
     url: "gdpr"
     url_external: 0
-    css_class: "btn btn-secondary"
+    css_class: "btn btn-default"
 
 set_cookies_lifetime_days: 365

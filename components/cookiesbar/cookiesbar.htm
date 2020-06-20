@@ -1,3 +1,5 @@
+{% set showModal = null %}
+
 <div id="cookies-bar">
 
     {% if cookiesSettingsGet('cookies_bar_title', null) %}
@@ -18,7 +20,13 @@
 
             {% for button in cookiesSettingsGet('cookies_bar_buttons') %}
 
-                <a href="{{ button.url_external ? button.url_external : button.url|app }}" class="{{ button.accept_all_cookies_btn ? 'btn-accept-all'}} {{ button.css_class ? button.css_class : 'btn btn-primary' }}">{{ button.title }}</a>
+                {% if button.show_modal %}
+
+                    {% set showModal = button.show_modal %}
+
+                {% endif %}
+
+                {% partial __SELF__ ~ '::cookiesbar-btn' ~ cookiesSettingsGet('ui_style')  button = button %}
 
             {% endfor %}
 
@@ -28,13 +36,18 @@
 
 </div>
 
+{% if showModal %}
+
+    {% partial __SELF__ ~ '::cookiesbar-modal' ~ cookiesSettingsGet('ui_style') %}
+    
+{% endif %}
 
 <script>
 
     $('#cookies-bar .btn-accept-all').click(function(e) {
         e.preventDefault();
 
-        {% partial '@setCookies' %}
+        {% partial '@set-cookies' %}
 
         $('#cookies-bar').hide();
         location.reload(true);

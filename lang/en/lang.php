@@ -60,6 +60,13 @@ return [
       'save_settings' => 'Save settings',
       'scripts_code' => 'Run JS code',
       'scripts_code_description' => 'These scripts will be executed if required or if allowed by user. Do not use "<script></script>" tag, it will be added automatically.',
+      'attributes' => 'HTML tag attributes',
+      'show_modal' => 'Open modal window',
+      'show_modal_description' => 'Open modal window with cookies settings by clicking on this button (for now works only when Bootstrap style is enabled on Settings tab).',
+      'empty_option' => 'Select an option',
+      'cancel' => 'Cancel',
+      'ui_style' => 'Custom layout',
+      'ui_style_description' => 'Components can format HTML for specific framework',
     ],
   ],
 

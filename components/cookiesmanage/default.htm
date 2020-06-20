@@ -1,5 +1,5 @@
 <div id="sg-{{ __SELF__ }}">
 
-    {% partial __SELF__ ~ '::cookiesmanage' %}
+    {% partial __SELF__ ~ '::cookiesmanage' ~ cookiesSettingsGet('ui_style') %}
 
 </div>

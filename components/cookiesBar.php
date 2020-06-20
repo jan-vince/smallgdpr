@@ -37,7 +37,7 @@ class cookiesBar extends ComponentBase
 
         if( CookiesSettings::get('cookies_bar_add_styles', null)) {
 
-            $this->addCss(['assets/cookiesBar/cookiesBar.less']);
+            $this->addCss(['assets/cookiesbar/cookiesbar.less']);
         }
 
         $sgCookies = [];

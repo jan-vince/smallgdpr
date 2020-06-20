@@ -1,0 +1,5 @@
+<a class="{{ button.accept_all_cookies_btn ? 'btn-accept-all'}} {{ button.css_class }}"
+    {{ button.attributes|raw }}
+    href="{{ button.url_external ? button.url_external : button.url|app }}" 
+    >{{ button.title }}
+</a>

@@ -1,0 +1,27 @@
+#cookies-bar {
+  position: fixed;
+  left: auto;
+  bottom: 20px;
+  right: 20px;
+  max-width: 500px;
+  color: #111111;
+  background-color: #eeeeee;
+  z-index: 1000;
+  text-align: left;
+  padding: 40px;
+  border-radius: 5px;
+  font-size: 15px;
+  box-shadow: 0 0 10px lightgrey;
+}
+#cookies-bar .title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+#cookies-bar .content {
+  font-size: 15px;
+  margin-top: 10px;
+}
+#cookies-bar .buttons {
+  margin-top: 30px;
+}

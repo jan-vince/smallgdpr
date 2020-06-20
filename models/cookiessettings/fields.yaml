@@ -99,25 +99,38 @@ tabs:
                         type: text
                         span: left
                         required: true
+                    url:
+                        label: 'janvince.smallgdpr::lang.settings.form_fields.url'
+                        type: text
+                        span: right
                     accept_all_cookies_btn:
                         label: 'janvince.smallgdpr::lang.settings.form_fields.accept_all_cookies_btn'
                         comment: 'janvince.smallgdpr::lang.settings.form_fields.accept_all_cookies_btn_description'
                         type: checkbox
-                        span: right
-                        cssClass: m-t
-                    url:
-                        label: 'janvince.smallgdpr::lang.settings.form_fields.url'
-                        type: text
                         span: left
                     url_external:
                         label: 'janvince.smallgdpr::lang.settings.form_fields.url_external'
                         comment: 'janvince.smallgdpr::lang.settings.form_fields.url_external_description'
                         type: checkbox
                         span: right
+                    section_01:
+                        type: section
                     css_class:
                         label: 'janvince.smallgdpr::lang.settings.form_fields.css_class'
                         type: text
                         span: left
+                    attributes:
+                        label: 'janvince.smallgdpr::lang.settings.form_fields.attributes'
+                        type: text
+                        span: right
+                    section_02:
+                        type: section
+                    show_modal:
+                        label: 'janvince.smallgdpr::lang.settings.form_fields.show_modal'
+                        comment: 'janvince.smallgdpr::lang.settings.form_fields.show_modal_description'
+                        type: checkbox
+                        span: full
+
 
         ## Cookies manage
 
@@ -146,6 +159,16 @@ tabs:
             type: number
             span: left
             tab: 'janvince.smallgdpr::lang.settings.tabs.settings'
+        ui_style:
+            label: 'janvince.smallgdpr::lang.settings.form_fields.ui_style'
+            comment: 'janvince.smallgdpr::lang.settings.form_fields.ui_style_description'
+            type: dropdown
+            span: left
+            tab: 'janvince.smallgdpr::lang.settings.tabs.settings'
+            emptyOption: 'janvince.smallgdpr::lang.settings.form_fields.empty_option'
+            options:
+                '-b3': 'Bootstrap 3'
+
 
 
         ## Import
