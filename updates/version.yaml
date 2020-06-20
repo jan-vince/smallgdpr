@@ -22,3 +22,5 @@
     - Changed trans function usage
     - Changed default CSS style
     - Added custom CSS class for Manage cookies and Cookies bar
+1.1.9:
+    - Removed unnecessary line in Manage cookies component
