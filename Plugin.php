@@ -63,4 +63,11 @@ class Plugin extends PluginBase {
             'JanVince\SmallGDPR\FormWidgets\ImportPreset' => 'importpreset',
         ];
     }
+
+    public function registerPageSnippets() {
+        
+        return [
+            '\JanVince\SmallGDPR\Components\CookiesManage' => 'cookiesManage'
+        ];
+    }
 }
