@@ -10,17 +10,14 @@ cookies:
     description: "<p>The necessary cookies help to make the website work properly.</p>"
     slug: "necessary"
     required: 1
-    default_active: 1
 -   title: "Statistical cookies"
     description: "<p>Statistical cookies help to understand how visitors use the website.</p>"
     slug: "statistical"
     required: 0
-    default_active: 0
 -   title: "Marketing cookies"
     description: "<p>Marketing cookies are used to display advertising that is relevant and interesting to a particular user.</p>"
     slug: "marketing"
     required: 0
-    default_active: 0
 
 cookies_bar_buttons:
 -   title: "Accept"

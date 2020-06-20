@@ -43,8 +43,6 @@ return [
       'cookie_required' => 'Required',
       'cookie_required_description' => 'This cookies cannot be disabled by user',
       'cookies_manager' => 'Manage cookies',
-      'default_active' => 'Active without consent',
-      'default_active_description' => 'These cookies will be active without explicit conset',
       'cookies_bar_buttons' => 'Buttons',
       'cookies_bar_buttons_prompt' => 'Add buttons',
       'cookies_bar_content' => 'Content',

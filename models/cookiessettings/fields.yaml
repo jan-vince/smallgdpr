@@ -38,12 +38,6 @@ tabs:
                         span: left
                         default: false
                         cssClass: m-t
-                    default_active:
-                        label: 'janvince.smallgdpr::lang.settings.form_fields.default_active'
-                        comment: 'janvince.smallgdpr::lang.settings.form_fields.default_active_description'
-                        type: checkbox
-                        span: left
-                        default: false
                     scripts_code_section:
                         type: section
                     scripts_code:

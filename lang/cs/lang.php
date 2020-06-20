@@ -43,8 +43,6 @@ return [
       'cookie_required' => 'Nezbytné',
       'cookie_required_description' => 'Tato cookies nebude možné uživatelsky zakázat',
       'cookies_manager' => 'Správa cookies',
-      'default_active' => 'Aktivní i bez souhlasu',
-      'default_active_description' => 'Tato cookies budou aktivní i bez souhlasu',
       'cookies_bar_buttons' => 'Tlačítka',
       'cookies_bar_buttons_prompt' => 'Přidat tlačítko',
       'cookies_bar_content' => 'Obsah',
