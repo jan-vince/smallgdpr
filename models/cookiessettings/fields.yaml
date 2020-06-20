@@ -165,9 +165,9 @@ tabs:
             type: dropdown
             span: left
             tab: 'janvince.smallgdpr::lang.settings.tabs.settings'
-            emptyOption: 'janvince.smallgdpr::lang.settings.form_fields.empty_option'
+            emptyOption: 'janvince.smallgdpr::lang.settings.form_fields.ui_style_option_empty'
             options:
-                '-b3': 'Bootstrap 3'
+                'b3': 'Bootstrap 3'
 
 
 

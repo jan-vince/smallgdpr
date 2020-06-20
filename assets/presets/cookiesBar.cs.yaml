@@ -35,3 +35,4 @@ cookies_bar_buttons:
     css_class: "btn btn-default"
 
 set_cookies_lifetime_days: 365
+ui_styling: 'b3'

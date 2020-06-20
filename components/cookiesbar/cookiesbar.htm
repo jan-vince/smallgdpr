@@ -26,7 +26,7 @@
 
                 {% endif %}
 
-                {% partial __SELF__ ~ '::cookiesbar-btn' ~ cookiesSettingsGet('ui_style')  button = button %}
+                {% partial __SELF__ ~ '::cookiesbar-btn-' ~ cookiesSettingsGet('ui_style', 'default')  button = button %}
 
             {% endfor %}
 
@@ -38,7 +38,7 @@
 
 {% if showModal %}
 
-    {% partial __SELF__ ~ '::cookiesbar-modal' ~ cookiesSettingsGet('ui_style') %}
+    {% partial __SELF__ ~ '::cookiesbar-modal-' ~ cookiesSettingsGet('ui_style', 'default') %}
     
 {% endif %}
 

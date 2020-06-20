@@ -1,2 +1,5 @@
 1.0.0:
     - First version of Small GDPR
+1.1.0:
+    - Added settings in modal window
+    - Added Bootrap 3 styling

@@ -46,7 +46,12 @@ class Plugin extends PluginBase {
             'filters' => [],
             'functions' => [
                 'cookiesSettingsGet' => function ($value, $default = NULL) {
-                    return CookiesSettings::get($value, $default);
+                    
+                    if(empty(CookiesSettings::get($value))) {
+                        return $default;
+                    } else {
+                        return CookiesSettings::get($value);
+                    }
                 }
             ]
         ];

@@ -65,8 +65,9 @@ return [
       'show_modal_description' => 'Open modal window with cookies settings by clicking on this button (for now works only when Bootstrap style is enabled on Settings tab).',
       'empty_option' => 'Select an option',
       'cancel' => 'Cancel',
-      'ui_style' => 'Custom layout',
+      'ui_style' => 'UI style',
       'ui_style_description' => 'Components can format HTML for specific framework',
+      'ui_style_option_empty' => 'Pure HTML',
     ],
   ],
 

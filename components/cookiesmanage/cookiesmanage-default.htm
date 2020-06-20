@@ -14,7 +14,7 @@
 
     {% endif %}
 
-    {% partial '@list-cookies' ~ cookiesSettingsGet('ui_style') %}
+    {% partial '@list-cookies-' ~ cookiesSettingsGet('ui_style', 'default') %}
 
 </div>
 

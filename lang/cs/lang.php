@@ -65,8 +65,9 @@ return [
       'show_modal_description' => 'Klenutím na toto tlačítko se zobrazí modální okno s nastavením cookies (nyní funguje pouze pokud je vybraný styl Boostrap na záložce Nastavení)',
       'empty_option' => 'Vyberte z možností',
       'cancel' => 'Zrušit',
-      'ui_style' => 'Přizpůsobit zobrazení',
+      'ui_style' => 'Styl rozhraní',
       'ui_style_description' => 'Komponenty mohou zobrazit obsah upravený pro konkrétní framework',
+      'ui_style_option_empty' => 'Čisté HTML',
     ],
   ],
 

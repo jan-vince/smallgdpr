@@ -1,6 +1,6 @@
 {% if cookiesSettingsGet('cookies', null)|length %}
 
-    <form class="form">
+    <form>
 
         {% for cookie in cookiesSettingsGet('cookies') %}
 
@@ -16,11 +16,11 @@
 
             {% endif %}
 
-            </div>
-
         {% endfor %}
 
         {% if disableSaveButton is empty %}
+
+            <hr>
 
             <button type="button" 
                     id="cookies-manage-save">{{ trans('janvince.smallgdpr::lang.settings.form_fields.save_settings') }}</button>
