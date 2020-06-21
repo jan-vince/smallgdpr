@@ -42,6 +42,8 @@ return [
       'cookies_list_prompt' => 'Přidat skupinu',
       'cookie_required' => 'Nezbytné',
       'cookie_required_description' => 'Tato cookies nebude možné uživatelsky zakázat',
+      'cookie_default_enabled' => 'Výchozí povoleno',
+      'cookie_default_enabled_description' => 'Tato cookies budou spuštěna i bez výslovného souhlasu (mělo by být použito jen pro anonymní data!).',
       'cookies_manager' => 'Správa cookies',
       'cookies_bar_buttons' => 'Tlačítka',
       'cookies_bar_buttons_prompt' => 'Přidat tlačítko',

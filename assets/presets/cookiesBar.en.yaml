@@ -11,9 +11,10 @@ cookies:
     slug: "necessary"
     required: 1
 -   title: "Statistical cookies"
-    description: "<p>Statistical cookies help to understand how visitors use the website.</p>"
+    description: "<p>Anonymous statistical cookies help to understand how visitors use the website.</p>"
     slug: "statistical"
     required: 0
+    default_enabled: 1
 -   title: "Marketing cookies"
     description: "<p>Marketing cookies are used to display advertising that is relevant and interesting to a particular user.</p>"
     slug: "marketing"

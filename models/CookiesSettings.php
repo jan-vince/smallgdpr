@@ -39,4 +39,33 @@ class CookiesSettings extends Model {
         'set_cookies_lifetime_days' => 'numeric',
     ];
 
+    static function getSGCookies($sgCookiesPrefix = 'sg-cookies') {
+
+        $sgCookies = [];
+
+        $sgCookies['consent'] = !empty($_COOKIE[($sgCookiesPrefix . '-consent')]);
+
+        foreach (CookiesSettings::get('cookies') as $cookie) {
+
+            // REQUIRED are always ON
+            if ($cookie['required']) {
+                $sgCookies[$cookie['slug']] = 1;
+                continue;
+            }
+
+            // DEFAULT ENABLED cookies are ON only when no general consent or when explicitly allowed
+            if ($cookie['default_enabled'] and empty($_COOKIE[($sgCookiesPrefix . '-consent')])) {
+                $sgCookies[$cookie['slug']] = 1;
+                continue;
+            }
+
+            // ALL OTHER by its consent state
+            if (!empty($_COOKIE[($sgCookiesPrefix . '-' . $cookie['slug'])])) {
+                $sgCookies[$cookie['slug']] = 1;
+            }
+        }
+
+        return $sgCookies;
+
+    }
 }

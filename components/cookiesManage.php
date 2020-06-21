@@ -17,8 +17,6 @@ use App;
 class cookiesManage extends ComponentBase
 {
 
-    private $sgCookiesPrefix = 'sg-cookies';
-
     public function componentDetails() {
 
         return [

@@ -17,8 +17,6 @@ use App;
 class cookiesBar extends ComponentBase
 {
 
-    private $sgCookiesPrefix = 'sg-cookies';
-
     public function componentDetails() {
 
         return [
@@ -40,21 +38,7 @@ class cookiesBar extends ComponentBase
             $this->addCss(['assets/cookiesbar/cookiesbar.less']);
         }
 
-        $sgCookies = [];
-        
-        $sgCookies['consent'] = !empty($_COOKIE[($this->sgCookiesPrefix . '-consent')]);
-
-        foreach(CookiesSettings::get('cookies') as $cookie) {
-
-            if ($cookie['required'] 
-                or !empty($_COOKIE[($this->sgCookiesPrefix . '-' . $cookie['slug'])])) {
-
-                $sgCookies[$cookie['slug']] = 1;
-
-            }
-        }
-
-        $this->page['sgCookies'] = $sgCookies;
+        $this->page['sgCookies'] = CookiesSettings::getSGCookies();
 
     }
     

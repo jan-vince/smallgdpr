@@ -38,6 +38,13 @@ tabs:
                         span: left
                         default: false
                         cssClass: m-t
+                    default_enabled:
+                        label: 'janvince.smallgdpr::lang.settings.form_fields.cookie_default_enabled'
+                        comment: 'janvince.smallgdpr::lang.settings.form_fields.cookie_default_enabled_description'
+                        type: checkbox
+                        span: left
+                        default: false
+                        cssClass: m-t
                     scripts_code_section:
                         type: section
                     scripts_code:

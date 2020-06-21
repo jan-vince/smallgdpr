@@ -11,9 +11,10 @@ cookies:
     slug: "nezbytna"
     required: 1
 -   title: "Statistická cookies"
-    description: "<p>Statistická cookies pomáhají porozumět tomu, jak návštěvníci používají webové stránky.</p>"
+    description: "<p>Anonymní statistická cookies pomáhají porozumět tomu, jak návštěvníci používají webové stránky.</p>"
     slug: "statisticka"
     required: 0
+    default_enabled: 1
 -   title: "Marketingová cookies"
     description: "<p>Marketingová cookies jsou používány pro zobrazení reklamy, která je relevantní a zajímavá pro konkrétního užívatele.</p>"
     slug: "marketingova"

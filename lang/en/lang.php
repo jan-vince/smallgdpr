@@ -42,6 +42,8 @@ return [
       'cookies_list_prompt' => 'Add a group',
       'cookie_required' => 'Required',
       'cookie_required_description' => 'This cookies cannot be disabled by user',
+      'cookie_default_enabled' => 'Default enabled',
+      'cookie_default_enabled_description' => 'This cookies will be executed even without explicit concent (should be used only for anonymous data!).',
       'cookies_manager' => 'Manage cookies',
       'cookies_bar_buttons' => 'Buttons',
       'cookies_bar_buttons_prompt' => 'Add buttons',
