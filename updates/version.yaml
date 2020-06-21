@@ -28,3 +28,5 @@
     - Added Default enabled option for cookies groups for cookies to be executed without explicit consent
     - Updated sgCookies array method
     - Updated default presets
+1.2.1:
+    - Fixed values checks in CookiesSettings

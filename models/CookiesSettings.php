@@ -48,13 +48,13 @@ class CookiesSettings extends Model {
         foreach (CookiesSettings::get('cookies') as $cookie) {
 
             // REQUIRED are always ON
-            if ($cookie['required']) {
+            if (!empty($cookie['required'])) {
                 $sgCookies[$cookie['slug']] = 1;
                 continue;
             }
 
             // DEFAULT ENABLED cookies are ON only when no general consent or when explicitly allowed
-            if ($cookie['default_enabled'] and empty($_COOKIE[($sgCookiesPrefix . '-consent')])) {
+            if (!empty($cookie['default_enabled']) and empty($_COOKIE[($sgCookiesPrefix . '-consent')])) {
                 $sgCookies[$cookie['slug']] = 1;
                 continue;
             }
