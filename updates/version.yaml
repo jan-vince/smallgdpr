@@ -32,3 +32,5 @@
     - Fixed values checks in CookiesSettings
 1.2.2:
     - Added option to hide Cookies bar on specific Page or Layout with View Bag property
+1.2.3:
+    - Updated hideCookiesBar check to support Static Pages
