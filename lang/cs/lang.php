@@ -60,6 +60,8 @@ return [
       'save_settings' => 'Uložit nastavení',
       'scripts_code' => 'Spouštět JS kód',
       'scripts_code_description' => 'Tyto skripty budou spuštěny, pokud jsou vyžadované nebo povolené uživatelem. Nepoužívejte značku "<script></script>", bude přidána automaticky.',
+      'scripts_file' => 'Spustit JS soubor',
+      'scripts_file_description' => "Spustit tento soubor.",
       'attributes' => 'HTML atributy značky',
       'show_modal' => 'Otevřít vyskakovací okno',
       'show_modal_description' => 'Klenutím na toto tlačítko se zobrazí modální okno s nastavením cookies (nyní funguje pouze pokud je vybraný styl Boostrap na záložce Nastavení)',

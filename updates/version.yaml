@@ -34,3 +34,5 @@
     - Added option to hide Cookies bar on specific Page or Layout with View Bag property
 1.2.3:
     - Updated hideCookiesBar check to support Static Pages
+1.2.4:
+    - Added optional cookies group script file to be executed

@@ -54,7 +54,11 @@ tabs:
                         size: large
                         language: javascript
                         fontSize: 12px
-
+                    scripts_file:
+                        label: 'janvince.smallgdpr::lang.settings.form_fields.scripts_file'
+                        comment: 'janvince.smallgdpr::lang.settings.form_fields.scripts_file_description'
+                        type: mediafinder
+                        mode: file
 
         ## Cookies bar
 

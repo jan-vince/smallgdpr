@@ -15,6 +15,16 @@
 
             {% endput %}
 
+            {% if cookie.scripts_file %}
+
+                {% put scripts %}
+
+                    <script src="{{ cookie.scripts_file|media }}"></script>
+                
+                {% endput %}
+
+            {% endif %}
+
         {% endif %}
 
     {% endfor %}

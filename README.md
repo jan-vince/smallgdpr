@@ -55,7 +55,7 @@ One or more groups can be set as `Required`. User cannot disable these groups in
 
 One or more groups can be set as `Default enabled`. Scripts in these groups will run without explicit user concent but can be disabled by user (eg. in Manage cookies component).
 
-You can add your custom JS code to be executed when a cookies group is allowed (or required).
+You can add your custom JS code and/or file to be executed when a cookies group is allowed (or required).
 
 > You can use your own code whenever you want (in layout, page or partial) - just check if a group is allowed by `{% if sgCookies.necessary  }` where `necessary` is a code of your cookies groups.
 
