@@ -105,8 +105,16 @@ Examples are in `/plugins/janvince/smallgdpr/assets/presets/` folder.
 
 ### Cookies bar
 
-Should be used in your Layouts.
+Should be used in your Layouts or Pages.
 
+#### Hide Cookies bar
+
+If you need to hide Cookies bar on specific Page or Layout, you can use [View Bag](https://octobercms.com/docs/cms/components#viewbag-component) on your Page this way:
+
+```
+[viewBag]
+hideCookiesBar = 1
+```
 
 ### Manage cookies
 

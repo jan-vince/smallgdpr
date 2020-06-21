@@ -30,3 +30,5 @@
     - Updated default presets
 1.2.1:
     - Fixed values checks in CookiesSettings
+1.2.2:
+    - Added option to hide Cookies bar on specific Page or Layout with View Bag property
