@@ -29,7 +29,7 @@ class ExportPreset extends FormWidgetBase {
     public function onExportPreset()
     {
 
-        $file = base_path(post('file_name'));
+        $path = base_path(post('file_name'));
 
         $data = CookiesSettings::instance()->toArray();
 
@@ -54,8 +54,8 @@ class ExportPreset extends FormWidgetBase {
 
         
         try {
-            
-            File::put($file, $dataParsed);
+
+            File::put($path, $dataParsed);
 
         } catch (\Exception $e) {
 

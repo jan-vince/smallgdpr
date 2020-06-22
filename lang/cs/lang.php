@@ -56,6 +56,8 @@ return [
       'accept_all_cookies_btn_description' => 'Kliknutím na toto tlačítko budou automaticky přijmuta všechna cookies a lišta zmizí.',
       'import' => 'Importovat nastavení',
       'import_confirm' => 'Skutečně chcete importovat nastavení? Stará nastavení budou ztracena!',
+      'import_path' => 'Cesta k souboru s konfigurací',
+      'import_path_description' => 'Vyberte vlastní soubor s konfigurací nebo nechte prázdné a bude použita výchozí konfigurace ze seouboru: ',
       'export' => 'Exportovat nastavení',
       'cookies_lifetime_days' => 'Expirace cookies (dnů)',
       'cookies_lifetime_days_comment' => 'Doba životnosti cookies v prohlížeči',

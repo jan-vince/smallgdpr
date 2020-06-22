@@ -56,6 +56,8 @@ return [
       'accept_all_cookies_btn_description' => 'By clicking on this button, all cookies will be accepted automatically and the bar will disappear.',
       'import' => 'Import settings',
       'import_confirm' => 'Are you sure you want to import settings? Old settings will be lost!',
+      'import_path' => 'Path to the import file',
+      'import_path_description' => 'Select your settings file or leave empty for a default preset file: ',
       'export' => 'Export settings',
       'cookies_lifetime_days' => 'Cookies expiration (in days)',
       'cookies_lifetime_days_comment' => 'The lifetime of cookies in the browser',

@@ -190,8 +190,13 @@ tabs:
 
         ## Import
 
+        import_preset_media:
+            label: 'janvince.smallgdpr::lang.settings.form_fields.import_path'
+            type: mediafinder
+            span: left
+            mode: file
+            tab: 'janvince.smallgdpr::lang.settings.tabs.import'
         import_preset_btn:
-            label: 'janvince.smallgdpr::lang.settings.form_fields.import'
             type: importpreset
             span: full
             tab: 'janvince.smallgdpr::lang.settings.tabs.import'
@@ -199,7 +204,7 @@ tabs:
         ## Export
 
         export_preset_btn:
-            label: 'janvince.smallgdpr::lang.settings.form_fields.export'
+#            label: 'janvince.smallgdpr::lang.settings.form_fields.export'
             type: exportpreset
-            span: full
+            span: left
             tab: 'janvince.smallgdpr::lang.settings.tabs.export'

@@ -121,7 +121,10 @@ You can import settings presets from default files or your own.
 
 You have to use YAML format.
 
-Examples are in `/plugins/janvince/smallgdpr/assets/presets/` folder.
+
+### Export
+
+You can export current settings data to configuration file and use it as a backup or template for other sites.
 
 
 ## Components
