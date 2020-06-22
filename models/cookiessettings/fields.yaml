@@ -47,25 +47,25 @@ tabs:
                         cssClass: m-t
                     scripts_code_section:
                         type: section
-                    scripts_code:
-                        label: 'janvince.smallgdpr::lang.settings.form_fields.scripts_code'
-                        comment: 'janvince.smallgdpr::lang.settings.form_fields.scripts_code_description'
-                        type: codeeditor
-                        size: huge
-                        span: left
-                        language: javascript
-                        fontSize: 12px
                     scripts_file:
                         label: 'janvince.smallgdpr::lang.settings.form_fields.scripts_file'
                         comment: 'janvince.smallgdpr::lang.settings.form_fields.scripts_file_description'
                         type: mediafinder
                         mode: file
+                        span: left
+                    scripts_code:
+                        label: 'janvince.smallgdpr::lang.settings.form_fields.scripts_code'
+                        comment: 'janvince.smallgdpr::lang.settings.form_fields.scripts_code_description'
+                        type: codeeditor
+                        size: huge
                         span: right
+                        language: javascript
+                        fontSize: 12px
                     scripts_run_production:
                         label: 'janvince.smallgdpr::lang.settings.form_fields.scripts_run_production'
                         comment: 'janvince.smallgdpr::lang.settings.form_fields.scripts_run_production_description'
                         type: checkbox
-                        span: right
+                        span: left
 
         ## Cookies bar
 

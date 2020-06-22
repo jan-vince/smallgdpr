@@ -40,3 +40,5 @@
     - Updated styling, removed unnecessary styles
 1.2.6:
     - Added option to run JS only in production mode
+1.2.7:
+    - Changed fields order in form
