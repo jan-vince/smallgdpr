@@ -12,8 +12,7 @@
     <button
         class="btn btn-danger oc-icon-upload"
         onclick="$(this).data('request-data', {
-            default_path: <?= e(trans('janvince.smallgdpr::lang.formwidgets.importpreset.file_name_default')) ?>,
-            media_path: $('div[data-field-name=import_preset_media]').find('input').val()
+            file_name: $('div[data-field-name=import_preset_media]').find('input').val()
             })"
         data-request="onImportPreset"
         data-request-confirm="<?= e(trans('janvince.smallgdpr::lang.settings.form_fields.import_confirm')) ?>"
