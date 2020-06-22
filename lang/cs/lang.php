@@ -25,6 +25,7 @@ return [
       'cookies_manage' => 'Správa cookies',
       'settings' => 'Nastavení',
       'import' => 'Import',
+      'export' => 'Export',
     ],
 
     'form_fields' => [
@@ -55,6 +56,7 @@ return [
       'accept_all_cookies_btn_description' => 'Kliknutím na toto tlačítko budou automaticky přijmuta všechna cookies a lišta zmizí.',
       'import' => 'Importovat nastavení',
       'import_confirm' => 'Skutečně chcete importovat nastavení? Stará nastavení budou ztracena!',
+      'export' => 'Exportovat nastavení',
       'cookies_lifetime_days' => 'Expirace cookies (dnů)',
       'cookies_lifetime_days_comment' => 'Doba životnosti cookies v prohlížeči',
       'save_settings' => 'Uložit nastavení',
@@ -95,12 +97,26 @@ return [
       'file_name' => 'Cesta k souboru s nastaveními',
       'file_name_comment' => 'Kompletní cesta k souboru.',
       'file_name_default' => '/plugins/janvince/smallgdpr/assets/presets/cookiesbar.cs.yaml',
+      'import_confirm' => 'opravdu chcete importovat data?',
 
       'flash' => [
         'import_successfull' => 'Data byla úspěšně importována',
         'import_error' => 'Nepodařilo se importovat data. Víc informací v systémovém protokolu.',
         'parse_error' => 'Nepodařilo se zpracovat data ze souboru. Víc informací v systémovém protokolu.',
         'file_error' => 'Nepodařilo se nalézt soubor! Zkontrolujte název a cestu.',
+      ],
+    ],
+    'exportpreset' => [
+
+      'file_name' => 'Cesta k souboru',
+      'file_name_comment' => 'Kompletní cesta k exportovanému souboru.',
+      'file_name_default' => '/storage/app/media/small-gdpr-export.yaml',
+
+      'flash' => [
+        'export_successfull' => 'Data byla úspěšně exportována',
+        'export_error' => 'Nepodařilo se exportovat data. Víc informací v systémovém protokolu.',
+        'parse_error' => 'Nepodařilo se zpracovat data nastavení. Víc informací v systémovém protokolu.',
+        'file_error' => 'Nepodařilo se zapsat do souboru! Zkontrolujte název a cestu.',
       ],
     ],
   ],

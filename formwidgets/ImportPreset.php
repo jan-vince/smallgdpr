@@ -34,7 +34,7 @@ class ImportPreset extends FormWidgetBase {
         if (!file_exists($file)) {
 
             Log::error('SG: Preset file was not found!');
-            Flash::error('janvince.smallgdpr::lang.formwidgets.importpreset.flash.file_error');
+            Flash::error(trans('janvince.smallgdpr::lang.formwidgets.importpreset.flash.file_error'));
             return false;
         }
 
@@ -44,10 +44,10 @@ class ImportPreset extends FormWidgetBase {
 
             $content = (new Yaml())->parseFile($file);
 
-        } catch (\Error $e) {
+        } catch (\Exception $e) {
 
             Log::error('SG: Error parsing config file! ' . $e->getMessage());
-            Flash::error('janvince.smallgdpr::lang.formwidgets.importpreset.flash.parse_error');
+            Flash::error(trans('janvince.smallgdpr::lang.formwidgets.importpreset.flash.parse_error'));
             return false;
         }
 
@@ -55,14 +55,14 @@ class ImportPreset extends FormWidgetBase {
 
             CookiesSettings::set($content);
 
-        } catch (\Error $e) {
+        } catch (\Exception $e) {
 
             Log::error('SG: Error importing data! ' . $e->getMessage());
-            Flash::error('janvince.smallgdpr::lang.formwidgets.importpreset.flash.import_error');
+            Flash::error(trans('janvince.smallgdpr::lang.formwidgets.importpreset.flash.import_error'));
             return false;
         }
 
-        Flash::success('janvince.smallgdpr::lang.formwidgets.importpreset.flash.import_successfull');
+        Flash::success(trans('janvince.smallgdpr::lang.formwidgets.importpreset.flash.import_successfull'));
 
     }
 }

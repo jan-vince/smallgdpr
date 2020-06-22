@@ -42,3 +42,5 @@
     - Added option to run JS only in production mode
 1.2.7:
     - Changed fields order in form
+1.3.0:
+    - Added export settings function

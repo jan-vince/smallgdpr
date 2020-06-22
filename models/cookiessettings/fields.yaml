@@ -195,3 +195,11 @@ tabs:
             type: importpreset
             span: full
             tab: 'janvince.smallgdpr::lang.settings.tabs.import'
+
+        ## Export
+
+        export_preset_btn:
+            label: 'janvince.smallgdpr::lang.settings.form_fields.export'
+            type: exportpreset
+            span: full
+            tab: 'janvince.smallgdpr::lang.settings.tabs.export'

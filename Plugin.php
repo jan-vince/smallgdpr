@@ -9,12 +9,14 @@ use Config;
 use Backend;
 use Validator;
 use Log;
+use Yaml;
+use File;
+use Storage;
 
 
 class Plugin extends PluginBase {
 
     public function boot() {
-
     }
 
     public function registerSettings() {
@@ -61,6 +63,7 @@ class Plugin extends PluginBase {
         
         return [
             'JanVince\SmallGDPR\FormWidgets\ImportPreset' => 'importpreset',
+            'JanVince\SmallGDPR\FormWidgets\ExportPreset' => 'exportpreset',
         ];
     }
 

@@ -25,6 +25,7 @@ return [
       'cookies_manage' => 'Manage cookies',
       'settings' => 'Settings',
       'import' => 'Import',
+      'export' => 'Export',
     ],
 
     'form_fields' => [
@@ -55,6 +56,7 @@ return [
       'accept_all_cookies_btn_description' => 'By clicking on this button, all cookies will be accepted automatically and the bar will disappear.',
       'import' => 'Import settings',
       'import_confirm' => 'Are you sure you want to import settings? Old settings will be lost!',
+      'export' => 'Export settings',
       'cookies_lifetime_days' => 'Cookies expiration (in days)',
       'cookies_lifetime_days_comment' => 'The lifetime of cookies in the browser',
       'save_settings' => 'Save settings',
@@ -95,12 +97,27 @@ return [
       'file_name' => 'Path to the settings file',
       'file_name_comment' => 'Complete path to the file.',
       'file_name_default' => '/plugins/janvince/smallgdpr/assets/presets/cookiesbar.en.yaml',
-
+      'import_confirm' => 'Do you really want to import your data?',
+      
       'flash' => [
         'import_successfull' => 'Data was imported successfully',
         'import_error' => 'Failed to import data. More information in the system log.',
         'parse_error' => 'Failed to process data from file. More information in the system log.',
         'file_error' => 'Could not find file! Check the name and path.',
+      ],
+    ],
+
+    'exportpreset' => [
+
+      'file_name' => 'Path to the file',
+      'file_name_comment' => 'Complete path to the exported file.',
+      'file_name_default' => '/storage/app/media/small-gdpr-export.yaml',
+
+      'flash' => [
+        'export_successfull' => 'Data was imported successfully',
+        'export_error' => 'There was an error while exporting. More info in system log.',
+        'parse_error' => 'Failed to process settings data. More information in the system log.',
+        'file_error' => 'Could not write to file! Check the name and path.',
       ],
     ],
   ],
