@@ -36,3 +36,5 @@
     - Updated hideCookiesBar check to support Static Pages
 1.2.4:
     - Added optional cookies group script file to be executed
+1.2.5:
+    - Updated styling, removed unnecessary styles
