@@ -38,3 +38,5 @@
     - Added optional cookies group script file to be executed
 1.2.5:
     - Updated styling, removed unnecessary styles
+1.2.6:
+    - Added option to run JS only in production mode

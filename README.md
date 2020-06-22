@@ -51,13 +51,36 @@ You can set permissions to restrict access to *Settings > Small plugins > Small 
 
 The main idea is to create groups of cookies and scripts you want to run on your website.
 
-One or more groups can be set as `Required`. User cannot disable these groups in Manage cookies component and cookies will be always executed.
+#### Title and content
 
-One or more groups can be set as `Default enabled`. Scripts in these groups will run without explicit user concent but can be disabled by user (eg. in Manage cookies component).
+Content to be shown on website next to the cookies group checkbox.
 
-You can add your custom JS code and/or file to be executed when a cookies group is allowed (or required).
+#### Code
 
-> You can use your own code whenever you want (in layout, page or partial) - just check if a group is allowed by `{% if sgCookies.necessary  }` where `necessary` is a code of your cookies groups.
+Automatically created from title but can be edited to whatever you need.
+
+You can use this field in your code to check cookies group status:
+
+```
+{% if sgCookies.necessary %}
+ ...
+{% endif %}
+```
+
+#### Required 
+
+When set users cannot disable these groups in Manage cookies component and cookies will be always executed.
+
+
+#### Default enabled
+
+Scripts in these groups will run without explicit user concent but can be disabled by user (in Manage cookies component).
+
+#### Custom JS code or file
+
+You can add your own JS code and/or file to be executed when a cookies group is allowed (or required).
+
+You can optionally limit scripts execution to production mode.
 
 ### Cookies bar 
 

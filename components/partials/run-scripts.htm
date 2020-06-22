@@ -2,26 +2,32 @@
 
     {% for cookie in cookiesSettingsGet('cookies') %}
 
-        {% if cookie.required or sgCookies[cookie.slug] %}
+        {# Test for production mode required first #}
+        {% if cookie.scripts_run_production == false 
+            or ( cookie.scripts_run_production == true and this.environment == 'production') %}
 
-            {% put scripts %}
-
-                <script>
-
-                    // SG script group: {{ cookie.slug }}
-                    {{ cookie.scripts_code|raw }}
-
-                </script>
-
-            {% endput %}
-
-            {% if cookie.scripts_file %}
+            {% if cookie.required or sgCookies[cookie.slug] %}
 
                 {% put scripts %}
 
-                    <script src="{{ cookie.scripts_file|media }}"></script>
-                
+                    <script>
+
+                        // SG script group: {{ cookie.slug }}
+                        {{ cookie.scripts_code|raw }}
+
+                    </script>
+
                 {% endput %}
+
+                {% if cookie.scripts_file %}
+
+                    {% put scripts %}
+
+                        <script src="{{ cookie.scripts_file|media }}"></script>
+                    
+                    {% endput %}
+
+                {% endif %}
 
             {% endif %}
 

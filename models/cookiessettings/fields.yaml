@@ -51,7 +51,8 @@ tabs:
                         label: 'janvince.smallgdpr::lang.settings.form_fields.scripts_code'
                         comment: 'janvince.smallgdpr::lang.settings.form_fields.scripts_code_description'
                         type: codeeditor
-                        size: large
+                        size: huge
+                        span: left
                         language: javascript
                         fontSize: 12px
                     scripts_file:
@@ -59,6 +60,12 @@ tabs:
                         comment: 'janvince.smallgdpr::lang.settings.form_fields.scripts_file_description'
                         type: mediafinder
                         mode: file
+                        span: right
+                    scripts_run_production:
+                        label: 'janvince.smallgdpr::lang.settings.form_fields.scripts_run_production'
+                        comment: 'janvince.smallgdpr::lang.settings.form_fields.scripts_run_production_description'
+                        type: checkbox
+                        span: right
 
         ## Cookies bar
 

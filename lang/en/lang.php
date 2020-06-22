@@ -62,6 +62,8 @@ return [
       'scripts_code_description' => 'These scripts will be executed if required or if allowed by user. Do not use "<script></script>" tag, it will be added automatically.',
       'scripts_file' => 'Run JS file',
       'scripts_file_description' => "Execute this file.",
+      'scripts_run_production' => 'Run only in production',
+      'scripts_run_production_description' => "Execute JS code and file only in production environment.",
       'attributes' => 'HTML tag attributes',
       'show_modal' => 'Open modal window',
       'show_modal_description' => 'Open modal window with cookies settings by clicking on this button (for now works only when Bootstrap style is enabled on Settings tab).',
