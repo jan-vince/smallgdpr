@@ -4,8 +4,6 @@
 
         {% for script in cookie.scripts %}
 
-{{d(script)}}
-
             {# Test for production mode required first #}
             {% if script.scripts_run_production == false 
                 or ( script.scripts_run_production == true and this.environment == 'production') %}

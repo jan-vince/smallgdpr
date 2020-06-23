@@ -55,3 +55,5 @@
     - v14_migration.php
 1.4.1:
     - Extended import tab to be able to use Media, own path or default preset file
+1.4.2:
+    - Removed forgotten dump
