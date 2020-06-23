@@ -56,8 +56,9 @@ return [
       'accept_all_cookies_btn_description' => 'By clicking on this button, all cookies will be accepted automatically and the bar will disappear.',
       'import' => 'Import settings',
       'import_confirm' => 'Are you sure you want to import settings? Old settings will be lost!',
-      'import_path' => 'Path to the import file',
       'import_path_description' => 'Select your settings file or leave empty for a default preset file: ',
+      'import_path_media' => 'Select import file from Media',
+      'import_path_media_description' => 'This file has presedence over the manually entered path below.',
       'export' => 'Export settings',
       'cookies_lifetime_days' => 'Cookies expiration (in days)',
       'cookies_lifetime_days_comment' => 'The lifetime of cookies in the browser',
@@ -100,8 +101,8 @@ return [
     
     'importpreset' => [
 
-      'file_name' => 'Path to the settings file',
-      'file_name_comment' => 'Complete path to the file.',
+      'file_name' => 'Or you can enter your import file path manually',
+      'file_name_comment' => 'Will be used only when there is no file selected from Media! Keep empty for default plugin preset file.',
       'file_name_default' => '/plugins/janvince/smallgdpr/assets/presets/cookiesbar.en.yaml',
       'import_confirm' => 'Do you really want to import your data?',
       
@@ -110,6 +111,7 @@ return [
         'import_error' => 'Failed to import data. More information in the system log.',
         'parse_error' => 'Failed to process data from file. More information in the system log.',
         'file_error' => 'Could not find file! Check the name and path.',
+        'file_missing_error' => 'No file was selected!',
       ],
     ],
 

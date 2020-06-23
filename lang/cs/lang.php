@@ -58,6 +58,8 @@ return [
       'import_confirm' => 'Skutečně chcete importovat nastavení? Stará nastavení budou ztracena!',
       'import_path' => 'Cesta k souboru s konfigurací',
       'import_path_description' => 'Vyberte vlastní soubor s konfigurací nebo nechte prázdné a bude použita výchozí konfigurace ze seouboru: ',
+      'import_path_media' => 'Vyberte soubor importu z Médií',
+      'import_path_media_description' => 'Tento soubor má přednost před ručně zadanou cestou níže.',
       'export' => 'Exportovat nastavení',
       'cookies_lifetime_days' => 'Expirace cookies (dnů)',
       'cookies_lifetime_days_comment' => 'Doba životnosti cookies v prohlížeči',
@@ -99,8 +101,8 @@ return [
     
     'importpreset' => [
 
-      'file_name' => 'Cesta k souboru s nastaveními',
-      'file_name_comment' => 'Kompletní cesta k souboru.',
+      'file_name' => 'Nebo můžete vložit cestu k importovacímu souboru ručně',
+      'file_name_comment' => 'Bude použit jen pokud není vybrán soubor z Médií! Nechte prázdné a použije se výchozí soubor importu.',
       'file_name_default' => '/plugins/janvince/smallgdpr/assets/presets/cookiesbar.cs.yaml',
       'import_confirm' => 'opravdu chcete importovat data?',
 

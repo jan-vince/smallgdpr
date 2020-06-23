@@ -53,3 +53,5 @@
     - Added option do have more scripts and files in scripts group (old scripts data are automatically migrated to the new structure)
     - Added optional title for scripts for internal use
     - v14_migration.php
+1.4.1:
+    - Extended import tab to be able to use Media, own path or default preset file

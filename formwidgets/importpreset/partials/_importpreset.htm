@@ -1,18 +1,24 @@
-<div class="form-group text-field span-full is-required">
+<div class="form-group text-field span-left">
+
+    <label>
+        <?= e(trans('janvince.smallgdpr::lang.formwidgets.importpreset.file_name')) ?>
+    </label>
+    
+    <input id="<?= $this->alias ?>-path-file-name" type="text" name="path_file_name" placeholder="<?= e(trans('janvince.smallgdpr::lang.formwidgets.importpreset.file_name_default')) ?>" class="form-control" />
     
     <p class="help-block after-field">
-        <?= e(trans('janvince.smallgdpr::lang.settings.form_fields.import_path_description')) ?>
-        <?= e(trans('janvince.smallgdpr::lang.formwidgets.importpreset.file_name_default')) ?>
+        <?= e(trans('janvince.smallgdpr::lang.formwidgets.importpreset.file_name_comment')) ?>
     </p>
 
 </div>
 
-<div class="form-group span-full">
+<div class="form-group span-left">
     
     <button
         class="btn btn-danger oc-icon-upload"
         onclick="$(this).data('request-data', {
-            file_name: $('div[data-field-name=import_preset_media]').find('input').val()
+            media_file_name: $('div[data-field-name=import_preset_media]').find('input').val(),
+            path_file_name: $('#<?= $this->alias ?>-path-file-name').val(),
             })"
         data-request="onImportPreset"
         data-request-confirm="<?= e(trans('janvince.smallgdpr::lang.settings.form_fields.import_confirm')) ?>"

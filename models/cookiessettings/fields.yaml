@@ -206,7 +206,8 @@ tabs:
         ## Import
 
         import_preset_media:
-            label: 'janvince.smallgdpr::lang.settings.form_fields.import_path'
+            label: 'janvince.smallgdpr::lang.settings.form_fields.import_path_media'
+            comment: 'janvince.smallgdpr::lang.settings.form_fields.import_path_media_description'
             type: mediafinder
             span: left
             mode: file

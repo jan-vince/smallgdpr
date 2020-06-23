@@ -64,6 +64,7 @@ class ExportPreset extends FormWidgetBase {
             return false;
         }
 
+        Log::info('SG: Data successfully exported!');
         Flash::success(trans('janvince.smallgdpr::lang.formwidgets.exportpreset.flash.export_successfull'));
 
     }
