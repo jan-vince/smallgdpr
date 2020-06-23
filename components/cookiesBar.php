@@ -14,7 +14,7 @@ use Form;
 use Log;
 use App;
 
-class cookiesBar extends ComponentBase
+class CookiesBar extends ComponentBase
 {
 
     public function componentDetails() {

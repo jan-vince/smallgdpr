@@ -38,8 +38,8 @@ class Plugin extends PluginBase {
     public function registerComponents() {
         
         return [
-            'JanVince\SmallGDPR\Components\cookiesBar' => 'cookiesBar',
-            'JanVince\SmallGDPR\Components\cookiesManage' => 'cookiesManage',
+            'JanVince\SmallGDPR\Components\CookiesBar' => 'cookiesBar',
+            'JanVince\SmallGDPR\Components\CookiesManage' => 'cookiesManage',
         ];
     }
 

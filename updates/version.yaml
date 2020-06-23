@@ -59,3 +59,5 @@
     - Removed forgotten dump
 1.4.3:
     - Fixed migration not working on new installs
+1.4.4:
+    - Fixed folders and models name case

@@ -14,7 +14,7 @@ use Form;
 use Log;
 use App;
 
-class cookiesManage extends ComponentBase
+class CookiesManage extends ComponentBase
 {
 
     public function componentDetails() {
