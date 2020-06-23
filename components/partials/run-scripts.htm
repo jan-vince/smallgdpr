@@ -10,16 +10,15 @@
 
                 {% if cookie.required or sgCookies[cookie.slug] %}
 
-                    {% put scripts %}
+                    {% if script.scripts_code %}
+                    
+                        {% put scripts %}
 
-                        <script>
-
-                            // SG script group: {{ cookie.slug }}
                             {{ script.scripts_code|raw }}
 
-                        </script>
-
-                    {% endput %}
+                        {% endput %}
+                    
+                    {% endif %}
 
                     {% if script.scripts_file %}
 

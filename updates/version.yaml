@@ -61,3 +61,4 @@
     - Fixed migration not working on new installs
 1.4.4:
     - Fixed folders and models name case
+1.4.5: !!! Cookies JS code placed in code window now requires <script> tags to be present! Please check your code.
