@@ -47,13 +47,13 @@ You can set permissions to restrict access to *Settings > Small plugins > Small 
 
 ## Settings
 
-### Cookies groups
+### Tab: Cookies groups
 
-The main idea is to create groups of cookies and scripts you want to run on your website.
+The main idea is to create groups of cookies with JS scripts that you want to run on your website.
 
 #### Title and content
 
-Content to be shown on website next to the cookies group checkbox.
+Content to be shown on website next to the cookies group checkbox in Cookies manager component.
 
 #### Code
 
@@ -69,20 +69,21 @@ You can use this field in your code to check cookies group status:
 
 #### Required 
 
-When set users cannot disable these groups in Manage cookies component and cookies will be always executed.
-
+When turned on users cannot disable these groups in Manage cookies component and scripts will be always executed.
 
 #### Default enabled
 
 Scripts in these groups will run without explicit user concent but can be disabled by user (in Manage cookies component).
 
-#### Custom JS code or file
+Be careful not to violate your local laws!
 
-You can add your own JS code and/or file to be executed when a cookies group is allowed (or required).
+#### Custom JS code or files
+
+You can add your own JS code and/or files to be executed when a cookies group is allowed (or required).
 
 You can optionally limit scripts execution to production mode.
 
-### Cookies bar 
+### Tab: Cookies bar 
 
 You can edit title and content of cookies bar.
 
@@ -92,18 +93,26 @@ If you want, you can allow default CSS styles.
 
 You can add one or more buttons to your cookies bar. 
 
-One (or more) buttons can be set to `Allow all cookies`. Clicking on these buttons will set all cookies groups to be enabled.
+##### Allow all cookies
 
-> *Users can change cookies settings later on CMS page with Manage cookies component (like /gdpr).*
+When turned on, click on this button will set all cookies groups enabled.
 
-One (or more) buttons can be set to `Open modal window` (currently supported only for Bootstrap UI style when set on Settings tab).
+Usefull for "Allow all" button on Cookies bar.
 
-### Manage cookies
+*Note: Users can change cookies settings later on CMS page with Manage cookies component (like /gdpr) if you create one.*
+
+##### Open modal window
+
+When turned on, click on this button open modal window with list of cookies group.
+
+*Currently supported only for Boostrap 3 UI style (can be set on tab Settings).*
+
+### Tab: Manage cookies
 
 Just add title and content and those will be shown above cookies groups listing in Manage cookies component.
 
 
-### Settings
+### Tab: Settings
 
 Few general settings to be set.
 
@@ -115,14 +124,15 @@ Number of days for cookies to live in browser.
 
 Change formating of output HTML code.
 
-### Import
+### Tab: Import
 
-You can import settings presets from default files or your own.
+You can import settings presets from Media your own path or default plugin preset (if you leave all empty).
 
 You have to use YAML format.
 
+*Note: Try Export first to get idea of an import file structure.*
 
-### Export
+### Tab: Export
 
 You can export current settings data to configuration file and use it as a backup or template for other sites.
 
