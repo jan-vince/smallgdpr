@@ -57,3 +57,5 @@
     - Extended import tab to be able to use Media, own path or default preset file
 1.4.2:
     - Removed forgotten dump
+1.4.3:
+    - Fixed migration not working on new installs

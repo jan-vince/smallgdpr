@@ -13,11 +13,14 @@ class v14_migration extends Migration
 {
     public function up() {
 
+        $settings = CookiesSettings::instance();
+        $groups = $settings->get('cookies');
+
+        if(!is_array($groups)) {
+            return;
+        }
+
         try {
-
-            $settings = CookiesSettings::instance();
-
-            $groups = $settings->get('cookies');
 
             foreach ($groups as $key => $values) {
 
