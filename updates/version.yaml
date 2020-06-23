@@ -49,3 +49,7 @@
     - Updated export and import functions
 1.3.2:
     - Fixed import function
+1.4.0:
+    - Added option do have more scripts and files in scripts group (old scripts data are automatically migrated to the new structure)
+    - Added optional title for scripts for internal use
+    - v14_migration.php
