@@ -64,3 +64,5 @@
 1.4.5: !!! Cookies JS code placed in code window now requires <script> tags to be present! Please check your code.
 1.4.6:
     - Updated translation and docs.
+1.4.7:
+    - Fixed components file name case
