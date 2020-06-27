@@ -39,9 +39,8 @@ class CookiesBar extends ComponentBase
         }
 
         $this->page['sgCookies'] = CookiesSettings::getSGCookies();
-
     }
-    
+
     public function onRender() {
     }
 }

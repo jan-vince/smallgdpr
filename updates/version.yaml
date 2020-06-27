@@ -66,3 +66,5 @@
     - Updated translation and docs.
 1.4.7:
     - Fixed components file name case
+1.4.8:
+    - Added sgCookies to Cookies Manage component (for case when you do not want to use Cookies Bar in your layout or page)
