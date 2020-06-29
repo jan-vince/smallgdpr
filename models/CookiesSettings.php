@@ -45,7 +45,7 @@ class CookiesSettings extends Model {
 
         $sgCookies['consent'] = !empty($_COOKIE[($sgCookiesPrefix . '-consent')]);
 
-        foreach (CookiesSettings::get('cookies') as $cookie) {
+        foreach (CookiesSettings::get('cookies', []) as $cookie) {
 
             // REQUIRED are always ON
             if (!empty($cookie['required'])) {
