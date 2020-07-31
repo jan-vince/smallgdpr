@@ -10,11 +10,11 @@
 
                     <input type="checkbox" id="sg-cookies-{{cookie.slug}}{{customId}}" {{ sgCookies[cookie.slug] or (cookie.required) ? 'checked' : '' }} {{ cookie.required ? 'disabled' : ''  }}> <strong>{{ cookie.title }}</strong>
                 
-                    {% if cookie.description %}
-                        <div class="description help-block">{{ cookie.description|raw }}</div>
-                    {% endif %}
-                    
                 </label>
+                    
+                {% if cookie.description %}
+                    <div class="description help-block">{{ cookie.description|raw }}</div>
+                {% endif %}
 
             </div>
 

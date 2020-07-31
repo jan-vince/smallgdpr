@@ -70,3 +70,5 @@
     - Added sgCookies to Cookies Manage component (for case when you do not want to use Cookies Bar in your layout or page)
 1.4.9:
     - Fixed CookiesSettings model
+1.4.10:
+    - Moved modal help-block div from label tag (to be HTML5 valid)
