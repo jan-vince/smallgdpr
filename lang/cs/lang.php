@@ -8,8 +8,8 @@ return [
     'category' => 'Small plugins',
   ],
 
-  'persmissions' => [
-    'access_settings' => 'Povolit správu nastavení',
+  'permissions' => [
+    'access_cookies_settings' => 'Povolit správu nastavení cookies',
   ],
 
   'settings' => [

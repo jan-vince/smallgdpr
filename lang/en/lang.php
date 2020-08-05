@@ -8,8 +8,8 @@ return [
     'category' => 'Small plugins',
   ],
 
-  'persmissions' => [
-    'access_settings' => 'Allow access to settings',
+  'permissions' => [
+    'access_cookies_settings' => 'Allow access to cookies settings',
   ],
 
   'settings' => [

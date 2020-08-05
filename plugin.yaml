@@ -5,6 +5,6 @@ plugin:
     icon: icon-university
     homepage: 'https://github.com/jan-vince/smallgdpr'
 permissions:
-    janvince.smallgdpr.access_cookiesbar_settings:
-        label: 'janvince.smallgdpr::lang.permissions.access_cookiesbar_settings'
-        tab: 'janvince.smallgdpr::lang.permissions.plugin.name'
+    janvince.smallgdpr.access_cookies_settings:
+        label: 'janvince.smallgdpr::lang.permissions.access_cookies_settings'
+        tab: 'janvince.smallgdpr::lang.plugin.name'

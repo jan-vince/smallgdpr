@@ -72,3 +72,5 @@
     - Fixed CookiesSettings model
 1.4.10:
     - Moved modal help-block div from label tag (to be HTML5 valid)
+1.4.11:
+    - Fixed localization
