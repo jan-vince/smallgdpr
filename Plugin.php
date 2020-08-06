@@ -44,9 +44,13 @@ class Plugin extends PluginBase {
     }
 
     public function registerMarkupTags() {
+
         $settings = CookiesSettings::instance();
-        if (class_exists($trans = \RainLab\Translate\Classes\Translator::class)) {
-            $settings->translateContext($trans::instance()->getLocale());
+        $pluginManager = \System\Classes\PluginManager::instance()->findByIdentifier('Rainlab.Translate');
+
+        if ($pluginManager && !$pluginManager->disabled) {
+           $trans = \RainLab\Translate\Classes\Translator::class;
+           $settings->translateContext($trans::instance()->getLocale());
         }
 
         return [
