@@ -44,15 +44,23 @@ class Plugin extends PluginBase {
     }
 
     public function registerMarkupTags() {
+
+        $settings = CookiesSettings::instance();
+        $pluginManager = \System\Classes\PluginManager::instance()->findByIdentifier('Rainlab.Translate');
+
+        if ($pluginManager && !$pluginManager->disabled) {
+            $settings->translateContext(\RainLab\Translate\Classes\Translator::instance()->getLocale());
+        }
+
         return [
             'filters' => [],
             'functions' => [
-                'cookiesSettingsGet' => function ($value, $default = NULL) {
-                    
-                    if(empty(CookiesSettings::get($value))) {
+                'cookiesSettingsGet' => function ($value, $default = NULL) use ($settings){
+
+                    if(empty($settings->$value)) {
                         return $default;
                     } else {
-                        return CookiesSettings::get($value);
+                        return $settings->$value;
                     }
                 }
             ]
