@@ -49,7 +49,7 @@ class Plugin extends PluginBase {
         $pluginManager = \System\Classes\PluginManager::instance()->findByIdentifier('Rainlab.Translate');
 
         if ($pluginManager && !$pluginManager->disabled) {
-           $settings->translateContext(\RainLab\Translate\Classes\Translator::instance()->getLocale());
+            $settings->translateContext(\RainLab\Translate\Classes\Translator::instance()->getLocale());
         }
 
         return [
