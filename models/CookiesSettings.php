@@ -26,7 +26,8 @@ class CookiesSettings extends Model {
     ];
 
     protected $jsonable = [
-        'cookies'
+        'cookies',
+        'cookies_bar_buttons'
     ];
 
     public $requiredPermissions = ['janvince.smallgdpr.access_cookies_settings'];

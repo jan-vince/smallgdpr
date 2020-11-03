@@ -147,7 +147,7 @@ tabs:
                         label: 'janvince.smallgdpr::lang.settings.form_fields.css_class'
                         type: text
                         span: left
-                    attributes:
+                    html_attributes:
                         label: 'janvince.smallgdpr::lang.settings.form_fields.attributes'
                         type: text
                         span: right

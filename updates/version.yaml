@@ -76,3 +76,5 @@
     - Fixed localization
 1.5.0:
     - Added Twig support for Translate plugin (thanks evwerkz)
+1.5.1:
+    - Changed buttons HTML attributes field to prevent naming collision

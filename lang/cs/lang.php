@@ -73,7 +73,7 @@ return [
       'scripts_file_description' => "Spustit tento soubor.",
       'scripts_run_production' => 'Spustit jen v produkčním režimu',
       'scripts_run_production_description' => "Spustí JS kód a soubor jen v produkčním režimu.",
-      'attributes' => 'HTML atributy značky',
+      'html_attributes' => 'HTML atributy značky',
       'show_modal' => 'Otevřít vyskakovací okno',
       'show_modal_description' => 'Klenutím na toto tlačítko se zobrazí modální okno s nastavením cookies (nyní funguje pouze pokud je vybraný styl Boostrap na záložce Nastavení)',
       'empty_option' => 'Vyberte z možností',

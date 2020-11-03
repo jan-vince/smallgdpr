@@ -73,7 +73,7 @@ return [
       'scripts_file_description' => "Execute this file.",
       'scripts_run_production' => 'Run only in production',
       'scripts_run_production_description' => "Execute JS code and file only in production environment.",
-      'attributes' => 'HTML tag attributes',
+      'html_attributes' => 'HTML tag attributes',
       'show_modal' => 'Open modal window',
       'show_modal_description' => 'Open modal window with cookies settings by clicking on this button (for now works only when Bootstrap style is enabled on Settings tab).',
       'empty_option' => 'Select an option',
