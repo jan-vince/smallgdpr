@@ -82,3 +82,5 @@
     - Changed settings for import (added second btn for import default settings)
 1.7.0:
     - Added option to specify pages to run scripts on
+    - Added option to disable specific script from execution (usable for temporary disable script)
+    - Added script for Google Analytics in default import files

@@ -17,6 +17,7 @@ use Storage;
 class Plugin extends PluginBase {
 
     public function boot() {
+        // dump( CookiesSettings::get('cookies') );
     }
 
     public function registerSettings() {

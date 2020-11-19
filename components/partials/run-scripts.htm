@@ -2,7 +2,7 @@
 
     {% for cookie in cookiesSettingsGet('cookies') %}
 
-        {% for script in cookie.scripts %}
+        {% for script in cookie.scripts if script.scripts_disable == 0 %}
 
             {#  If pages list is set, compare to current page URL #}
 

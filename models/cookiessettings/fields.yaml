@@ -37,14 +37,12 @@ tabs:
                         type: checkbox
                         span: left
                         default: false
-                        cssClass: m-t
                     default_enabled:
                         label: 'janvince.smallgdpr::lang.settings.form_fields.cookie_default_enabled'
                         comment: 'janvince.smallgdpr::lang.settings.form_fields.cookie_default_enabled_description'
                         type: checkbox
                         span: left
                         default: false
-                        cssClass: m-t
                     scripts_code_section:
                         comment: 'janvince.smallgdpr::lang.settings.form_fields.scripts'
                         type: section
@@ -81,10 +79,17 @@ tabs:
                                     span: right
                                     language: javascript
                                     fontSize: 12px
+                                scripts_disable:
+                                    label: 'janvince.smallgdpr::lang.settings.form_fields.scripts_disable'
+                                    comment: 'janvince.smallgdpr::lang.settings.form_fields.scripts_disable_description'
+                                    type: checkbox
+                                    default: false
+                                    span: left
                                 scripts_run_pages:
                                     label: 'janvince.smallgdpr::lang.settings.form_fields.scripts_run_pages'
                                     comment: 'janvince.smallgdpr::lang.settings.form_fields.scripts_run_pages_description'
                                     type: checkbox
+                                    default: false
                                     span: left
                                 scripts_run_pages_list:
                                     label: 'janvince.smallgdpr::lang.settings.form_fields.scripts_run_pages_list'

@@ -28,7 +28,7 @@ You can set permissions to restrict access to *Settings > Small plugins > Small 
 
 * Install plugin.
 * Go October's settings page and click on GDPR > Cookies.
-  * Go to tab Import and click button Import settings.
+  * Go to tab Import and click button `Import default settings`.
   * Go to tab Cookies, add your JS code to cookies group as you need.
 
 * Go to CMS part of October.
@@ -44,28 +44,12 @@ You can set permissions to restrict access to *Settings > Small plugins > Small 
 
 * Open your website - cookies bar should be visible :)
 
-
+---
 ## Settings
 
 ### Tab: Cookies groups
 
 The main idea is to create groups of cookies with JS scripts that you want to run on your website.
-
-#### Title and content
-
-Content to be shown on website next to the cookies group checkbox in Cookies manager component.
-
-#### Code
-
-Automatically created from title but can be edited to whatever you need.
-
-You can use this field in your code to check cookies group status:
-
-```
-{% if sgCookies.necessary %}
- ...
-{% endif %}
-```
 
 #### Required 
 
@@ -77,11 +61,27 @@ Scripts in these groups will run without explicit user concent but can be disabl
 
 Be careful not to violate your local laws!
 
-#### Custom JS code or files
+#### Scripts
+
+You can add one or more scripts to selected group
+
+##### Custom JS code or files
 
 You can add your own JS code and/or files to be executed when a cookies group is allowed (or required).
 
 You can optionally limit scripts execution to production mode.
+
+##### Run only in production
+
+Script wil be executed only in `production` environment.
+
+##### Disable
+
+This scripts will never be executed
+
+##### Run on specific pages
+
+You can limit scripts execution to specific pages URLs.
 
 ### Tab: Cookies bar 
 
@@ -137,6 +137,7 @@ You have to use YAML format.
 You can export current settings data to configuration file and use it as a backup or template for other sites.
 
 
+
 ## Components
 
 ### Cookies bar
@@ -160,7 +161,15 @@ Put this component to your page with details about privacy (like /gdpr or /cooki
 
 Users will be able to change cookies settings.
 
+## HOWTO
 
+With component `Cookies bar` or `Manage cookies` you can access cookies settings in your Twig code like this:
+
+```
+{% if sgCookies.necessary %}
+ ...
+{% endif %}
+```
 
 
 ----

@@ -75,6 +75,8 @@ return [
       'scripts_file_description' => "Execute this file.",
       'scripts_run_production' => 'Run only in production',
       'scripts_run_production_description' => "Execute JS code and file only in production environment.",
+      'scripts_disable' => 'Disable',
+      'scripts_disable_description' => 'Do not run this scripts.',
       'scripts_run_pages' => 'Run on specific pages only',
       'scripts_run_pages_description' => 'You can specify one or more pages where this script will run.',
       'scripts_run_pages_list' => 'Run on these pages only',
