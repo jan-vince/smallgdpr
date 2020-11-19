@@ -56,6 +56,8 @@ return [
       'accept_all_cookies_btn_description' => 'Kliknutím na toto tlačítko budou automaticky přijmuta všechna cookies a lišta zmizí.',
       'import' => 'Importovat nastavení',
       'import_confirm' => 'Skutečně chcete importovat nastavení? Stará nastavení budou ztracena!',
+      'import_default' => 'Importovat výchozí nastavení',
+      'import_default_confirm' => 'Skutečně chcete importovat výchozí nastavení ze šablony: ',
       'import_path' => 'Cesta k souboru s konfigurací',
       'import_path_description' => 'Vyberte vlastní soubor s konfigurací nebo nechte prázdné a bude použita výchozí konfigurace ze seouboru: ',
       'import_path_media' => 'Vyberte soubor importu z Médií',
@@ -101,8 +103,8 @@ return [
     
     'importpreset' => [
 
-      'file_name' => 'Nebo můžete vložit cestu k importovacímu souboru ručně',
-      'file_name_comment' => 'Bude použit jen pokud není vybrán soubor z Médií! Nechte prázdné a použije se výchozí soubor importu.',
+      'file_name' => 'Nebo vložte cestu k importovacímu souboru ručně',
+      'file_name_comment' => 'Celá cesta k souboru.',
       'file_name_default' => '/plugins/janvince/smallgdpr/assets/presets/cookiesbar.cs.yaml',
       'import_confirm' => 'opravdu chcete importovat data?',
 

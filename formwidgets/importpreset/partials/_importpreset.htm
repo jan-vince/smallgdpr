@@ -1,10 +1,17 @@
-<div class="form-group text-field span-left">
+<div class="form-group text-field span-left"
+    data-field-name="import_section" 
+    data-trigger="[name=&quot;CookiesSettings[import_preset_default]&quot;]" 
+    data-trigger-action="show" 
+    data-trigger-condition="unchecked" 
+    data-trigger-closest-parent="form, div[data-control=&quot;formwidget&quot;]" 
+    id="Form-field-CookiesSettings-<?= $this->alias ?>-path-file-name">
 
     <label>
         <?= e(trans('janvince.smallgdpr::lang.formwidgets.importpreset.file_name')) ?>
     </label>
-    
-    <input id="<?= $this->alias ?>-path-file-name" type="text" name="path_file_name" placeholder="<?= e(trans('janvince.smallgdpr::lang.formwidgets.importpreset.file_name_default')) ?>" class="form-control" />
+
+        <input type="hidden" name="CookiesSettings[import_preset_default]" value="0">
+        <input id="<?= $this->alias ?>-path-file-name" type="text" name="path_file_name" placeholder="<?= e(trans('janvince.smallgdpr::lang.formwidgets.importpreset.file_name_default')) ?>" class="form-control" />
     
     <p class="help-block after-field">
         <?= e(trans('janvince.smallgdpr::lang.formwidgets.importpreset.file_name_comment')) ?>
@@ -15,7 +22,7 @@
 <div class="form-group span-left">
     
     <button
-        class="btn btn-danger oc-icon-upload"
+        class="btn btn-default oc-icon-upload"
         onclick="$(this).data('request-data', {
             media_file_name: $('div[data-field-name=import_preset_media]').find('input').val(),
             path_file_name: $('#<?= $this->alias ?>-path-file-name').val(),
@@ -25,6 +32,19 @@
         data-request-success="location.reload(true);"
         data-stripe-load-indicator>
             <?= e(trans('janvince.smallgdpr::lang.settings.form_fields.import')) ?>
-        </button>
+    </button>
+
+    <button
+        class="btn btn-warning oc-icon-upload"
+        onclick="$(this).data('request-data', {
+            media_file_name: '',
+            path_file_name: '',
+            })"
+        data-request="onImportPreset"
+        data-request-confirm="<?= e(trans('janvince.smallgdpr::lang.settings.form_fields.import_default_confirm')) ?> <?= e(trans('janvince.smallgdpr::lang.formwidgets.importpreset.file_name_default')) ?>"
+        data-request-success="location.reload(true);"
+        data-stripe-load-indicator>
+            <?= e(trans('janvince.smallgdpr::lang.settings.form_fields.import_default')) ?>
+    </button>
 
 </div>

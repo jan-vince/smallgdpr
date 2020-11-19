@@ -56,6 +56,8 @@ return [
       'accept_all_cookies_btn_description' => 'By clicking on this button, all cookies will be accepted automatically and the bar will disappear.',
       'import' => 'Import settings',
       'import_confirm' => 'Are you sure you want to import settings? Old settings will be lost!',
+      'import_default' => 'Import default settings',
+      'import_default_confirm' => 'Are you sure you want to import default settings from template: ',
       'import_path_description' => 'Select your settings file or leave empty for a default preset file: ',
       'import_path_media' => 'Select import file from Media',
       'import_path_media_description' => 'This file has presedence over the manually entered path below.',
@@ -101,8 +103,8 @@ return [
     
     'importpreset' => [
 
-      'file_name' => 'Or you can enter your import file path manually',
-      'file_name_comment' => 'Will be used only when there is no file selected from Media! Keep empty for default plugin preset file.',
+      'file_name' => 'Or enter your import file path manually',
+      'file_name_comment' => 'Complete path to the file.',
       'file_name_default' => '/plugins/janvince/smallgdpr/assets/presets/cookiesbar.en.yaml',
       'import_confirm' => 'Do you really want to import your data?',
       

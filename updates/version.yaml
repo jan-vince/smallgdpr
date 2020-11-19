@@ -78,3 +78,5 @@
     - Added Twig support for Translate plugin (thanks evwerkz)
 1.5.1:
     - Changed buttons HTML attributes field to prevent naming collision
+1.6.0:
+    - Changed settings for import (added second btn for import default settings)
