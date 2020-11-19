@@ -202,23 +202,8 @@ tabs:
                 'b3': 'Bootstrap 3'
 
 
-
         ## Import
 
-        # import_preset_default:
-        #     label: 'janvince.smallgdpr::lang.settings.form_fields.import_preset_default'
-        #     comment: 'janvince.smallgdpr::lang.settings.form_fields.import_preset_default_description'
-        #     type: checkbox
-        #     span: left
-        #     default: true
-        #     tab: 'janvince.smallgdpr::lang.settings.tabs.import'
-        # import_section:
-        #     type: section
-        #     tab: 'janvince.smallgdpr::lang.settings.tabs.import'
-        #     trigger:
-        #         action: show
-        #         field: import_preset_default
-        #         condition: unchecked
         import_preset_media:
             label: 'janvince.smallgdpr::lang.settings.form_fields.import_path_media'
             comment: 'janvince.smallgdpr::lang.settings.form_fields.import_path_media_description'
@@ -226,10 +211,6 @@ tabs:
             span: left
             mode: file
             tab: 'janvince.smallgdpr::lang.settings.tabs.import'
-            # trigger:
-            #     action: show
-            #     field: import_preset_default
-            #     condition: unchecked
         import_preset_btn:
             type: importpreset
             span: full
@@ -238,7 +219,6 @@ tabs:
         ## Export
 
         export_preset_btn:
-#            label: 'janvince.smallgdpr::lang.settings.form_fields.export'
             type: exportpreset
             span: left
             tab: 'janvince.smallgdpr::lang.settings.tabs.export'
