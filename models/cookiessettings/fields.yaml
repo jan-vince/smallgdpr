@@ -68,6 +68,11 @@ tabs:
                                     type: mediafinder
                                     mode: file
                                     span: right
+                                scripts_run_production:
+                                    label: 'janvince.smallgdpr::lang.settings.form_fields.scripts_run_production'
+                                    comment: 'janvince.smallgdpr::lang.settings.form_fields.scripts_run_production_description'
+                                    type: checkbox
+                                    span: left
                                 scripts_code:
                                     label: 'janvince.smallgdpr::lang.settings.form_fields.scripts_code'
                                     comment: 'janvince.smallgdpr::lang.settings.form_fields.scripts_code_description'
@@ -76,11 +81,32 @@ tabs:
                                     span: right
                                     language: javascript
                                     fontSize: 12px
-                                scripts_run_production:
-                                    label: 'janvince.smallgdpr::lang.settings.form_fields.scripts_run_production'
-                                    comment: 'janvince.smallgdpr::lang.settings.form_fields.scripts_run_production_description'
+                                scripts_run_pages:
+                                    label: 'janvince.smallgdpr::lang.settings.form_fields.scripts_run_pages'
+                                    comment: 'janvince.smallgdpr::lang.settings.form_fields.scripts_run_pages_description'
                                     type: checkbox
                                     span: left
+                                scripts_run_pages_list:
+                                    label: 'janvince.smallgdpr::lang.settings.form_fields.scripts_run_pages_list'
+                                    prompt: 'janvince.smallgdpr::lang.settings.form_fields.scripts_run_pages_list_prompt'
+                                    span: left
+                                    type: repeater
+                                    style: collapsed
+                                    titleFrom: page_url
+                                    cssClass: field-indent
+                                    tab: 'janvince.smallgdpr::lang.settings.tabs.cookies_list'
+                                    trigger:
+                                        action: show
+                                        field: scripts_run_pages
+                                        condition: checked
+                                    form:
+                                        fields:
+                                            page_url:
+                                                label: 'janvince.smallgdpr::lang.settings.form_fields.page_url'
+                                                comment: 'janvince.smallgdpr::lang.settings.form_fields.page_url_description'
+                                                type: text
+                                                span: full
+
 
         ## Cookies bar
 

@@ -80,3 +80,5 @@
     - Changed buttons HTML attributes field to prevent naming collision
 1.6.0:
     - Changed settings for import (added second btn for import default settings)
+1.7.0:
+    - Added option to specify pages to run scripts on

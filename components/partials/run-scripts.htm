@@ -4,29 +4,56 @@
 
         {% for script in cookie.scripts %}
 
-            {# Test for production mode required first #}
-            {% if script.scripts_run_production == false 
-                or ( script.scripts_run_production == true and this.environment == 'production') %}
+            {#  If pages list is set, compare to current page URL #}
 
-                {% if cookie.required or sgCookies[cookie.slug] %}
+            {% if script.scripts_run_pages == true and script.scripts_run_pages_list|length %}
 
-                    {% if script.scripts_code %}
-                    
-                        {% put scripts %}
+                {% set scriptRunThisPage = false %}
 
-                            {{ script.scripts_code|raw }}
+                {% for item in script.scripts_run_pages_list %}
 
-                        {% endput %}
-                    
+                    {% if url(item.page_url) == url().current %}
+
+                        {% set scriptRunThisPage = true %}
+
                     {% endif %}
 
-                    {% if script.scripts_file %}
+                {% endfor %}
 
-                        {% put scripts %}
+            {% else %}
+                {% set scriptRunThisPage = true %}
+            {% endif %}
 
-                            <script src="{{ script.scripts_file|media }}"></script>
+
+            {# TODO: get rid of those IFs #}
+
+            {% if scriptRunThisPage %}
+
+                {# Test for production mode required first #}
+                {% if script.scripts_run_production == false 
+                    or ( script.scripts_run_production == true and this.environment == 'production') %}
+
+                    {% if cookie.required or sgCookies[cookie.slug] %}
+
+                        {% if script.scripts_code and scriptRunThisPage %}
                         
-                        {% endput %}
+                            {% put scripts %}
+
+                                {{ script.scripts_code|raw }}
+
+                            {% endput %}
+                        
+                        {% endif %}
+
+                        {% if script.scripts_file and scriptRunThisPage %}
+
+                            {% put scripts %}
+
+                                <script src="{{ script.scripts_file|media }}"></script>
+                            
+                            {% endput %}
+
+                        {% endif %}
 
                     {% endif %}
 
