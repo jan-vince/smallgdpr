@@ -179,7 +179,7 @@ tabs:
                         type: text
                         span: left
                     html_attributes:
-                        label: 'janvince.smallgdpr::lang.settings.form_fields.attributes'
+                        label: 'janvince.smallgdpr::lang.settings.form_fields.html_attributes'
                         type: text
                         span: right
                     section_02:
