@@ -1,0 +1,50 @@
+{% if cookiesSettingsGet('cookies', null)|length %}
+
+    <form class="list-cookies">
+
+        {% for cookie in cookiesSettingsGet('cookies') %}
+
+        <div class="form-check">
+            <input class="form-check-input {{ cookie.required ? 'disabled' : ''  }}" type="checkbox"
+                   id="sg-cookies-{{cookie.slug}}{{customId}}"
+                   {{ sgCookies[cookie.slug] or (cookie.required) ? 'checked' : '' }} {{ cookie.default_enabled ? 'checked' : '' }} {{ cookie.required ? 'disabled' : ''  }}>
+            <label class="form-check-label" for="sg-cookies-{{cookie.slug}}{{customId}}">
+                {{ cookie.title }}
+            </label>
+        </div>
+
+        {% if cookie.description %}
+        <div class="description help-block">{{ cookie.description|raw }}</div>
+        {% endif %}
+
+        {% endfor %}
+
+        <br>
+
+        {% if disableSaveButton is empty %}
+
+            <button type="button" id="cookies-manage-save" class="btn btn-primary">
+                {{ 'janvince.smallgdpr::lang.settings.form_fields.save_settings'|trans }}
+            </button>
+
+        {% endif %}
+
+    </form>
+
+{% endif %}
+
+{% put scripts %}
+<!--hier-->
+<script>
+
+    $('#cookies-manage-save{{customId}}').click(function() {
+       
+        {% partial '@set-cookies' setOnlyManageCookies = true %}
+
+        location.reload(true);
+
+    });
+
+</script>
+
+{% endput %}

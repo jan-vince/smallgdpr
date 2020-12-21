@@ -1,0 +1,41 @@
+<div id="cookies-manage" class="panel panel-default {{ cookiesSettingsGet('cookies_manage_css_class') }}">
+
+    <div class="panel-heading">
+
+        {% if cookiesSettingsGet('cookies_manage_title', null) %}
+
+            <h2 class="panel-title title"><strong>{{ cookiesSettingsGet('cookies_manage_title') }}</strong></h2>
+            
+        {% endif %}
+
+    </div>
+
+    <div class="panel-body">
+
+        {% if cookiesSettingsGet('cookies_manage_content', null) %}
+
+            <div class="content">{{ cookiesSettingsGet('cookies_manage_content')|raw }}</div>
+
+        {% endif %}
+
+        {% partial '@list-cookies-' ~ cookiesSettingsGet('ui_style', 'default') %}
+
+    </div>
+
+</div>
+
+{% put scripts %}
+
+    <script>
+
+        $('#cookies-manage-save').click(function() {
+
+            {% partial '@set-cookies' setOnlyManageCookies = true %}
+
+            location.reload(true);
+
+        });
+
+    </script>
+
+{% endput %}
