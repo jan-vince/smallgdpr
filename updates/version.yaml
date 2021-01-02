@@ -86,3 +86,6 @@
     - Added script for Google Analytics in default import files
 1.7.1:
     - Fixed HTML attributes field localization in Settings
+1.8.0:
+    - Added Russian and German language (thanks evwerkz)
+    - Added Bootstrap 5 support (thanks evwerkz)
