@@ -89,3 +89,5 @@
 1.8.0:
     - Added Russian and German language (thanks evwerkz)
     - Added Bootstrap 5 support (thanks evwerkz)
+1.8.1:
+    - Updated Bootstrap 5 modal support (thanks evwerkz)
