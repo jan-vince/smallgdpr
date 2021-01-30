@@ -134,10 +134,13 @@ tabs:
         cookies_bar_add_styles:
             label: 'janvince.smallgdpr::lang.settings.form_fields.add_css'
             comment: 'janvince.smallgdpr::lang.settings.form_fields.add_css_description'
-            type: checkbox
+            type: dropdown
             span: left
-            default: false
+            emptyOption: 'janvince.smallgdpr::lang.settings.form_fields.add_css_empty_option'
             cssClass: m-t
+            options:
+                1: 'janvince.smallgdpr::lang.settings.form_fields.add_css_option_rbbox'
+                2: 'janvince.smallgdpr::lang.settings.form_fields.add_css_option_topline'
             tab: 'janvince.smallgdpr::lang.settings.tabs.cookies_bar'
         cookies_bar_buttons_section:
             label: 'janvince.smallgdpr::lang.settings.form_fields.cookies_bar_buttons'

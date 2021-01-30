@@ -33,9 +33,25 @@ class CookiesBar extends ComponentBase
 
     public function onRun() {
 
-        if( CookiesSettings::get('cookies_bar_add_styles', null)) {
+        if(CookiesSettings::get('cookies_bar_add_styles', null))
+        {
+        
+            switch( CookiesSettings::get('cookies_bar_add_styles', null)) 
+            {
 
-            $this->addCss(['assets/cookiesbar/cookiesbar.less']);
+                case 2:
+
+                    $this->addCss(['assets/cookiesbar/cookiesbar-topline.less']);
+
+                    break;
+
+                default:
+
+                    $this->addCss(['assets/cookiesbar/cookiesbar.less']);
+
+                    break;
+            }
+
         }
 
         $this->page['sgCookies'] = CookiesSettings::getSGCookies();

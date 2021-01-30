@@ -1,0 +1,121 @@
+#sg-cookiesBar .cookies-bar {
+  display: table;
+  width: 100%;
+  background-color: rgba(235, 235, 235, 0.98);
+  color: #666666;
+  font-size: 12px;
+  text-align: left;
+  border-radius: 0;
+  padding-left: 50px;
+  padding-right: 20px;
+  background-image: url(../images/icon-cookies-bar.svg);
+  background-size: 18px 18px;
+  background-position: 20px center;
+  background-repeat: no-repeat;
+}
+@media (max-width: 750px) {
+  #sg-cookiesBar .cookies-bar {
+    padding-left: 20px;
+  }
+}
+@media (max-width: 750px) {
+  #sg-cookiesBar .cookies-bar {
+    display: block;
+  }
+}
+#sg-cookiesBar .cookies-bar .title,
+#sg-cookiesBar .cookies-bar > .content,
+#sg-cookiesBar .cookies-bar > .buttons {
+  display: table-cell;
+  vertical-align: middle;
+}
+@media (max-width: 750px) {
+  #sg-cookiesBar .cookies-bar .title,
+  #sg-cookiesBar .cookies-bar > .content,
+  #sg-cookiesBar .cookies-bar > .buttons {
+    display: block;
+    text-align: center;
+  }
+}
+#sg-cookiesBar .cookies-bar > .buttons {
+  text-align: center;
+}
+@media (min-width: 750px) {
+  #sg-cookiesBar .cookies-bar > .buttons {
+    text-align: right;
+  }
+}
+#sg-cookiesBar .cookies-bar .title,
+#sg-cookiesBar .cookies-bar .content {
+  margin: 0;
+  padding: 10px 0;
+  font-size: 12px;
+}
+@media (max-width: 750px) {
+  #sg-cookiesBar .cookies-bar .title,
+  #sg-cookiesBar .cookies-bar .content {
+    padding: 20px 0 10px 0;
+  }
+}
+#sg-cookiesBar .cookies-bar .title p,
+#sg-cookiesBar .cookies-bar .content p {
+  margin: 0;
+}
+#sg-cookiesBar .cookies-bar .title p a,
+#sg-cookiesBar .cookies-bar .content p a {
+  color: #666666;
+  text-decoration: underline;
+}
+#sg-cookiesBar .cookies-bar .title p a:hover,
+#sg-cookiesBar .cookies-bar .content p a:hover {
+  text-decoration: none;
+}
+#sg-cookiesBar .cookies-bar .buttons {
+  padding: 10px 0;
+  white-space: nowrap;
+}
+@media (max-width: 750px) {
+  #sg-cookiesBar .cookies-bar .buttons {
+    padding: 10px 0 20px 0;
+  }
+}
+#sg-cookiesBar .cookies-bar .buttons .btn {
+  padding: 0 10px;
+  text-decoration: underline;
+  text-transform: none;
+  font-size: 12px;
+  color: #666666;
+  border: 0;
+  background: transparent;
+  display: inline-block;
+}
+#sg-cookiesBar .cookies-bar .buttons .btn::after {
+  display: none;
+}
+#sg-cookiesBar .cookies-bar .buttons .btn:hover {
+  text-decoration: none;
+}
+#sg-cookiesBar .cookies-bar .buttons .text-muted {
+  color: #808080;
+}
+#sg-cookiesBar .modal .modal-header {
+  padding: 15px 30px;
+}
+#sg-cookiesBar .modal .modal-body {
+  padding: 25px 30px;
+}
+#sg-cookiesBar .modal .modal-body .list-cookies {
+  margin-top: 30px;
+}
+#sg-cookiesBar .modal .modal-body .list-cookies > div:not(:first-child) {
+  margin-top: 20px;
+}
+#sg-cookiesBar .modal .modal-body .list-cookies label {
+  padding-left: 30px;
+}
+#sg-cookiesBar .modal .modal-body .list-cookies input {
+  margin-left: -30px;
+}
+#sg-cookiesBar .modal .modal-body .list-cookies .help-block {
+  padding-left: 30px;
+}

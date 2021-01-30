@@ -1,0 +1,132 @@
+#sg-cookiesBar {
+
+    .cookies-bar {
+        display: table;
+        width: 100%;
+        background-color: fade(lighten(black, 92%), 98%);
+        color: lighten(black, 40%);
+        font-size: 12px;
+        text-align: left;
+        border-radius: 0;
+        padding-left: 50px;
+        padding-right: 20px;
+        background-image: url(../images/icon-cookies-bar.svg);
+        background-size: 18px 18px;
+        background-position: 20px center;
+        background-repeat: no-repeat;
+
+        @media(max-width: 750px) {
+            padding-left: 20px;
+        }
+
+        @media(max-width: 750px) {
+            display: block;
+        }
+
+        .title, >.content, >.buttons {
+            display: table-cell;
+            vertical-align: middle;
+
+            @media(max-width: 750px) {
+                display: block;
+                text-align: center;
+            }
+        }
+
+        >.buttons {
+            text-align: center;
+
+            @media(min-width: 750px) {
+                text-align: right;
+            }
+        }
+
+        .title, .content {
+            margin: 0;
+            padding: 10px 0;
+            font-size: 12px;
+
+            @media(max-width: 750px) {
+                padding: 20px 0 10px 0;
+            }
+
+            p {
+                margin: 0;
+
+                a {
+                    color: lighten(black, 40%);
+                    text-decoration: underline;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+
+        }
+
+        .buttons {
+            padding: 10px 0;
+            white-space: nowrap;
+
+            @media(max-width: 750px) {
+                padding: 10px 0 20px 0;
+            }
+
+            .btn {
+                padding: 0 10px;
+                text-decoration: underline;
+                text-transform: none;
+                font-size: 12px;
+                color: lighten(black,40%);
+                border: 0;
+                background: transparent;
+                display: inline-block;
+
+                &::after {
+                    display: none;
+                }
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+
+            .text-muted {
+                color: lighten(black, 50%);
+            }
+        }
+
+    }
+
+    .modal {
+
+        .modal-header {
+            padding: 15px 30px;
+        }
+
+        .modal-body {
+            padding: 25px 30px;
+
+            .list-cookies {
+                margin-top: 30px;
+
+                >div:not(:first-child) {
+                    margin-top: 20px;
+                }
+
+                label {
+                    padding-left: 30px;
+                }
+
+                input {
+                    margin-left: -30px;
+                }
+
+                .help-block {
+                    padding-left: 30px;
+                }
+            }
+        }
+    }
+}

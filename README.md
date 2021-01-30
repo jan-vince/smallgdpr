@@ -87,7 +87,7 @@ You can limit scripts execution to specific pages URLs.
 
 You can edit title and content of cookies bar.
 
-If you want, you can allow default CSS styles.
+If you want, you can select from pre-defined CSS styles.
 
 #### Buttons
 
