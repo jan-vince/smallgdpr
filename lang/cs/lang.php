@@ -62,7 +62,7 @@ return [
       'import_default' => 'Importovat výchozí nastavení',
       'import_default_confirm' => 'Skutečně chcete importovat výchozí nastavení ze šablony: ',
       'import_path' => 'Cesta k souboru s konfigurací',
-      'import_path_description' => 'Vyberte vlastní soubor s konfigurací nebo nechte prázdné a bude použita výchozí konfigurace ze seouboru: ',
+      'import_path_description' => 'Vyberte vlastní soubor s konfigurací nebo nechte prázdné a bude použita výchozí konfigurace ze souboru: ',
       'import_path_media' => 'Vyberte soubor importu z Médií',
       'import_path_media_description' => 'Tento soubor má přednost před ručně zadanou cestou níže.',
       'export' => 'Exportovat nastavení',
@@ -86,7 +86,7 @@ return [
       'page_url_description' => 'Relativní cesta, např.: /kontakt, /cs/produkty, ...',
       'html_attributes' => 'HTML atributy značky',
       'show_modal' => 'Otevřít vyskakovací okno',
-      'show_modal_description' => 'Klenutím na toto tlačítko se zobrazí modální okno s nastavením cookies (nyní funguje pouze pokud je vybraný styl Boostrap na záložce Nastavení)',
+      'show_modal_description' => 'Klepnutím na toto tlačítko se zobrazí modální okno s nastavením cookies (nyní funguje pouze pokud je vybraný styl Boostrap na záložce Nastavení)',
       'empty_option' => 'Vyberte z možností',
       'cancel' => 'Zrušit',
       'ui_style' => 'Styl rozhraní',
@@ -115,7 +115,7 @@ return [
       'file_name' => 'Nebo vložte cestu k importovacímu souboru ručně',
       'file_name_comment' => 'Celá cesta k souboru.',
       'file_name_default' => '/plugins/janvince/smallgdpr/assets/presets/cookiesbar.cs.yaml',
-      'import_confirm' => 'opravdu chcete importovat data?',
+      'import_confirm' => 'Opravdu chcete importovat data?',
 
       'flash' => [
         'import_successfull' => 'Data byla úspěšně importována',
