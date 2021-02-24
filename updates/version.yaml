@@ -95,3 +95,5 @@
     - Added optional Cookies bar strip CSS styles
 1.10.0:
     - Added Slovak translation, fixed Czech translation
+1.10.1:
+    - Fixed cookie lifetime function

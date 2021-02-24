@@ -1,6 +1,6 @@
 var date = new Date();
 
-date.setFullYear(date.getFullYear() + {{ cookiesSettingsGet('set_cookies_lifetime_days') ? cookiesSettingsGet('set_cookies_lifetime_days') : 365 }});
+date.setDate(date.getDate() + {{ cookiesSettingsGet('set_cookies_lifetime_days') ? cookiesSettingsGet('set_cookies_lifetime_days') : 365 }});
 
 document.cookie = "{{ 'sg-cookies-consent=1; path=/; expires='}}" + date.toGMTString();            
 
