@@ -99,7 +99,9 @@
     - Fixed cookie lifetime function
 1.10.2:
     - Fixed external URL handling with cookies bar buttons
-1.11.2:
+1.10.2:
     - !!! If you edited default components markup (or you use only parts of it), please check if everything works after update. If you use plugin as is, you should be fine :)
     - Added option to disable page reload after cookies are set (for cookiesBar and cookiesManage components)
     - Updated default components markup (fixed duplicates, updated JS code)
+1.10.3:
+    - Fixed versions numbering
