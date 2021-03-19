@@ -97,3 +97,5 @@
     - Added Slovak translation, fixed Czech translation
 1.10.1:
     - Fixed cookie lifetime function
+1.10.2:
+    - Fixed external URL handling with cookies bar buttons

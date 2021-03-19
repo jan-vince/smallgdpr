@@ -10,8 +10,12 @@
 
     {% else %}
 
-        href="{{ button.url_external ? button.url_external : button.url|app }}" 
+        href="{{ button.url_external ? button.url : button.url|app }}" 
         
+        {% if button.url_external %}
+            target="_blank"
+        {% endif %}
+
     {% endif %}
 
     >{{ button.title }}
