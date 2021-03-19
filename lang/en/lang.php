@@ -33,6 +33,7 @@ return [
       'content' => 'Content',
       'slug' => 'Code',
       'url' => 'URL',
+      'url_description' => 'Set to # if you want to stay on a current page after page reload.',
       'url_external' => 'External URL',
       'url_external_description' => 'The URL leads to a page outside of this web (eg. https://www.google.com).',
       'description' => 'Description',
@@ -61,6 +62,7 @@ return [
       'import_confirm' => 'Are you sure you want to import settings? Old settings will be lost!',
       'import_default' => 'Import default settings',
       'import_default_confirm' => 'Are you sure you want to import default settings from template: ',
+      'import_path' => 'Path to your config file',
       'import_path_description' => 'Select your settings file or leave empty for a default preset file: ',
       'import_path_media' => 'Select import file from Media',
       'import_path_media_description' => 'This file has presedence over the manually entered path below.',
@@ -89,6 +91,8 @@ return [
       'html_attributes' => 'HTML tag attributes',
       'show_modal' => 'Open modal window',
       'show_modal_description' => 'Open modal window with cookies settings by clicking on this button (for now works only when Bootstrap style is enabled on Settings tab).',
+      'disable_page_reload' => 'Disable page reload',
+      'disable_page_reload_description' => 'Do not reload page after cookies are set.',
       'empty_option' => 'Select an option',
       'cancel' => 'Cancel',
       'ui_style' => 'UI style',
@@ -127,7 +131,6 @@ return [
         'file_missing_error' => 'No file was selected!',
       ],
     ],
-
     'exportpreset' => [
 
       'file_name' => 'Path to the file',

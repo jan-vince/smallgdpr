@@ -142,6 +142,12 @@ tabs:
                 1: 'janvince.smallgdpr::lang.settings.form_fields.add_css_option_rbbox'
                 2: 'janvince.smallgdpr::lang.settings.form_fields.add_css_option_topline'
             tab: 'janvince.smallgdpr::lang.settings.tabs.cookies_bar'
+        cookies_bar_disable_page_reload:
+            label: 'janvince.smallgdpr::lang.settings.form_fields.disable_page_reload'
+            comment: 'janvince.smallgdpr::lang.settings.form_fields.disable_page_reload_description'
+            type: checkbox
+            span: left
+            tab: 'janvince.smallgdpr::lang.settings.tabs.cookies_bar'
         cookies_bar_buttons_section:
             label: 'janvince.smallgdpr::lang.settings.form_fields.cookies_bar_buttons'
             type: section
@@ -163,8 +169,14 @@ tabs:
                         required: true
                     url:
                         label: 'janvince.smallgdpr::lang.settings.form_fields.url'
+                        comment: 'janvince.smallgdpr::lang.settings.form_fields.url_description'
                         type: text
                         span: right
+                        trigger:
+                            action: hide
+                            field: accept_all_cookies_btn
+                            action: show
+                            condition: checked
                     accept_all_cookies_btn:
                         label: 'janvince.smallgdpr::lang.settings.form_fields.accept_all_cookies_btn'
                         comment: 'janvince.smallgdpr::lang.settings.form_fields.accept_all_cookies_btn_description'
@@ -175,6 +187,11 @@ tabs:
                         comment: 'janvince.smallgdpr::lang.settings.form_fields.url_external_description'
                         type: checkbox
                         span: right
+                        trigger:
+                            action: hide
+                            field: accept_all_cookies_btn
+                            action: show
+                            condition: checked
                     section_01:
                         type: section
                     css_class:
@@ -191,7 +208,7 @@ tabs:
                         label: 'janvince.smallgdpr::lang.settings.form_fields.show_modal'
                         comment: 'janvince.smallgdpr::lang.settings.form_fields.show_modal_description'
                         type: checkbox
-                        span: full
+                        span: left
 
 
         ## Cookies manage
@@ -211,6 +228,12 @@ tabs:
             type: richeditor
             span: full
             size: large
+            tab: 'janvince.smallgdpr::lang.settings.tabs.cookies_manage'
+        cookies_manage_disable_page_reload:
+            label: 'janvince.smallgdpr::lang.settings.form_fields.disable_page_reload'
+            comment: 'janvince.smallgdpr::lang.settings.form_fields.disable_page_reload_description'
+            type: checkbox
+            span: left
             tab: 'janvince.smallgdpr::lang.settings.tabs.cookies_manage'
 
 

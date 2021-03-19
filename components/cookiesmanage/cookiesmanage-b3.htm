@@ -18,25 +18,9 @@
 
         {% endif %}
 
-        {% partial '@list-cookies-' ~ cookiesSettingsGet('ui_style', 'default') %}
+        {% partial '@list-cookies' 
+            disablePageReload = cookiesSettingsGet('cookies_manage_disable_page_reload', 0) %}
 
     </div>
 
 </div>
-
-
-{% put scripts %}
-
-    <script>
-
-        $('#cookies-manage-save').click(function() {
-        
-            {% partial '@set-cookies' setOnlyManageCookies = true %}
-
-            location.reload(true);
-
-        });
-
-    </script>
-
-{% endput %}

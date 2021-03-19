@@ -10,10 +10,18 @@
 
     {% else %}
 
-        href="{{ button.url_external ? button.url : button.url|app }}" 
-        
-        {% if button.url_external %}
-            target="_blank"
+        {% if button.url %}
+
+            href="{{ button.url_external ? button.url : button.url|app }}" 
+
+            {% if button.url_external %}
+                target="_blank"
+            {% endif %}
+
+        {% else %}
+
+            href="#"
+
         {% endif %}
 
     {% endif %}

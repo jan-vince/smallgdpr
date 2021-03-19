@@ -3,3 +3,23 @@
     {% partial __SELF__ ~ '::cookiesmanage-' ~ cookiesSettingsGet('ui_style','default') %}
 
 </div>
+
+{% put scripts %}
+
+    <script>
+
+        $('#cookies-manage-save').click(function() {
+        
+            {% partial '@set-cookies' setOnlyManageCookies = true %}
+
+            {% if cookiesSettingsGet('cookies_manage_disable_page_reload', 0) == 0 %}
+
+                location.reload(true);
+
+            {% endif %}
+
+        });
+
+    </script>
+
+{% endput %}

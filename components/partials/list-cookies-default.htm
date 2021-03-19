@@ -28,19 +28,3 @@
     </form>
 
 {% endif %}
-
-{% put scripts %}
-
-<script>
-
-    $('#cookies-manage-save{{customId}}').click(function() {
-       
-        {% partial '@set-cookies' setOnlyManageCookies = true %}
-
-        location.reload(true);
-
-    });
-
-</script>
-
-{% endput %}

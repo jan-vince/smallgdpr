@@ -1,5 +1,19 @@
 <a class="{{ button.accept_all_cookies_btn ? 'btn-accept-all'}} {{ button.css_class }}"
     {{ button.html_attributes|raw }}
-    href="{{ button.url_external ? button.url_external : button.url|app }}" 
+    
+    {% if button.url %}
+
+        href="{{ button.url_external ? button.url : button.url|app }}" 
+
+        {% if button.url_external %}
+            target="_blank"
+        {% endif %}
+
+    {% else %}
+
+        href="#"
+
+    {% endif %}
+
     >{{ button.title }}
 </a>

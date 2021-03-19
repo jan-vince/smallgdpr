@@ -46,13 +46,23 @@
 
     <script>
 
-        $('#cookies-bar .btn-accept-all').click(function(e) {
+        $('#cookies-bar .btn-accept-all').click(function(e) 
+        {
             e.preventDefault();
 
             {% partial '@set-cookies' %}
 
-            $('#cookies-bar').hide();
-            location.reload(true);
+            if( $('#cookies-bar').length )
+            {
+                $('#cookies-bar').hide();
+            }
+
+            {% if cookiesSettingsGet('cookies_bar_disable_page_reload', 0) == 0 %}
+
+                location.reload(true);
+
+            {% endif %}
+
         });
 
     </script>
