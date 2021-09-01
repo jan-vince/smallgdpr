@@ -107,3 +107,5 @@
     - Fixed versions numbering
 1.12.1:
     - Fixed modal hide function
+1.13.0:
+    - Updated default presets with new GA code
