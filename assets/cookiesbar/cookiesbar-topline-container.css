@@ -1,3 +1,8 @@
 #sg-cookiesBar .cookies-bar-container {
   background-color: rgba(235, 235, 235, 0.98);
 }
+#sg-cookiesBar .cookies-bar-container .cookies-bar {
+  padding-right: 20px;
+  padding-left: 30px;
+  background-position: 0 center;
+}

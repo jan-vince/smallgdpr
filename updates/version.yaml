@@ -111,3 +111,5 @@
     - Updated default presets with new GA code
 1.14.0:
     - Added option to display top strip in Bootstrap container
+1.14.1:
+    - Fixed css styles for topline strip in container
