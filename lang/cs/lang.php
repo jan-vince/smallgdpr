@@ -55,6 +55,7 @@ return [
       'add_css_empty_option' => 'Žádné styly',
       'add_css_option_rbbox' => 'Box (pravý spodní okraj)',
       'add_css_option_topline' => 'Proužek (nahoře)',
+      'add_css_option_topline_container' => 'Proužek (nahoře) v Bootstrap containeru',
       'accept_all_cookies_btn' => 'Povolí všechna cookies',
       'accept_all_cookies_btn_description' => 'Kliknutím na toto tlačítko budou automaticky přijmuta všechna cookies a lišta zmizí.',
       'import' => 'Importovat nastavení',

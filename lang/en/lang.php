@@ -56,6 +56,7 @@ return [
       'add_css_empty_option' => 'No styles',
       'add_css_option_rbbox' => 'Box (right bottom corner)',
       'add_css_option_topline' => 'Strip (on top)',
+      'add_css_option_topline_container' => 'Strip (on top) in Bootstrap container',
       'accept_all_cookies_btn' => 'Allow all cookies',
       'accept_all_cookies_btn_description' => 'By clicking on this button, all cookies will be accepted automatically and the bar will disappear.',
       'import' => 'Import settings',

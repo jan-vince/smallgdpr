@@ -1,5 +1,18 @@
 {% set showModal = null %}
 
+{% if cookiesSettingsGet('cookies_bar_add_styles', null) == 3 %}
+
+    <div class="cookies-bar-container">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-xs-12">
+
+{% endif %}
+
+
 <div id="cookies-bar" class="cookies-bar {{ cookiesSettingsGet('cookies_bar_css_class') }}">
 
     {% if cookiesSettingsGet('cookies_bar_title', null) %}
@@ -35,6 +48,19 @@
     {% endif %}
 
 </div>
+
+{% if cookiesSettingsGet('cookies_bar_add_styles', null) == 3 %}
+
+                </div>
+            
+            </div>
+        
+        </div>
+        
+    </div>
+
+{% endif %}
+
 
 {% if showModal %}
 

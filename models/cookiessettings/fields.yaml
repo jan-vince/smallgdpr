@@ -141,6 +141,7 @@ tabs:
             options:
                 1: 'janvince.smallgdpr::lang.settings.form_fields.add_css_option_rbbox'
                 2: 'janvince.smallgdpr::lang.settings.form_fields.add_css_option_topline'
+                3: 'janvince.smallgdpr::lang.settings.form_fields.add_css_option_topline_container'
             tab: 'janvince.smallgdpr::lang.settings.tabs.cookies_bar'
         cookies_bar_disable_page_reload:
             label: 'janvince.smallgdpr::lang.settings.form_fields.disable_page_reload'

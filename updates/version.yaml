@@ -109,3 +109,5 @@
     - Fixed modal hide function
 1.13.0:
     - Updated default presets with new GA code
+1.14.0:
+    - Added option to display top strip in Bootstrap container
