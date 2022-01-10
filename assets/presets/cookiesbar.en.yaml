@@ -25,7 +25,7 @@ cookies:
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
 
-                    gtag('config', '--- add GA3/GA4 code here ---');
+                    gtag('config', 'UA-XXXXXX-X', { 'anonymize_ip': true, 'forceSSL': true });
                 </script>"
 -   title: "Marketing cookies"
     description: "<p>Marketing cookies are used to display advertising that is relevant and interesting to a particular user.</p>"
@@ -35,6 +35,11 @@ cookies:
 cookies_bar_buttons:
 -   title: "Accept"
     accept_all_cookies_btn: 1
+    url: "#"
+    url_external: 0
+    css_class: "btn btn-primary"
+-   title: "Reject"
+    disable_all_cookies_btn: 1
     url: "#"
     url_external: 0
     css_class: "btn btn-primary"

@@ -59,6 +59,8 @@ return [
       'add_css_option_topline_container' => 'Strip (on top) in Bootstrap container',
       'accept_all_cookies_btn' => 'Allow all cookies',
       'accept_all_cookies_btn_description' => 'By clicking on this button, all cookies will be accepted automatically and the bar will disappear.',
+      'disable_all_cookies_btn' => 'Disable all cookies',
+      'disable_all_cookies_btn_description' => 'By clicking on this button, all (non required) cookies will be disabled automatically and the bar will disappear.',
       'import' => 'Import settings',
       'import_confirm' => 'Are you sure you want to import settings? Old settings will be lost!',
       'import_default' => 'Import default settings',
