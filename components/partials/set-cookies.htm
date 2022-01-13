@@ -30,6 +30,10 @@ document.cookie = "{{ 'sg-cookies-consent=1; path=/; expires='}}" + date.toGMTSt
 
                 document.cookie = "{{ 'sg-cookies-'~( cookie.slug ? cookie.slug : loop.index)~'=1; path=/; expires='}}" + date.toGMTString();    
 
+            {% else %}
+
+                document.cookie = "{{ 'sg-cookies-'~( cookie.slug ? cookie.slug : loop.index)~'=1; path=/; expires='}}" + date.toGMTString();    
+
             {% endif %}
 
         {% endif %}

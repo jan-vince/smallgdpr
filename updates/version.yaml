@@ -117,3 +117,5 @@
     - Updated css styles for topline strip in container
 1.15.0:
     - Added Reject all button option, updated import presets
+1.15.1:
+    - Fixed cookies bar buttons function
