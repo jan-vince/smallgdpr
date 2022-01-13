@@ -119,3 +119,5 @@
     - Added Reject all button option, updated import presets
 1.15.1:
     - Fixed cookies bar buttons function
+1.15.2:
+    - Updated css for Bootstrap box UI
