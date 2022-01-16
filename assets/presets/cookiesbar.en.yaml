@@ -1,9 +1,9 @@
 cookies_manage_title: "Manage cookies"
-cookies_manage_content: "We use cookies to improve our services. Read more about how we use cookies and how you can refuse them."
+cookies_manage_content: "<p>We use cookies on our website.</p><p>Some of them are necessary for the functioning of the site, but you can decide about others.</p>"
 
-cookies_bar_title: "This website uses cookies"
+cookies_bar_title: "Cookies settings"
 cookies_bar_add_styles: "1"
-cookies_bar_content: "<p>We use cookies to improve our services. Read more about how we use cookies and how you can refuse them.</p>"
+cookies_bar_content: "<p>We use cookies on our website.</p><p>Some of them are necessary for the functioning of the site, but you can decide about others.</p>"
 
 cookies:
 -   title: "Necessary cookies"

@@ -1,9 +1,9 @@
 cookies_manage_title: "Správa cookies"
-cookies_manage_content: "Pro zlepšení služeb používáme cookies. Přečtěte si více o tom, jak cookies používáme a jak je můžete případně odmítnout."
+cookies_manage_content: "<p>Na našem webu používáme cookies.</p><p>Některé z nich jsou k fungování stránek nezbytné, ale o těch ostatních můžete rozhodnout sami.</p>"
 
-cookies_bar_title: "Tato webová stránka používá cookies"
+cookies_bar_title: "Nastavení cookies"
 cookies_bar_add_styles: "1"
-cookies_bar_content: "<p>Pro zlepšení služeb používáme cookies. Přečtěte si více o tom, jak cookies používáme a jak je můžete případně odmítnout.</p>"
+cookies_bar_content: "<p>Na našem webu používáme cookies.</p><p>Některé z nich jsou k fungování stránek nezbytné, ale o těch ostatních můžete rozhodnout sami.</p>"
 
 cookies:
 -   title: "Nezbytná cookies"
