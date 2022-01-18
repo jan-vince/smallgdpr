@@ -123,3 +123,5 @@
     - Updated css for Bootstrap box UI
 1.15.3:
     - Updated presets texts
+1.15.4:
+    - Fixed bug in JS

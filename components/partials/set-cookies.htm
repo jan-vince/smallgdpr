@@ -28,8 +28,6 @@ document.cookie = "{{ 'sg-cookies-consent=1; path=/; expires='}}" + date.toGMTSt
                     document.cookie = 'sg-cookies-{{cookie.slug}}=0; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;';    
                 }
 
-                document.cookie = "{{ 'sg-cookies-'~( cookie.slug ? cookie.slug : loop.index)~'=1; path=/; expires='}}" + date.toGMTString();    
-
             {% else %}
 
                 document.cookie = "{{ 'sg-cookies-'~( cookie.slug ? cookie.slug : loop.index)~'=1; path=/; expires='}}" + date.toGMTString();    
