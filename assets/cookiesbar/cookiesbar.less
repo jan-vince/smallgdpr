@@ -5,23 +5,26 @@
     right: 20px;
     max-width: 560px;
     color: black;
-    background-color: fade(lighten(black,92%), 98%);
     z-index: 1000;
     text-align: left;
     padding: 40px;
-    border-radius: 5px;
-    font-size: 15px;
-    box-shadow: 0 0 10px gray;
-    
+    background-color: fade(white, 95%);
+    box-shadow: 0 0 10px fade(black, 30%);
+    border-radius: 10px;
+
     .title {
         margin: 0;
     }
     
     .content {
-        margin-top: 10px;
+        margin-top: 15px;
     }
 
     .buttons {
         margin-top: 40px;
+
+        .btn {
+            margin-right: 5px;
+        }
     }
 }

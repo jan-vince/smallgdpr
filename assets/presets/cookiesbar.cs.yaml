@@ -1,9 +1,9 @@
 cookies_manage_title: "Správa cookies"
-cookies_manage_content: "Pro zlepšení služeb používáme cookies. Přečtěte si více o tom, jak cookies používáme a jak je můžete případně odmítnout."
+cookies_manage_content: "<p>Na našem webu používáme cookies.</p><p>Některé z nich jsou k fungování stránek nezbytné, ale o těch ostatních můžete rozhodnout sami.</p>"
 
-cookies_bar_title: "Tato webová stránka používá cookies"
+cookies_bar_title: "Nastavení cookies"
 cookies_bar_add_styles: "1"
-cookies_bar_content: "<p>Pro zlepšení služeb používáme cookies. Přečtěte si více o tom, jak cookies používáme a jak je můžete případně odmítnout.</p>"
+cookies_bar_content: "<p>Na našem webu používáme cookies.</p><p>Některé z nich jsou k fungování stránek nezbytné, ale o těch ostatních můžete rozhodnout sami.</p>"
 
 cookies:
 -   title: "Nezbytná cookies"
@@ -25,7 +25,7 @@ cookies:
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
 
-                    gtag('config', '--- add GA3/GA4 code here ---');
+                    gtag('config', 'UA-XXXXXX-X', { 'anonymize_ip': true, 'forceSSL': true });
                 </script>"
 -   title: "Marketingová cookies"
     description: "<p>Marketingová cookies jsou používány pro zobrazení reklamy, která je relevantní a zajímavá pro konkrétního užívatele.</p>"
@@ -35,6 +35,11 @@ cookies:
 cookies_bar_buttons:
 -   title: "Přijmout"
     accept_all_cookies_btn: 1
+    url: "#"
+    url_external: 0
+    css_class: "btn btn-primary"
+-   title: "Odmítnout"
+    disable_all_cookies_btn: 1
     url: "#"
     url_external: 0
     css_class: "btn btn-primary"
