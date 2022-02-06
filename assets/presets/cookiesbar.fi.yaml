@@ -19,7 +19,7 @@ cookies:
     -   scripts_title: 'Google Analytics (lisää GA-koodi!)'
         scripts_disable: 1
         scripts_run_production: 1
-        scripts_code: "<script async src='https://www.googletagmanager.com/gtag/js?id=G-2RJNC5YGP6'></script>
+        scripts_code: "<script async src='https://www.googletagmanager.com/gtag/js?id=XXXXXXXXX'></script>
                 <script>
                     window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
