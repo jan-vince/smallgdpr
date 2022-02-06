@@ -6,7 +6,7 @@
 
             <label>
 
-                <input type="checkbox" id="sg-cookies-{{cookie.slug}}{{customId}}" {{ sgCookies[cookie.slug] or (cookie.required) ? 'checked' : '' }} {{ cookie.required ? 'disabled' : ''  }}> <strong>{{ cookie.title }}</strong>
+                <input type="checkbox" id="sg-cookies-{{ sgCookiesLocalePrefix ? sgCookiesLocalePrefix~'-' }}{{cookie.slug}}{{customId}}" {{ sgCookies[cookie.slug] or (cookie.required) ? 'checked' : '' }} {{ cookie.required ? 'disabled' : ''  }}> <strong>{{ cookie.title }}</strong>
             
             </label>
                     

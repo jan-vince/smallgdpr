@@ -42,6 +42,8 @@ class CookiesSettings extends Model {
 
     static function getSGCookies($sgCookiesPrefix = 'sg-cookies') {
 
+        $sgCookiesPrefix = CookiesSettings::getSGCookiesLocalePrefix($sgCookiesPrefix);
+
         $sgCookies = [];
 
         $sgCookies['consent'] = !empty($_COOKIE[($sgCookiesPrefix . '-consent')]);
@@ -67,6 +69,17 @@ class CookiesSettings extends Model {
         }
 
         return $sgCookies;
+
+    }
+
+    static function getSGCookiesLocalePrefix($sgCookiesPrefix = '') {
+
+        if(CookiesSettings::get('set_cookies_with_locale', false))
+        {
+            $sgCookiesPrefix = $sgCookiesPrefix . '-' . App::getLocale();
+        }
+
+        return $sgCookiesPrefix;
 
     }
 }

@@ -2,7 +2,7 @@ var date = new Date();
 
 date.setDate(date.getDate() + {{ cookiesSettingsGet('set_cookies_lifetime_days') ? cookiesSettingsGet('set_cookies_lifetime_days') : 365 }});
 
-document.cookie = "{{ 'sg-cookies-consent=1; path=/; expires='}}" + date.toGMTString();            
+document.cookie = "{{ 'sg-cookies'~(sgCookiesLocalePrefix ? sgCookiesLocalePrefix)~'-consent=1; path=/; expires='}}" + date.toGMTString();            
 
 {% if cookiesSettingsGet('cookies',null)|length %}
 
@@ -12,7 +12,7 @@ document.cookie = "{{ 'sg-cookies-consent=1; path=/; expires='}}" + date.toGMTSt
 
             {% if cookie.required %}
 
-                document.cookie = "{{ 'sg-cookies-'~( cookie.slug ? cookie.slug : loop.index)~'=1; path=/; expires='}}" + date.toGMTString();    
+                document.cookie = "{{ 'sg-cookies'~(sgCookiesLocalePrefix ? sgCookiesLocalePrefix)~'-'~( cookie.slug ? cookie.slug : loop.index)~'=1; path=/; expires='}}" + date.toGMTString();    
                 
             {% endif %}
 
@@ -20,17 +20,17 @@ document.cookie = "{{ 'sg-cookies-consent=1; path=/; expires='}}" + date.toGMTSt
 
             {% if setOnlyManageCookies %}
 
-                var item = document.getElementById('sg-cookies-{{cookie.slug}}{{customId}}');
+                var item = document.getElementById('sg-cookies{{ sgCookiesLocalePrefix ? sgCookiesLocalePrefix }}-{{cookie.slug}}{{customId}}');
 
                 if( item.checked == true ) {
-                    document.cookie = 'sg-cookies-{{cookie.slug}}=1; path=/; expires=' + date.toGMTString();    
+                    document.cookie = 'sg-cookies{{ sgCookiesLocalePrefix ? sgCookiesLocalePrefix }}-{{cookie.slug}}=1; path=/; expires=' + date.toGMTString();    
                 } else {
-                    document.cookie = 'sg-cookies-{{cookie.slug}}=0; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;';    
+                    document.cookie = 'sg-cookies{{ sgCookiesLocalePrefix ? sgCookiesLocalePrefix}}-{{cookie.slug}}=0; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;';    
                 }
 
             {% else %}
 
-                document.cookie = "{{ 'sg-cookies-'~( cookie.slug ? cookie.slug : loop.index)~'=1; path=/; expires='}}" + date.toGMTString();    
+                document.cookie = "{{ 'sg-cookies'~(sgCookiesLocalePrefix ? sgCookiesLocalePrefix)~'-'~( cookie.slug ? cookie.slug : loop.index)~'=1; path=/; expires='}}" + date.toGMTString();    
 
             {% endif %}
 

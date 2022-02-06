@@ -127,3 +127,5 @@
     - Fixed bug in JS
 1.15.5:
     - Fixed bug in Bootstrap 5 modal form template
+1.16.0:
+    - Added option to require cookies consent for each web site language separately
