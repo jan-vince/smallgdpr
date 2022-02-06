@@ -129,3 +129,5 @@
     - Fixed bug in Bootstrap 5 modal form template
 1.16.0:
     - Added option to require cookies consent for each web site language separately
+1.17.0:
+    - Updated default presets with Google Analytics code to run without consent with disabled storage
