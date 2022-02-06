@@ -115,3 +115,15 @@
     - Fixed css styles for topline strip in container
 1.14.2:
     - Updated css styles for topline strip in container
+1.15.0:
+    - Added Reject all button option, updated import presets
+1.15.1:
+    - Fixed cookies bar buttons function
+1.15.2:
+    - Updated css for Bootstrap box UI
+1.15.3:
+    - Updated presets texts
+1.15.4:
+    - Fixed bug in JS
+1.15.5:
+    - Fixed bug in Bootstrap 5 modal form template

@@ -5,20 +5,22 @@
   right: 20px;
   max-width: 560px;
   color: black;
-  background-color: rgba(235, 235, 235, 0.98);
   z-index: 1000;
   text-align: left;
   padding: 40px;
-  border-radius: 5px;
-  font-size: 15px;
-  box-shadow: 0 0 10px gray;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
 }
 #cookies-bar .title {
   margin: 0;
 }
 #cookies-bar .content {
-  margin-top: 10px;
+  margin-top: 15px;
 }
 #cookies-bar .buttons {
   margin-top: 40px;
+}
+#cookies-bar .buttons .btn {
+  margin-right: 5px;
 }

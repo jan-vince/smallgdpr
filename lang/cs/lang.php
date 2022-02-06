@@ -58,6 +58,8 @@ return [
       'add_css_option_topline_container' => 'Proužek (nahoře) v Bootstrap containeru',
       'accept_all_cookies_btn' => 'Povolí všechna cookies',
       'accept_all_cookies_btn_description' => 'Kliknutím na toto tlačítko budou automaticky přijmuta všechna cookies a lišta zmizí.',
+      'disable_all_cookies_btn' => 'Zakáže všechna cookies',
+      'disable_all_cookies_btn_description' => 'Kliknutím na toto tlačítko budou automaticky zakázana všechna (ne nezbytná) cookies a lišta zmizí.',
       'import' => 'Importovat nastavení',
       'import_confirm' => 'Skutečně chcete importovat nastavení? Stará nastavení budou ztracena!',
       'import_default' => 'Importovat výchozí nastavení',

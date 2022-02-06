@@ -91,6 +91,25 @@
 
         });
 
+        $('#cookies-bar .btn-disable-all').click(function(e) 
+        {
+            e.preventDefault();
+
+            {% partial '@set-cookies' setOnlyRequiredCookies = true %}
+
+            if( $('#cookies-bar').length )
+            {
+                $('#cookies-bar').hide();
+            }
+
+            {% if cookiesSettingsGet('cookies_bar_disable_page_reload', 0) == 0 %}
+
+                location.reload(true);
+
+            {% endif %}
+
+        });
+
     </script>
 
 {% endput %}
