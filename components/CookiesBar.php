@@ -61,6 +61,7 @@ class CookiesBar extends ComponentBase
         }
 
         $this->page['sgCookies'] = CookiesSettings::getSGCookies();
+        $this->page['sgCookiesLocalePrefix'] = CookiesSettings::getSGCookiesLocalePrefix();
     }
 
     public function onRender() {

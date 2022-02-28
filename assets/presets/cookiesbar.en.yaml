@@ -10,27 +10,54 @@ cookies:
     description: "<p>The necessary cookies help to make the website work properly.</p>"
     slug: "necessary"
     required: 1
+    scripts:
+    -   scripts_title: 'Google Analytics without consent (add your GA code !)'
+        scripts_run_production: 1
+        scripts_code: "<script async src='https://www.googletagmanager.com/gtag/js'></script>
+                
+                <script>window.dataLayer = window.dataLayer || [];
+
+                    function gtag(){dataLayer.push(arguments);}
+
+                    // Denied storage before consent
+
+                    gtag('consent', 'default', {
+
+                        'ad_storage': 'denied',
+
+                        'analytics_storage': 'denied'
+
+                    });
+
+                    gtag('js', new Date());
+
+                    // GA4
+
+                    gtag('config', 'G-XXXXXX-X');
+
+                    // GA3
+
+                    gtag('config', 'UA-XXXXXX-X', { 'anonymize_ip': true, 'forceSSL': true });
+
+                </script>"
 -   title: "Statistical cookies"
     description: "<p>Anonymous statistical cookies help to understand how visitors use the website.</p>"
     slug: "statistical"
     required: 0
-    default_enabled: 1
     scripts:
-    -   scripts_title: 'Google Analytics (add GA code!)'
-        scripts_disable: 1
+    -   scripts_title: 'Google Analytics with consent'
         scripts_run_production: 1
-        scripts_code: "<script async src='https://www.googletagmanager.com/gtag/js?id=G-2RJNC5YGP6'></script>
-                <script>
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
+        scripts_code: "<script>
 
-                    gtag('config', 'UA-XXXXXX-X', { 'anonymize_ip': true, 'forceSSL': true });
-                </script>"
--   title: "Marketing cookies"
-    description: "<p>Marketing cookies are used to display advertising that is relevant and interesting to a particular user.</p>"
-    slug: "marketing"
-    required: 0
+                gtag('consent', 'update', {
+
+                'ad_storage': 'granted',
+
+                'analytics_storage': 'granted'
+
+                });
+
+            </script>"
 
 cookies_bar_buttons:
 -   title: "Accept"
