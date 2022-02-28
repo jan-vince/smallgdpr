@@ -34,6 +34,7 @@ class CookiesManage extends ComponentBase
     public function onRun() {
 
         $this->page['sgCookies'] = CookiesSettings::getSGCookies();
+        $this->page['sgCookiesLocalePrefix'] = CookiesSettings::getSGCookiesLocalePrefix();
     }
     
     public function onRender() {

@@ -10,27 +10,54 @@ cookies:
     description: "<p>Nezbytná cookies pomáhají, aby webová stránka v pořádku fungovala.</p>"
     slug: "nezbytna"
     required: 1
+    scripts:
+    -   scripts_title: 'Google Analytics without consent (přidejte GA kód !)'
+        scripts_run_production: 1
+        scripts_code: "<script async src='https://www.googletagmanager.com/gtag/js'></script>
+                
+                <script>window.dataLayer = window.dataLayer || [];
+
+                    function gtag(){dataLayer.push(arguments);}
+
+                    // Denied storage before consent
+
+                    gtag('consent', 'default', {
+
+                        'ad_storage': 'denied',
+
+                        'analytics_storage': 'denied'
+
+                    });
+
+                    gtag('js', new Date());
+
+                    // GA4
+
+                    gtag('config', 'G-XXXXXX-X');
+
+                    // GA3
+
+                    gtag('config', 'UA-XXXXXX-X', { 'anonymize_ip': true, 'forceSSL': true });
+
+                </script>"
 -   title: "Statistická cookies"
     description: "<p>Anonymní statistická cookies pomáhají porozumět tomu, jak návštěvníci používají webové stránky.</p>"
     slug: "statisticka"
     required: 0
-    default_enabled: 1
     scripts:
-    -   scripts_title: 'Google Analytics (add GA code!)'
-        scripts_disable: 1
+    -   scripts_title: 'Google Analytics with consent'
         scripts_run_production: 1
-        scripts_code: "<script async src='https://www.googletagmanager.com/gtag/js?id=G-2RJNC5YGP6'></script>
-                <script>
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
+        scripts_code: "<script>
 
-                    gtag('config', 'UA-XXXXXX-X', { 'anonymize_ip': true, 'forceSSL': true });
-                </script>"
--   title: "Marketingová cookies"
-    description: "<p>Marketingová cookies jsou používány pro zobrazení reklamy, která je relevantní a zajímavá pro konkrétního užívatele.</p>"
-    slug: "marketingova"
-    required: 0
+                gtag('consent', 'update', {
+
+                'ad_storage': 'granted',
+
+                'analytics_storage': 'granted'
+
+                });
+
+            </script>"
 
 cookies_bar_buttons:
 -   title: "Přijmout"

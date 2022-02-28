@@ -124,6 +124,14 @@ Number of days for cookies to live in browser.
 
 Change formating of output HTML code.
 
+#### Set cookies for each language
+
+> Default is on.
+
+This is required if you use Rainlab Translate plugin and you set up cookies groups for each language with different cookies groups codes.
+
+On the other hand if you have separate languages but same cookies groups codes and you want your visitors not to have consent for each language separately, you can switch this off.
+
 ### Tab: Import
 
 You can import settings presets from Media your own path or default plugin preset (if you leave all empty).

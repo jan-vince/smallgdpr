@@ -101,6 +101,8 @@ return [
       'ui_style' => 'UI style',
       'ui_style_description' => 'Components can format HTML for specific framework',
       'ui_style_option_empty' => 'Pure HTML',
+      'set_cookies_with_locale' => 'Set cookies for each language',
+      'set_cookies_with_locale_comment' => 'If set, cookies consent will be required for each language separately (useful if you do not have same cookies group code for all languages; requires Rainlab Translate plugin).',
     ],
   ],
 

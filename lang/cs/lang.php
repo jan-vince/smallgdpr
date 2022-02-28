@@ -100,6 +100,8 @@ return [
       'ui_style' => 'Styl rozhraní',
       'ui_style_description' => 'Komponenty mohou zobrazit obsah upravený pro konkrétní framework',
       'ui_style_option_empty' => 'Čisté HTML',
+      'set_cookies_with_locale' => 'Nastavit pro každý jazyk zvlášť',
+      'set_cookies_with_locale_comment' => 'Pokud je povoleno, bude souhlas s cookies požadován pro každý jazyk webu zvlášť (užitečné, pokud nemáte ve všech jazycích stejné kódy skupin cookies; vyžaduje plugin Rainlab Translate).',
     ],
   ],
 

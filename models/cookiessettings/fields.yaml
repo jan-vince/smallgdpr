@@ -264,6 +264,13 @@ tabs:
             options:
                 'b3': 'Bootstrap 3'
                 'b5': 'Bootstrap 5'
+        set_cookies_with_locale:
+            label: 'janvince.smallgdpr::lang.settings.form_fields.set_cookies_with_locale'
+            comment: 'janvince.smallgdpr::lang.settings.form_fields.set_cookies_with_locale_comment'
+            default: 1
+            type: checkbox
+            span: full
+            tab: 'janvince.smallgdpr::lang.settings.tabs.settings'
 
 
         ## Import
