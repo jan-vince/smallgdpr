@@ -59,6 +59,8 @@ return [
       'add_css_option_topline_container' => 'Kaistale (päällä) Bootstrap container-luokan sisällä',
       'accept_all_cookies_btn' => 'Salli kaikki evästeet',
       'accept_all_cookies_btn_description' => 'Napsauttamalla tätä nappulaa, kaikki keksit hyväksytään automaattisesti, ja otsake häviää.',
+      'disable_all_cookies_btn' => 'Estä kaikki evästeet',
+      'disable_all_cookies_btn_description' => 'Klikkaamalla tätä, kaikki (ei pakolliset) evästeet poistetaan käytöstä automaattisesti ja evästeikkuna poistetaan näkyvistä.',
       'import' => 'Tuo asetukset',
       'import_confirm' => 'Haluatko varmasti tuoda asetukset? Vanhat asetukset poistetaan!',
       'import_default' => 'Tuo oletusasetukset',
