@@ -131,3 +131,6 @@
     - Added option to require cookies consent for each web site language separately
 1.17.0:
     - Updated default presets with Google Analytics code to run without consent with disabled storage
+1.18.0:
+    - Added Finnish language (thanks mediaclinic)
+    - Updated presets

@@ -11,7 +11,7 @@ cookies:
     slug: "nezbytna"
     required: 1
     scripts:
-    -   scripts_title: 'Google Analytics without consent (přidejte GA kód !)'
+    -   scripts_title: 'Google Analytics without consent'
         scripts_run_production: 1
         scripts_code: "<script async src='https://www.googletagmanager.com/gtag/js'></script>
                 
@@ -33,7 +33,7 @@ cookies:
 
                     // GA4
 
-                    gtag('config', 'G-XXXXXX-X');
+                    gtag('config', 'G-XXXXXXX');
 
                     // GA3
 

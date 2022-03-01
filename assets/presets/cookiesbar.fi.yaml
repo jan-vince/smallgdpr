@@ -16,10 +16,10 @@ cookies:
     required: 0
     default_enabled: 1
     scripts:
-    -   scripts_title: 'Google Analytics (lisää GA-koodi!)'
+    -   scripts_title: 'Google Analytics'
         scripts_disable: 1
         scripts_run_production: 1
-        scripts_code: "<script async src='https://www.googletagmanager.com/gtag/js?id=XXXXXXXXX'></script>
+        scripts_code: "<script async src='https://www.googletagmanager.com/gtag/js'></script>
                 <script>
                     window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
