@@ -1,0 +1,49 @@
+cookies_manage_title: "Evästeasetukset"
+cookies_manage_content: "Käytämme evästeitä parantaaksemme käyttäjäkokemusta. Lue lisää, mitä evästeitä käytämme ja miten voit estää niiden käytön."
+
+cookies_bar_title: "Sivuston evästeet"
+cookies_bar_add_styles: "1"
+cookies_bar_content: "<p>Käytämme evästeitä parantaaksemme sivuston käyttäjäkokemusta ja palvelujamme. Lue lisää, mitä evästeitä käytämme ja miten voit estää niiden käytön.</p>"
+
+cookies:
+-   title: "Pakolliset evästeet"
+    description: "<p>Sivuston toiminnan kannalta pakolliset evästeet.</p>"
+    slug: "pakollinen"
+    required: 1
+-   title: "Tilastotiedon evästeet"
+    description: "<p>Anonyymitilastointi auttaa meitä analysoimaan, miten käyttäjät käyttävä sivustoa.</p>"
+    slug: "tilastollinen"
+    required: 0
+    default_enabled: 1
+    scripts:
+    -   scripts_title: 'Google Analytics (lisää GA-koodi!)'
+        scripts_disable: 1
+        scripts_run_production: 1
+        scripts_code: "<script async src='https://www.googletagmanager.com/gtag/js?id=XXXXXXXXX'></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+
+                    gtag('config', '--- Lisää GA3/GA4 koodi tähän ---');
+                </script>"
+-   title: "Markkinointievästeet"
+    description: "<p>Markkinointievästeitä käytetään mainonnankohdentamisessa käyttäjän kiinnostuksen mukaan.</p>"
+    slug: "markkinointi"
+    required: 0
+
+cookies_bar_buttons:
+-   title: "Hyväksy"
+    accept_all_cookies_btn: 1
+    url: "#"
+    url_external: 0
+    css_class: "btn btn-primary"
+-   title: "Asetukset"
+    accept_all_cookies_btn: 0
+    url: "gdpr"
+    url_external: 0
+    css_class: "btn btn-default"
+    show_modal: 1
+
+set_cookies_lifetime_days: 365
+ui_style: 'b3'
