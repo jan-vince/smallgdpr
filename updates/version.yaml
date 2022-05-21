@@ -100,7 +100,7 @@
 1.10.2:
     - Fixed external URL handling with cookies bar buttons
 1.11.2:
-    - !!! If you edited default components markup (or you use only parts of it), please check if everything works after update. If you use plugin as is, you should be fine :)
+    - If you edited default components markup (or you use only parts of it), please check if everything works after update. If you use plugin as is, you should be fine :)
     - Added option to disable page reload after cookies are set (for cookiesBar and cookiesManage components)
     - Updated default components markup (fixed duplicates, updated JS code)
 1.12.0:
@@ -134,3 +134,5 @@
 1.18.0:
     - Added Finnish language (thanks mediaclinic)
     - Updated presets
+1.18.1:
+    - Fixed version yaml for OC3
