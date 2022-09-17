@@ -6,9 +6,9 @@ cookies_bar_add_styles: "1"
 cookies_bar_content: "<p>Na našem webu používáme cookies.</p><p>Některé z nich jsou k fungování stránek nezbytné, ale o těch ostatních můžete rozhodnout sami.</p>"
 
 cookies:
--   title: "Nezbytná cookies"
-    description: "<p>Nezbytná cookies pomáhají, aby webová stránka v pořádku fungovala.</p>"
-    slug: "nezbytna"
+-   title: "Funkční cookies"
+    description: "<p>Funkční cookies pomáhají, aby webová stránka v pořádku fungovala.</p>"
+    slug: "funkcni"
     required: 1
     scripts:
     -   scripts_title: 'Google Analytics without consent'
@@ -40,9 +40,25 @@ cookies:
                     gtag('config', 'UA-XXXXXX-X', { 'anonymize_ip': true, 'forceSSL': true });
 
                 </script>"
--   title: "Statistická cookies"
-    description: "<p>Anonymní statistická cookies pomáhají porozumět tomu, jak návštěvníci používají webové stránky.</p>"
-    slug: "statisticka"
+-   title: "Statistické cookies"
+    description: "<p>Anonymní statistické cookies pomáhají porozumět tomu, jak návštěvníci používají webové stránky.</p>"
+    slug: "statisticke"
+    required: 0
+    scripts:
+    -   scripts_title: 'Google Analytics with consent'
+        scripts_run_production: 1
+        scripts_code: "<script>
+
+                gtag('consent', 'update', {
+
+                'analytics_storage': 'granted'
+
+                });
+
+            </script>"
+-   title: "Marketingové cookies"
+    description: "<p>Používáme marketingové cookies abychom vám mohli zobrazovat relevantní reklamy na základě vašich zájmů na sociálních sítích a historie procházení webu.</p>"
+    slug: "marketingove"
     required: 0
     scripts:
     -   scripts_title: 'Google Analytics with consent'
@@ -52,8 +68,6 @@ cookies:
                 gtag('consent', 'update', {
 
                 'ad_storage': 'granted',
-
-                'analytics_storage': 'granted'
 
                 });
 

@@ -51,9 +51,24 @@ cookies:
 
                 gtag('consent', 'update', {
 
-                'ad_storage': 'granted',
-
                 'analytics_storage': 'granted'
+
+                });
+
+            </script>"
+
+-   title: "Marketing cookies"
+    description: "<p>We use marketing cookies to serve you relevant ads based on your social media interests and browsing history.</p>"
+    slug: "marketing"
+    required: 0
+    scripts:
+    -   scripts_title: 'Google Analytics with consent'
+        scripts_run_production: 1
+        scripts_code: "<script>
+
+                gtag('consent', 'update', {
+
+                'ad_storage': 'granted',
 
                 });
 
