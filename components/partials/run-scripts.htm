@@ -2,56 +2,60 @@
 
     {% for cookie in cookiesSettingsGet('cookies') %}
 
-        {% for script in cookie.scripts if script.scripts_disable == 0 %}
+        {% for script in cookie.scripts %}
 
-            {#  If pages list is set, compare to current page URL #}
+            {% if script.scripts_disable == 0 %}
 
-            {% if script.scripts_run_pages == true and script.scripts_run_pages_list|length %}
+                {#  If pages list is set, compare to current page URL #}
 
-                {% set scriptRunThisPage = false %}
+                {% if script.scripts_run_pages == true and script.scripts_run_pages_list|length %}
 
-                {% for item in script.scripts_run_pages_list %}
+                    {% set scriptRunThisPage = false %}
 
-                    {% if url(item.page_url) == url().current %}
+                    {% for item in script.scripts_run_pages_list %}
 
-                        {% set scriptRunThisPage = true %}
+                        {% if url(item.page_url) == url().current %}
 
-                    {% endif %}
+                            {% set scriptRunThisPage = true %}
 
-                {% endfor %}
-
-            {% else %}
-                {% set scriptRunThisPage = true %}
-            {% endif %}
-
-
-            {# TODO: get rid of those IFs #}
-
-            {% if scriptRunThisPage %}
-
-                {# Test for production mode required first #}
-                {% if script.scripts_run_production == false 
-                    or ( script.scripts_run_production == true and this.environment == 'production') %}
-
-                    {% if cookie.required or sgCookies[cookie.slug] %}
-
-                        {% if script.scripts_code and scriptRunThisPage %}
-                        
-                            {% put scripts %}
-
-                                {{ script.scripts_code|raw }}
-
-                            {% endput %}
-                        
                         {% endif %}
 
-                        {% if script.scripts_file and scriptRunThisPage %}
+                    {% endfor %}
 
-                            {% put scripts %}
+                {% else %}
+                    {% set scriptRunThisPage = true %}
+                {% endif %}
 
-                                <script src="{{ script.scripts_file|media }}"></script>
+
+                {# TODO: get rid of those IFs #}
+
+                {% if scriptRunThisPage %}
+
+                    {# Test for production mode required first #}
+                    {% if script.scripts_run_production == false 
+                        or ( script.scripts_run_production == true and this.environment == 'production') %}
+
+                        {% if cookie.required or sgCookies[cookie.slug] %}
+
+                            {% if script.scripts_code and scriptRunThisPage %}
                             
-                            {% endput %}
+                                {% put scripts %}
+
+                                    {{ script.scripts_code|raw }}
+
+                                {% endput %}
+                            
+                            {% endif %}
+
+                            {% if script.scripts_file and scriptRunThisPage %}
+
+                                {% put scripts %}
+
+                                    <script src="{{ script.scripts_file|media }}"></script>
+                                
+                                {% endput %}
+
+                            {% endif %}
 
                         {% endif %}
 

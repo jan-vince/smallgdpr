@@ -137,3 +137,5 @@
     - Updated presets
 1.18.1:
     - Fixed version yaml for OC3
+1.18.2:
+    - Fixed Twig code for OC3
