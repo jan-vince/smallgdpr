@@ -45,6 +45,8 @@ return [
       'cookie_required_description' => 'Tato cookies nebude možné uživatelsky zakázat',
       'cookie_default_enabled' => 'Výchozí povoleno',
       'cookie_default_enabled_description' => 'Tato cookies budou spuštěna i bez výslovného souhlasu (mělo by být použito jen pro anonymní data!).',
+      'cookie_default_modal_checked' => 'Výchozí zaškrtnuto (v modálním okně)',
+      'cookie_default_modal_checked_description' => 'Tato cookies budou před-zaškrtnuta v modálním okně, skripty se automaticky nespouštějí.',
       'cookies_manager' => 'Správa cookies',
       'cookies_bar_buttons' => 'Tlačítka',
       'cookies_bar_buttons_prompt' => 'Přidat tlačítko',

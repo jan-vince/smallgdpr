@@ -7,7 +7,7 @@
         <div class="form-check">
             <input class="form-check-input {{ cookie.required ? 'disabled' : ''  }}" type="checkbox"
                    id="sg-cookies{{ sgCookiesLocalePrefix ? sgCookiesLocalePrefix }}-{{cookie.slug}}{{customId}}"
-                   {{ sgCookies[cookie.slug] or (cookie.required) ? 'checked' : '' }} {{ cookie.required ? 'disabled' : ''  }}>
+                   {{ sgCookies[cookie.slug] or (cookie.required) or (modal and cookie.default_modal_checked) ? 'checked' : '' }} {{ cookie.required ? 'disabled' : ''  }}>
             <label class="form-check-label" for="sg-cookies{{ sgCookiesLocalePrefix ? sgCookiesLocalePrefix }}-{{cookie.slug}}{{customId}}">
                 {{ cookie.title }}
             </label>

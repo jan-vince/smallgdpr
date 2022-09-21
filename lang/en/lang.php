@@ -46,6 +46,8 @@ return [
       'cookie_required_description' => 'This cookies cannot be disabled by user',
       'cookie_default_enabled' => 'Default enabled',
       'cookie_default_enabled_description' => 'This cookies will be executed even without explicit concent (should be used only for anonymous data!).',
+      'cookie_default_modal_checked' => 'Default checked (in modal)',
+      'cookie_default_modal_checked_description' => 'This cookies will be pre-checked in modal window, scripts are not fired.',
       'cookies_manager' => 'Manage cookies',
       'cookies_bar_buttons' => 'Buttons',
       'cookies_bar_buttons_prompt' => 'Add buttons',

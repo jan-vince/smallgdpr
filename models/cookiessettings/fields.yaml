@@ -43,6 +43,16 @@ tabs:
                         type: checkbox
                         span: left
                         default: false
+                    default_modal_checked:
+                        label: 'janvince.smallgdpr::lang.settings.form_fields.cookie_default_modal_checked'
+                        comment: 'janvince.smallgdpr::lang.settings.form_fields.cookie_default_modal_checked_description'
+                        type: checkbox
+                        span: left
+                        default: false
+                        trigger:
+                            action: hide
+                            field: required
+                            condition: checked
                     scripts_code_section:
                         comment: 'janvince.smallgdpr::lang.settings.form_fields.scripts'
                         type: section
