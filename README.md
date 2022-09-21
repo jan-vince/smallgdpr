@@ -61,6 +61,10 @@ Scripts in these groups will run without explicit user concent but can be disabl
 
 Be careful not to violate your local laws!
 
+#### Default checked
+
+Scripts in these groups will not run but in modal window they will be pre-checked.
+
 #### Scripts
 
 You can add one or more scripts to selected group
