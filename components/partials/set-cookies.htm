@@ -8,7 +8,7 @@ document.cookie = "{{ 'sg-cookies'~(sgCookiesLocalePrefix ? sgCookiesLocalePrefi
 
     {% for cookie in cookiesSettingsGet('cookies') %}
 
-        {% if setOnlyRequiredCookies %}
+        {% if setOnlyRequiredCookies|default(false) %}
 
             {% if cookie.required %}
 
@@ -18,9 +18,9 @@ document.cookie = "{{ 'sg-cookies'~(sgCookiesLocalePrefix ? sgCookiesLocalePrefi
 
         {% else %}
 
-            {% if setOnlyManageCookies %}
+            {% if setOnlyManageCookies|default(false) %}
 
-                var item = document.getElementById('sg-cookies{{ sgCookiesLocalePrefix ? sgCookiesLocalePrefix }}-{{cookie.slug}}{{customId}}');
+                var item = document.getElementById('sg-cookies{{ sgCookiesLocalePrefix ? sgCookiesLocalePrefix }}-{{cookie.slug}}{{customId|default('custom')}}');
 
                 if( item.checked == true ) {
                     document.cookie = 'sg-cookies{{ sgCookiesLocalePrefix ? sgCookiesLocalePrefix }}-{{cookie.slug}}=1; path=/; expires=' + date.toGMTString();    
