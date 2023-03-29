@@ -1,9 +1,15 @@
 <div id="sg-{{ __SELF__ }}">
+    {% set show = true %}
+    {% if sgCookies.consent is defined and sgCookies.consent is not empty %}
+        {% set show = false %}
+    {% elseif viewBag is defined and viewBag.property('hideCookiesBar', false) == true %}
+        {% set show = false %}
+    {% elseif page.viewBag is defined and page.viewBag.hideCookiesBar|default(false) == true %}
+        {% set show = false %}
+    {% endif %}
 
-    {% if sgCookies.consent is empty and viewBag.hideCookiesBar == false and page.viewBag.hideCookiesBar == false %}
-    
+    {% if show %}
         {% partial __SELF__ ~ '::cookiesbar' %}
-
     {% endif %}
 
     {% partial '@run-scripts' %}
