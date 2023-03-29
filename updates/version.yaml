@@ -147,3 +147,5 @@
     - Added option to pre-check cookies list items in modal window
 1.21.0:
     - OC3 compatibility
+1.22.0:
+    - Strict variables fix (thanks @SamBrishes)
