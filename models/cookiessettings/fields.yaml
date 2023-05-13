@@ -208,6 +208,15 @@ tabs:
                         comment: 'janvince.smallgdpr::lang.settings.form_fields.disable_all_cookies_btn_description'
                         type: checkbox
                         span: left
+                    accept_all_cookies_btn_script:
+                        label: 'janvince.smallgdpr::lang.settings.form_fields.accept_all_cookies_btn_script'
+                        comment: 'janvince.smallgdpr::lang.settings.form_fields.accept_all_cookies_btn_script_description'
+                        type: codeeditor
+                        span: full
+                        trigger:
+                            field: accept_all_cookies_btn
+                            action: show
+                            condition: checked
                     section_01:
                         type: section
                     css_class:

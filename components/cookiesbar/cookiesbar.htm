@@ -83,6 +83,16 @@
                 $('#cookies-bar').hide();
             }
 
+            {% for button in cookiesSettingsGet('cookies_bar_buttons', null)  %}
+
+                {% if button.accept_all_cookies_btn_script %}
+
+                    {{ button.accept_all_cookies_btn_script|raw }}
+
+                {% endif %}
+
+            {% endfor %}
+
             {% if cookiesSettingsGet('cookies_bar_disable_page_reload', 0) == 0 %}
 
                 location.reload(true);

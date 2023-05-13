@@ -149,3 +149,5 @@
     - OC3 compatibility
 1.22.0:
     - Strict variables fix (thanks @SamBrishes)
+1.23.0:
+    - Added option to run JS script after Accept-all Button click
