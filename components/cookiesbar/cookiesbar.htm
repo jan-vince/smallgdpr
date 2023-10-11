@@ -72,15 +72,13 @@
 
     <script>
 
-        $('#cookies-bar .btn-accept-all').click(function(e) 
-        {
+        document.querySelector('#cookies-bar .btn-accept-all').addEventListener('click', function(e) {
             e.preventDefault();
 
             {% partial '@set-cookies' %}
 
-            if( $('#cookies-bar').length )
-            {
-                $('#cookies-bar').hide();
+            if (document.querySelector('#cookies-bar')) {
+                document.querySelector('#cookies-bar').style.display = 'none';
             }
 
             {% for button in cookiesSettingsGet('cookies_bar_buttons', null)  %}
@@ -101,15 +99,13 @@
 
         });
 
-        $('#cookies-bar .btn-disable-all').click(function(e) 
-        {
+        document.querySelector('#cookies-bar .btn-disable-all').addEventListener('click', function(e) {
             e.preventDefault();
 
             {% partial '@set-cookies' setOnlyRequiredCookies = true %}
 
-            if( $('#cookies-bar').length )
-            {
-                $('#cookies-bar').hide();
+            if(document.querySelector('#cookies-bar')) {
+                document.querySelector('#cookies-bar').style.display = 'none';
             }
 
             {% if cookiesSettingsGet('cookies_bar_disable_page_reload', 0) == 0 %}
