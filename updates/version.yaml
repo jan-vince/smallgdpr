@@ -151,3 +151,5 @@
     - Strict variables fix (thanks @SamBrishes)
 1.23.0:
     - Added option to run JS script after Accept-all Button click
+1.23.1:
+    - Fixed export settings

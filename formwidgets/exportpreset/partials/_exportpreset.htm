@@ -20,7 +20,7 @@
             path: $('#<?= $this->alias ?>-file-name').val()
             })"
         data-request="onExportPreset"
-        data-request-data='path: <?= e(trans("janvince.smallgdpr::lang.formwidgets.exportpreset.file_name_default")) ?>'
+        data-request-data="path: '<?= e(trans('janvince.smallgdpr::lang.formwidgets.exportpreset.file_name_default')) ?>'"
         data-stripe-load-indicator>
             <?= e(trans('janvince.smallgdpr::lang.settings.form_fields.export')) ?>
         </button>
