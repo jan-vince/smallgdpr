@@ -153,3 +153,5 @@
     - Added option to run JS script after Accept-all Button click
 1.23.1:
     - Fixed export settings
+1.24.0:
+    - Replaced jQuery with vanilla JS (thanks @anik1ng)
