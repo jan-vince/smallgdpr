@@ -23,9 +23,13 @@ cookies:
 
                     gtag('consent', 'default', {
 
+                        'analytics_storage': 'denied',
+
                         'ad_storage': 'denied',
 
-                        'analytics_storage': 'denied'
+                        'ad_user_data': 'denied',
+                        
+                        'ad_personalization': 'denied'
 
                     });
 
@@ -34,10 +38,6 @@ cookies:
                     // GA4
 
                     gtag('config', 'G-XXXXXXX');
-
-                    // GA3
-
-                    gtag('config', 'UA-XXXXXX-X', { 'anonymize_ip': true, 'forceSSL': true });
 
                 </script>"
 -   title: "Statistical cookies"
@@ -68,7 +68,11 @@ cookies:
 
                 gtag('consent', 'update', {
 
-                'ad_storage': 'granted',
+                    'ad_storage': 'granted',
+
+                    'ad_user_data': 'granted',
+
+                    'ad_personalization': 'granted'
 
                 });
 
@@ -80,6 +84,18 @@ cookies_bar_buttons:
     url: "#"
     url_external: 0
     css_class: "btn btn-primary"
+    accept_all_cookies_btn_script: "
+        gtag('consent', 'update', {
+
+            'analytics_storage': 'granted',
+
+            'ad_storage': 'granted',
+
+            'ad_user_data': 'granted',
+
+            'ad_personalization': 'granted'
+
+        });"
 -   title: "Reject"
     disable_all_cookies_btn: 1
     url: "#"

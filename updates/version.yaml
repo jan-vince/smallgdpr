@@ -157,3 +157,5 @@
     - Replaced jQuery with vanilla JS (thanks @anik1ng)
 1.25.0:
     - Simplified Chinese Language (thanks @ZhiweiWu0425)
+1.26.0:
+    - Updated templates for Google Consent v2
