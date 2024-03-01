@@ -155,3 +155,5 @@
     - Fixed export settings
 1.24.0:
     - Replaced jQuery with vanilla JS (thanks @anik1ng)
+1.25.0:
+    - Simplified Chinese Language (thanks @ZhiweiWu0425)
