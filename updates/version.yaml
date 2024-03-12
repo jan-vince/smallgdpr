@@ -159,3 +159,5 @@
     - Simplified Chinese Language (thanks @ZhiweiWu0425)
 1.26.0:
     - Updated templates for Google Consent v2
+1.26.1:
+    - Modal reload logic updated
