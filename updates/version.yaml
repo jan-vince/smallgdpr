@@ -161,3 +161,5 @@
     - Updated templates for Google Consent v2
 1.26.1:
     - Modal reload logic updated
+1.27.0:
+    - French translation (thanks Jean-Daniel Kneubühler)
