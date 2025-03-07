@@ -163,3 +163,5 @@
     - Modal reload logic updated
 1.27.0:
     - French translation (thanks Jean-Daniel Kneubühler)
+1.27.1:
+    - Added btn-disable-all class to cookiesbar-btn-default
