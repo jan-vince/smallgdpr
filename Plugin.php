@@ -26,7 +26,7 @@ class Plugin extends PluginBase {
             'cookies' => [
                 'label' => 'janvince.smallgdpr::lang.settings.cookies.name',
                 'description' => 'janvince.smallgdpr::lang.settings.cookies.description',
-                'category'    => 'GDPR',
+                'category'    => 'Small plugins',
                 'icon' => 'icon-desktop',
                 'class' => 'JanVince\SmallGDPR\Models\CookiesSettings',
                 'keywords' => 'gdpr cookies bar consent',

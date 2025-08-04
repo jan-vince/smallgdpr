@@ -15,7 +15,7 @@ return [
   'settings' => [
 
     'cookies' => [
-      'name' => 'Cookies',
+      'name' => 'Small GDPR',
       'description' => '关于 Cookies 的一切',
     ],
 

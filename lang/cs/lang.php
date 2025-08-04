@@ -15,7 +15,7 @@ return [
   'settings' => [
 
     'cookies' => [
-      'name' => 'Cookies',
+      'name' => 'Small GDPR',
       'description' => 'Vše kolem cookies',
     ],
 
@@ -62,8 +62,10 @@ return [
       'accept_all_cookies_btn_description' => 'Kliknutím na toto tlačítko budou automaticky přijmuta všechna cookies a lišta zmizí.',
       'accept_all_cookies_btn_script' => 'Spustit skript po klepnutí na tlačítko (nepoužívejte značku <script>)',
       'accept_all_cookies_btn_script_description' => 'Můžete přidat JavaScript skript, který bude spuštěný po klepnutí na tlačítko.',
+      'disable_all_cookies_btn_script' => 'Spustit skript po klepnutí na tlačítko (nepoužívejte značku <script>)',
+      'disable_all_cookies_btn_script_description' => 'Můžete přidat JavaScript skript, který bude spuštěný po klepnutí na tlačítko.',
       'disable_all_cookies_btn' => 'Zakáže všechna cookies',
-      'disable_all_cookies_btn_description' => 'Kliknutím na toto tlačítko budou automaticky zakázana všechna (ne nezbytná) cookies a lišta zmizí.',
+      'disable_all_cookies_btn_description' => 'Kliknutím na toto tlačítko budou automaticky zakázána všechna (ne nezbytná) cookies a lišta zmizí.',
       'import' => 'Importovat nastavení',
       'import_confirm' => 'Skutečně chcete importovat nastavení? Stará nastavení budou ztracena!',
       'import_default' => 'Importovat výchozí nastavení',

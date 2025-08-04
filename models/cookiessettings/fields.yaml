@@ -1,6 +1,5 @@
 fields: { }
 tabs:
-    icons:
     fields:
 
         ## Cookies
@@ -215,6 +214,15 @@ tabs:
                         span: full
                         trigger:
                             field: accept_all_cookies_btn
+                            action: show
+                            condition: checked
+                    disable_all_cookies_btn_script:
+                        label: 'janvince.smallgdpr::lang.settings.form_fields.disable_all_cookies_btn_script'
+                        comment: 'janvince.smallgdpr::lang.settings.form_fields.disable_all_cookies_btn_script_description'
+                        type: codeeditor
+                        span: full
+                        trigger:
+                            field: disable_all_cookies_btn
                             action: show
                             condition: checked
                     section_01:

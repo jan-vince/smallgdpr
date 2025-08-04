@@ -165,3 +165,5 @@
     - French translation (thanks Jean-Daniel Kneubühler)
 1.27.1:
     - Added btn-disable-all class to cookiesbar-btn-default
+1.28.0:
+    - Added option to run JS script after Disable-all Button click
