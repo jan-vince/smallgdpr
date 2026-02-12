@@ -12,6 +12,12 @@
     box-shadow: 0 0 10px fade(black, 30%);
     border-radius: 10px;
 
+    @media (max-width: 980px) {
+        left: 20px;
+        right: 20px;
+        padding: 20px;
+    }
+
     .title {
         margin: 0;
     }
@@ -22,6 +28,10 @@
 
     .buttons {
         margin-top: 40px;
+
+        @media (max-width: 980px) {
+            text-align: center;
+        }
 
         .btn {
             margin-right: 5px;

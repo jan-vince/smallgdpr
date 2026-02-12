@@ -12,6 +12,13 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
 }
+@media (max-width: 980px) {
+  #cookies-bar {
+    left: 20px;
+    right: 20px;
+    padding: 20px;
+  }
+}
 #cookies-bar .title {
   margin: 0;
 }
@@ -20,6 +27,11 @@
 }
 #cookies-bar .buttons {
   margin-top: 40px;
+}
+@media (max-width: 980px) {
+  #cookies-bar .buttons {
+    text-align: center;
+  }
 }
 #cookies-bar .buttons .btn {
   margin-right: 5px;
