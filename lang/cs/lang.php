@@ -58,6 +58,7 @@ return [
       'add_css_option_rbbox' => 'Box (pravý spodní okraj)',
       'add_css_option_topline' => 'Proužek (nahoře)',
       'add_css_option_topline_container' => 'Proužek (nahoře) v Bootstrap containeru',
+      'add_css_option_pill_b5' => 'Plovoucí pill (Bootstrap 5, modern)',
       'accept_all_cookies_btn' => 'Povolí všechna cookies',
       'accept_all_cookies_btn_description' => 'Kliknutím na toto tlačítko budou automaticky přijmuta všechna cookies a lišta zmizí.',
       'accept_all_cookies_btn_script' => 'Spustit skript po klepnutí na tlačítko (nepoužívejte značku <script>)',

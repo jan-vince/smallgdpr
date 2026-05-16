@@ -1,9 +1,9 @@
 cookies_manage_title: "Evästeasetukset"
-cookies_manage_content: "Käytämme evästeitä parantaaksemme käyttäjäkokemusta. Lue lisää, mitä evästeitä käytämme ja miten voit estää niiden käytön."
+cookies_manage_content: "<p>Osa evästeistä on välttämättömiä sivuston toiminnan kannalta, muista voit päättää itse.</p>"
 
-cookies_bar_title: "Sivuston evästeet"
-cookies_bar_add_styles: "1"
-cookies_bar_content: "<p>Käytämme evästeitä parantaaksemme sivuston käyttäjäkokemusta ja palvelujamme. Lue lisää, mitä evästeitä käytämme ja miten voit estää niiden käytön.</p>"
+cookies_bar_title: "Sivusto käyttää evästeitä"
+cookies_bar_add_styles: "4"
+cookies_bar_content: "<p>Osa on välttämättömiä, muut ovat valinnaisia.</p>"
 
 cookies:
 -   title: "Pakolliset evästeet"
@@ -46,4 +46,4 @@ cookies_bar_buttons:
     show_modal: 1
 
 set_cookies_lifetime_days: 365
-ui_style: 'b3'
+ui_style: 'b5'

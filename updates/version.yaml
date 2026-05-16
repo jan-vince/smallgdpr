@@ -171,3 +171,5 @@
     - Fixed CSS styles
 1.28.2:
     - Removed remaining jQuery dependency from frontend components (list-cookies, cookiesmanage), replaced with vanilla JS and native Bootstrap 5 Modal API
+1.29.0:
+    - Added 'Floating pill (BS5)' style preset and modal

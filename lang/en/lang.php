@@ -59,6 +59,7 @@ return [
       'add_css_option_rbbox' => 'Box (right bottom corner)',
       'add_css_option_topline' => 'Strip (on top)',
       'add_css_option_topline_container' => 'Strip (on top) in Bootstrap container',
+      'add_css_option_pill_b5' => 'Floating pill (Bootstrap 5, modern)',
       'accept_all_cookies_btn' => 'Allow all cookies',
       'accept_all_cookies_btn_description' => 'By clicking on this button, all cookies will be accepted automatically and the bar will disappear.',
       'accept_all_cookies_btn_script' => 'Script to run after click this button (do not use <script> tag)',

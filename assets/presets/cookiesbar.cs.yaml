@@ -1,9 +1,9 @@
 cookies_manage_title: "Správa cookies"
-cookies_manage_content: "<p>Na našem webu používáme cookies.</p><p>Některé z nich jsou k fungování stránek nezbytné, ale o těch ostatních můžete rozhodnout sami.</p>"
+cookies_manage_content: "<p>Některé cookies jsou pro fungování webu nezbytné, o ostatních si můžete rozhodnout sami.</p>"
 
-cookies_bar_title: "Nastavení cookies"
-cookies_bar_add_styles: "1"
-cookies_bar_content: "<p>Na našem webu používáme cookies.</p><p>Některé z nich jsou k fungování stránek nezbytné, ale o těch ostatních můžete rozhodnout sami.</p>"
+cookies_bar_title: "Tento web používá cookies"
+cookies_bar_add_styles: "4"
+cookies_bar_content: "<p>Některé jsou nutné, ostatní si můžete nastavit.</p>"
 
 cookies:
 -   title: "Funkční cookies"
@@ -106,4 +106,4 @@ cookies_bar_buttons:
     show_modal: 1
 
 set_cookies_lifetime_days: 365
-ui_style: 'b3'
+ui_style: 'b5'

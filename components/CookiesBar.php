@@ -51,6 +51,12 @@ class CookiesBar extends ComponentBase
 
                     break;
 
+                case 4:
+
+                    $this->addCss(['assets/cookiesbar/cookiesbar-pill.less']);
+
+                    break;
+
                 default:
 
                     $this->addCss(['assets/cookiesbar/cookiesbar.less']);

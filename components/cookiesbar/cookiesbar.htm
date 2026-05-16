@@ -126,6 +126,19 @@
 
         });
 
+        {% if cookiesSettingsGet('cookies_bar_add_styles', null) == 4 %}
+
+            // Mount animation for the pill style — adds .is-visible class after DOM is ready
+            document.addEventListener('DOMContentLoaded', function() {
+                var bar = document.getElementById('cookies-bar');
+                if (!bar) { return; }
+                requestAnimationFrame(function() {
+                    bar.classList.add('is-visible');
+                });
+            });
+
+        {% endif %}
+
     </script>
 
 {% endput %}
