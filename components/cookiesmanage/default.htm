@@ -8,17 +8,23 @@
 
     <script>
 
-        $('#cookies-manage-save').click(function() {
-        
-            {% partial '@set-cookies' setOnlyManageCookies = true %}
+        (function() {
+            var saveBtn = document.getElementById('cookies-manage-save');
+            if (!saveBtn) { return; }
 
-            {% if cookiesSettingsGet('cookies_manage_disable_page_reload', 0) == 0 %}
+            saveBtn.addEventListener('click', function(e) {
+                e.preventDefault();
 
-                location.reload(true);
+                {% partial '@set-cookies' setOnlyManageCookies = true %}
 
-            {% endif %}
+                {% if cookiesSettingsGet('cookies_manage_disable_page_reload', 0) == 0 %}
 
-        });
+                    location.reload(true);
+
+                {% endif %}
+
+            });
+        })();
 
     </script>
 

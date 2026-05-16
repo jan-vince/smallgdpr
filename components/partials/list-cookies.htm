@@ -4,29 +4,36 @@
 
 <script>
 
-    $('#cookies-manage-save{{ customId|default('custom') }}').click(function() {
+    (function() {
+        var saveBtn = document.getElementById('cookies-manage-save{{ customId|default('custom') }}');
+        if (!saveBtn) { return; }
 
-        {% partial '@set-cookies' setOnlyManageCookies = true %}
+        saveBtn.addEventListener('click', function(e) {
+            e.preventDefault();
 
-        {% if cookiesSettingsGet('cookies_manage_disable_page_reload', 0) == 0 %}
+            {% partial '@set-cookies' setOnlyManageCookies = true %}
 
-            location.reload(true);
+            {% if cookiesSettingsGet('cookies_manage_disable_page_reload', 0) == 0 %}
 
-        {% else %}
+                location.reload(true);
 
-            if( $('#cookies-bar').length )
-            {
-                $('#cookies-bar').hide();
-            }
+            {% else %}
 
-            if( $('#sg-settings-modal-{{ __SELF__ }}').length )
-            {
-                $('#sg-settings-modal-{{ __SELF__ }}').modal('hide');
-            }
+                var bar = document.getElementById('cookies-bar');
+                if (bar) {
+                    bar.style.display = 'none';
+                }
 
-        {% endif %}
+                var modalEl = document.getElementById('sg-settings-modal-{{ __SELF__ }}');
+                if (modalEl && typeof bootstrap !== 'undefined' && bootstrap.Modal) {
+                    var modalInstance = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
+                    modalInstance.hide();
+                }
 
-    });
+            {% endif %}
+
+        });
+    })();
 
 </script>
 
