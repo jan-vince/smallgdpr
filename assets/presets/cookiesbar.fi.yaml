@@ -1,49 +1,51 @@
-cookies_manage_title: "Evästeasetukset"
-cookies_manage_content: "<p>Osa evästeistä on välttämättömiä sivuston toiminnan kannalta, muista voit päättää itse.</p>"
+# Small GDPR v2 — oletusasetukset (suomi)
+# Tuonti: Asetukset → Small GDPR → Tuonti → "Tuo oletusasetukset".
+
+tag_type: "none"
+tag_id: ""
+production_only: 1
+consent_event_name: "cookie_consent_update"
 
 cookies_bar_title: "Sivusto käyttää evästeitä"
-cookies_bar_add_styles: "4"
-cookies_bar_content: "<p>Osa on välttämättömiä, muut ovat valinnaisia.</p>"
+cookies_bar_content: "<p>Osa on välttämättömiä, muut ovat valinnaisia. Sinä päätät.</p>"
+cookies_bar_disable_page_reload: 1
+
+btn_accept_label: "Hyväksy"
+btn_reject_label: "Hylkää"
+btn_reject_show: 1
+btn_settings_label: "Asetukset"
+btn_settings_show: 1
+btn_save_label: "Tallenna valinta"
+
+cookies_manage_title: "Evästeasetukset"
+cookies_manage_content: "<p>Osa evästeistä on välttämättömiä sivuston toiminnan kannalta, muista voit päättää itse.</p>"
+cookies_manage_disable_page_reload: 1
 
 cookies:
 -   title: "Pakolliset evästeet"
     description: "<p>Sivuston toiminnan kannalta pakolliset evästeet.</p>"
     slug: "pakollinen"
     required: 1
+    consent_types:
+    -   "functionality_storage"
+    -   "security_storage"
+    scripts: []
 -   title: "Tilastotiedon evästeet"
-    description: "<p>Anonyymitilastointi auttaa meitä analysoimaan, miten käyttäjät käyttävä sivustoa.</p>"
+    description: "<p>Anonyymitilastointi auttaa meitä analysoimaan, miten käyttäjät käyttävät sivustoa.</p>"
     slug: "tilastollinen"
     required: 0
-    default_enabled: 1
-    scripts:
-    -   scripts_title: 'Google Analytics'
-        scripts_disable: 1
-        scripts_run_production: 1
-        scripts_code: "<script async src='https://www.googletagmanager.com/gtag/js'></script>
-                <script>
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
-
-                    gtag('config', '--- Lisää GA3/GA4 koodi tähän ---');
-                </script>"
+    consent_types:
+    -   "analytics_storage"
+    scripts: []
 -   title: "Markkinointievästeet"
-    description: "<p>Markkinointievästeitä käytetään mainonnankohdentamisessa käyttäjän kiinnostuksen mukaan.</p>"
+    description: "<p>Markkinointievästeitä käytetään mainonnan kohdentamisessa käyttäjän kiinnostuksen mukaan.</p>"
     slug: "markkinointi"
     required: 0
-
-cookies_bar_buttons:
--   title: "Hyväksy"
-    accept_all_cookies_btn: 1
-    url: "#"
-    url_external: 0
-    css_class: "btn btn-primary"
--   title: "Asetukset"
-    accept_all_cookies_btn: 0
-    url: "gdpr"
-    url_external: 0
-    css_class: "btn btn-default"
-    show_modal: 1
+    consent_types:
+    -   "ad_storage"
+    -   "ad_user_data"
+    -   "ad_personalization"
+    scripts: []
 
 set_cookies_lifetime_days: 365
-ui_style: 'b5'
+set_cookies_with_locale: 0

@@ -33,43 +33,14 @@ class CookiesBar extends ComponentBase
 
     public function onRun() {
 
-        if(CookiesSettings::get('cookies_bar_add_styles', null))
-        {
-        
-            switch( CookiesSettings::get('cookies_bar_add_styles', null)) 
-            {
-
-                case 2:
-
-                    $this->addCss(['assets/cookiesbar/cookiesbar-topline.less']);
-
-                    break;
-
-                case 3:
-
-                    $this->addCss(['assets/cookiesbar/cookiesbar-topline.less', 'assets/cookiesbar/cookiesbar-topline-container.less']);
-
-                    break;
-
-                case 4:
-
-                    $this->addCss(['assets/cookiesbar/cookiesbar-pill.less']);
-
-                    break;
-
-                default:
-
-                    $this->addCss(['assets/cookiesbar/cookiesbar.less']);
-
-                    break;
-            }
-
-        }
-
+        // Styly i JS načítá head komponenta cookiesConfig — tady stačí stav cookies.
         $this->page['sgCookies'] = CookiesSettings::getSGCookies();
         $this->page['sgCookiesLocalePrefix'] = CookiesSettings::getSGCookiesLocalePrefix();
-    }
+        $this->page['sgRenderTags'] = CookiesSettings::shouldRenderTags();
 
-    public function onRender() {
+        // Booleany čteme přímo (Twig helper cookiesSettingsGet coalescuje '0' na default)
+        $this->page['sgRejectShow'] = (bool) CookiesSettings::get('btn_reject_show', true);
+        $this->page['sgSettingsShow'] = (bool) CookiesSettings::get('btn_settings_show', true);
+        $this->page['sgBarReload'] = !((bool) CookiesSettings::get('cookies_bar_disable_page_reload', true));
     }
 }

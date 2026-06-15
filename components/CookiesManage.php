@@ -35,8 +35,9 @@ class CookiesManage extends ComponentBase
 
         $this->page['sgCookies'] = CookiesSettings::getSGCookies();
         $this->page['sgCookiesLocalePrefix'] = CookiesSettings::getSGCookiesLocalePrefix();
+        $this->page['sgManageReload'] = !((bool) CookiesSettings::get('cookies_manage_disable_page_reload', true));
     }
-    
+
     public function onRender() {
     }
 }

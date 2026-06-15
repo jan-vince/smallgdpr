@@ -173,3 +173,10 @@
     - Removed remaining jQuery dependency from frontend components (list-cookies, cookiesmanage), replaced with vanilla JS and native Bootstrap 5 Modal API
 1.29.0:
     - Added 'Floating pill (BS5)' style preset and modal
+2.0.0:
+    - 'Major rewrite. Native Google Consent Mode v2: map cookie groups to Google consent types, plugin emits gtag consent update + a dataLayer event on every page load and consent change.'
+    - 'New head component cookiesConfig renders the Consent Mode init and the GA4/GTM loader from a single Tag ID field (no more pasting snippets).'
+    - 'Single floating pill style, settings moved to a native <dialog>, Bootstrap dependency removed (vanilla JS + CSS).'
+    - 'Buttons simplified from a repeater to fixed roles (accept / reject / settings / save).'
+    - 'Consent state moved to a single JS asset with a public SmallGDPR API.'
+    - v200_migration.php

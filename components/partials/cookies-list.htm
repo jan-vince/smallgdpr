@@ -1,0 +1,31 @@
+{% set customId = customId|default('') %}
+
+{% if cookiesSettingsGet('cookies')|length %}
+
+    <div class="list-cookies">
+
+        {% for cookie in cookiesSettingsGet('cookies') %}
+
+            <div class="form-check">
+
+                <input class="form-check-input" type="checkbox"
+                    id="sg-check-{{ cookie.slug }}{{ customId }}"
+                    data-sg-cookie="{{ cookie.slug }}"
+                    {{ (sgCookies[cookie.slug] is defined and sgCookies[cookie.slug]) or cookie.required or cookie.default_modal_checked ? 'checked' }}
+                    {{ cookie.required ? 'disabled' }}>
+
+                <label class="form-check-label" for="sg-check-{{ cookie.slug }}{{ customId }}">
+                    {{ cookie.title }}
+                </label>
+
+                {% if cookie.description %}
+                    <div class="description">{{ cookie.description|raw }}</div>
+                {% endif %}
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+{% endif %}

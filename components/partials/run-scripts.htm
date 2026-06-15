@@ -1,71 +1,51 @@
-{% if cookiesSettingsGet('cookies',null)|length %}
+{#
+    Per-group custom scripty (advanced). Vykreslí se server-side, jen když je
+    skupina nezbytná nebo uživatelem odsouhlasená. Filtruje se podle pozice
+    (head/body) — head volá komponenta cookiesConfig, body komponenta cookiesBar.
+#}
+{% set position = position|default('body') %}
+
+{% if cookiesSettingsGet('cookies', null)|length %}
 
     {% for cookie in cookiesSettingsGet('cookies') %}
 
-        {% for script in cookie.scripts %}
+        {% if cookie.required or sgCookies[cookie.slug] %}
 
-            {% if script.scripts_disable == 0 %}
+            {% for script in cookie.scripts %}
 
-                {#  If pages list is set, compare to current page URL #}
+                {% if script.scripts_disable in [0, '0', false, null] and (script.scripts_position|default('body')) == position %}
 
-                {% if script.scripts_run_pages == true and script.scripts_run_pages_list|length %}
+                    {# Volitelné omezení na konkrétní stránky #}
+                    {% set runThisPage = true %}
+                    {% if script.scripts_run_pages and script.scripts_run_pages_list|length %}
+                        {% set runThisPage = false %}
+                        {% for item in script.scripts_run_pages_list %}
+                            {% if url(item.page_url) == url().current %}
+                                {% set runThisPage = true %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
 
-                    {% set scriptRunThisPage = false %}
+                    {# Volitelné omezení jen na produkci #}
+                    {% set runThisEnv = (not script.scripts_run_production) or (this.environment == 'production') %}
 
-                    {% for item in script.scripts_run_pages_list %}
+                    {% if runThisPage and runThisEnv %}
 
-                        {% if url(item.page_url) == url().current %}
-
-                            {% set scriptRunThisPage = true %}
-
+                        {% if script.scripts_code %}
+                            {{ script.scripts_code|raw }}
                         {% endif %}
 
-                    {% endfor %}
-
-                {% else %}
-                    {% set scriptRunThisPage = true %}
-                {% endif %}
-
-
-                {# TODO: get rid of those IFs #}
-
-                {% if scriptRunThisPage %}
-
-                    {# Test for production mode required first #}
-                    {% if script.scripts_run_production == false 
-                        or ( script.scripts_run_production == true and this.environment == 'production') %}
-
-                        {% if cookie.required or sgCookies[cookie.slug] %}
-
-                            {% if script.scripts_code and scriptRunThisPage %}
-                            
-                                {% put scripts %}
-
-                                    {{ script.scripts_code|raw }}
-
-                                {% endput %}
-                            
-                            {% endif %}
-
-                            {% if script.scripts_file and scriptRunThisPage %}
-
-                                {% put scripts %}
-
-                                    <script src="{{ script.scripts_file|media }}"></script>
-                                
-                                {% endput %}
-
-                            {% endif %}
-
+                        {% if script.scripts_file %}
+                            <script src="{{ script.scripts_file|media }}"></script>
                         {% endif %}
 
                     {% endif %}
 
                 {% endif %}
 
-            {% endif %}
+            {% endfor %}
 
-        {% endfor %}
+        {% endif %}
 
     {% endfor %}
 

@@ -1,197 +1,209 @@
 # Small GDPR
-> Simple plugin to cope with GDPR
+> Cookie consent bar for October CMS with native Google Consent Mode v2.
+
+Version 2 is a major rewrite: the plugin now owns the Consent Mode plumbing.
+You map cookie groups to Google consent types and the plugin emits the
+`gtag('consent', 'update', …)` signal **and** a `dataLayer` event on every page
+load and consent change — no pasted gtag/GTM snippets needed for the common case.
+
+> **Upgrading from 1.x?** v2.0 is a conscious major upgrade (bump the version in
+> `composer.json`). A migration moves your data to the new schema automatically
+> (it guesses `consent_types` from group slugs and copies your button labels).
+> The Bootstrap dependency and the old style presets are gone — there is now a
+> single floating-pill bar and a native `<dialog>` settings window, themable via
+> CSS custom properties.
 
 
 ## Installation
 
-**GitHub** clone into `/plugins` dir:
+**GitHub** — clone into the `/plugins` dir:
 
 ```sh
-git clone https://github.com/jan-vince/smallgdpr
+git clone https://github.com/jan-vince/smallgdpr plugins/janvince/smallgdpr
 ```
 
-**OctoberCMS backend**
-
-Just look for 'Small GDPR' in search field in:
-> Settings > Updates & Plugins > Install plugins
-
-### Permissions
-
-> Settings > Administrators
-
-You can set permissions to restrict access to *Settings > Small plugins > Small GDPR* and to messages list.
+**October backend** — search for *Small GDPR* in:
+> Settings → Updates & Plugins → Install plugins
 
 
-## Quick start guide
+## Quick start
 
-### Cookies
+1. **Settings → Small GDPR → Settings → Import** → *Import default settings*.
+2. **Settings → Small GDPR → Cookies → Integration**:
+   - `Tag type` = *Google Analytics 4* or *Google Tag Manager*
+   - `Tag ID` = `G-XXXXXXX` (GA4) or `GTM-XXXXXXX` (GTM)
+3. Add the two components to your layout — **both are required**:
 
-* Install plugin.
-* Go October's settings page and click on GDPR > Cookies.
-  * Go to tab Import and click button `Import default settings`.
-  * Go to tab Cookies, add your JS code to cookies group as you need.
+```twig
+<head>
+    ...
+    {# REQUIRED — must be inside <head>, as high as possible,
+       before any analytics / tag scripts #}
+    {% component 'cookiesConfig' %}
+</head>
+<body>
+    {# right after <body> opens #}
+    {% component 'cookiesBar' %}
+    ...
+</body>
+```
 
-* Go to CMS part of October.
-  * Add new Layout (or use your existing)
-  * Add component Small GDPR > Cookies bar (inside of your `body` tag).
+> ⚠️ **`cookiesConfig` must live in `<head>`.** It sets the Consent Mode
+> `default` and loads the GA4/GTM tag, and that has to happen *before* any tag
+> fires. Put it as high in `<head>` as possible (ideally first). Without it the
+> bar still renders, but no tags are loaded and consent is never applied.
 
-* Go to CMS part of October.
-  * Add new Page with URL `/gdpr`
-  * Add component Small GDPR > Manage cookies (inside any of your tags)
+4. (Optional) create a `/gdpr` page and drop in the **Manage cookies** component
+   (or its page snippet) so visitors can change their choice later.
 
-> Do not forget to add `{% scripts %}` tag to your layout page just before closing `body` tag! More info [in October docs](https://octobercms.com/docs/markup/tag-scripts).
+That's it — no need to paste GA4/GTM code anywhere. The plugin renders the
+loader, the consent default, the consent update and the dataLayer event for you.
 
 
-* Open your website - cookies bar should be visible :)
+## How it works
 
----
+- **`cookiesConfig`** (head) outputs, in order: the `dataLayer`/`gtag` stub, the
+  Consent Mode `default` (seeded from saved cookies so returning visitors start
+  `granted`), the GA4/GTM loader (from `Tag ID`), your custom head code, and the
+  plugin JS.
+- **`cookiesBar`** (body) renders the GTM `<noscript>` (GTM only), your custom
+  body code, the floating-pill bar and the settings `<dialog>`.
+- On every consent change **and** every page load (once a decision exists), the
+  JS calls `gtag('consent', 'update', …)` and pushes a `dataLayer` event so
+  non-Google tags can fire via a Custom Event trigger:
+
+```js
+dataLayer.push({
+  event: 'cookie_consent_update',
+  analytics_storage: 'granted',
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied'
+});
+```
+
+
 ## Settings
 
-### Tab: Cookies groups
+### Tab: Cookies
 
-The main idea is to create groups of cookies with JS scripts that you want to run on your website.
+**Integration**
+- `Tag type` — `none` / `Google Analytics 4 (gtag.js)` / `Google Tag Manager`.
+- `Tag ID` — `G-…` or `GTM-…`. The plugin renders the matching loader.
+- `Load tags only in production` — when on, the loader is rendered only in the
+  production environment (the bar still works everywhere so you can test the UI).
+- `Consent dataLayer event name` — default `cookie_consent_update`.
 
-#### Required 
+**Cookies groups** — one group per cookie category (Necessary, Statistical,
+Marketing, …):
+- `Required` — cannot be disabled by the user.
+- `Default enabled` — active without explicit consent (use for anonymous data
+  only, mind your local laws).
+- `Default checked` — pre-checked in the settings dialog (scripts still gated).
+- `Google consent types` — which Consent Mode signals this group grants
+  (`analytics_storage`, `ad_storage`, `ad_user_data`, `ad_personalization`,
+  `functionality_storage`, `personalization_storage`, `security_storage`). This
+  mapping drives the automatic consent update.
+- `Scripts` *(advanced)* — optional raw JS/files injected server-side when the
+  group is consented, with `head`/`body` position, production and per-page limits.
+  Most setups won't need this — use GTM + the dataLayer event instead.
 
-When turned on users cannot disable these groups in Manage cookies component and scripts will be always executed.
+**Custom code** — raw `<head>` / `<body>` code injected after the plugin block,
+for tags the plugin does not load directly (Meta, LinkedIn, Hotjar, …).
 
-#### Default enabled
+### Tab: Cookies bar
 
-Scripts in these groups will run without explicit user concent but can be disabled by user (in Manage cookies component).
-
-Be careful not to violate your local laws!
-
-#### Default checked
-
-Scripts in these groups will not run but in modal window they will be pre-checked.
-
-#### Scripts
-
-You can add one or more scripts to selected group
-
-##### Custom JS code or files
-
-You can add your own JS code and/or files to be executed when a cookies group is allowed (or required).
-
-You can optionally limit scripts execution to production mode.
-
-##### Run only in production
-
-Script wil be executed only in `production` environment.
-
-##### Disable
-
-This scripts will never be executed
-
-##### Run on specific pages
-
-You can limit scripts execution to specific pages URLs.
-
-### Tab: Cookies bar 
-
-You can edit title and content of cookies bar.
-
-If you want, you can select from pre-defined CSS styles.
-
-#### Buttons
-
-You can add one or more buttons to your cookies bar. 
-
-##### Allow all cookies
-
-When turned on, click on this button will set all cookies groups enabled.
-
-Usefull for "Allow all" button on Cookies bar.
-
-*Note: Users can change cookies settings later on CMS page with Manage cookies component (like /gdpr) if you create one.*
-
-##### Open modal window
-
-When turned on, click on this button open modal window with list of cookies group.
-
-*Currently supported only for Boostrap 3 UI style (can be set on tab Settings).*
+Title, content, page-reload toggle, and the button labels / visibility
+(Accept, Reject, Settings, Save).
 
 ### Tab: Manage cookies
 
-Just add title and content and those will be shown above cookies groups listing in Manage cookies component.
-
+Title and content shown above the cookie list in the **Manage cookies**
+component / dialog.
 
 ### Tab: Settings
 
-Few general settings to be set.
-
-#### Cookies expiration
-
-Number of days for cookies to live in browser.
-
-#### UI style
-
-Change formating of output HTML code.
-
-#### Set cookies for each language
-
-> Default is on.
-
-This is required if you use Rainlab Translate plugin and you set up cookies groups for each language with different cookies groups codes.
-
-On the other hand if you have separate languages but same cookies groups codes and you want your visitors not to have consent for each language separately, you can switch this off.
-
-### Tab: Import
-
-You can import settings presets from Media your own path or default plugin preset (if you leave all empty).
-
-You have to use YAML format.
-
-*Note: Try Export first to get idea of an import file structure.*
-
-### Tab: Export
-
-You can export current settings data to configuration file and use it as a backup or template for other sites.
-
+- `Cookies expiration` — cookie lifetime in days.
+- `Set cookies for each language` — adds a locale prefix to cookie names (for
+  RainLab.Translate setups that need a separate consent per language).
+- **Import** — import a YAML preset from Media, a custom path, or the bundled
+  default (leave empty).
+- **Export** — export current settings as a YAML preset (backup / template).
 
 
 ## Components
 
-### Cookies bar
+### `cookiesConfig`
+Place inside `<head>`, as high as possible. Renders the Consent Mode init and the
+tag loader.
 
-Should be used in your Layouts or Pages.
+### `cookiesBar`
+Place right after `<body>`. Renders the bar and the settings dialog.
 
-#### Hide Cookies bar
+**Hide the bar** on a specific page/layout via the [View Bag](https://docs.octobercms.com/4.x/cms/components.html):
 
-If you need to hide Cookies bar on specific Page or Layout, you can use [View Bag](https://octobercms.com/docs/cms/components#viewbag-component) on your Page this way:
-
-```
+```ini
 [viewBag]
 hideCookiesBar = 1
 ```
 
-### Manage cookies
+### `cookiesManage`
+Put on a privacy page (e.g. `/gdpr`) so visitors can change their choice. Also
+available as a Static Pages snippet.
 
-Put this component to your page with details about privacy (like /gdpr or /cookies).
 
-> Manage cookies component can be also added as a snippet to Static Page
+## JavaScript API
 
-Users will be able to change cookies settings.
+A global `SmallGDPR` object is available:
 
-## HOWTO
-
-With component `Cookies bar` or `Manage cookies` you can access cookies settings in your Twig code like this:
-
+```js
+SmallGDPR.get()         // { necessary: true, statistical: false, … }
+SmallGDPR.set(state)    // persist a state object + emit signals
+SmallGDPR.acceptAll()
+SmallGDPR.rejectAll()
+SmallGDPR.hasDecision() // has the user decided yet?
+SmallGDPR.openSettings()
 ```
-{% if sgCookies.necessary %}
- ...
+
+Listen for changes:
+
+```js
+document.addEventListener('smallgdpr:consent', function (e) {
+  console.log(e.detail.state, e.detail.consent);
+});
+```
+
+
+## Twig
+
+With the `cookiesBar` or `cookiesManage` component on the page you can read the
+consent state in Twig:
+
+```twig
+{% if sgCookies.statistical %}
+  ...
 {% endif %}
 ```
 
 
+## Theming
+
+The bar and dialog are styled with CSS custom properties — override them in your
+own stylesheet (no Bootstrap required):
+
+```css
+:root {
+  --sg-bg: #1a2842;
+  --sg-primary: #0d6efd;
+  --sg-text: #ffffff;
+  /* … see assets/css/smallgdpr.css for the full list */
+}
+```
+
+
 ----
-> My thanks goes to:    
-> [OctoberCMS](http://www.octobercms.com) team members and supporters for this great system.   
-> [Brooke Cagle](https://unsplash.com/@brookecagle) for her photo.   
-> [Font Awesome](http://fontawesome.io/icons/) for nice icons.
-> [OFFLINE](https://github.com/OFFLINE-GmbH) for inspiration from [his GDPR plugin](https://github.com/OFFLINE-GmbH/oc-gdpr-plugin)
+> Thanks to the [October CMS](https://octobercms.com) team and to
+> [OFFLINE](https://github.com/OFFLINE-GmbH) for inspiration from
+> [their GDPR plugin](https://github.com/OFFLINE-GmbH/oc-gdpr-plugin).
 
-Created by [Jan Vince](http://www.vince.cz), freelance web designer from Czech Republic.
-
-
-
+Created by [Jan Vince](http://www.vince.cz), freelance web designer from the Czech Republic.

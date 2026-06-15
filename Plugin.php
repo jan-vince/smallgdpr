@@ -31,6 +31,7 @@ class Plugin extends PluginBase {
                 'class' => 'JanVince\SmallGDPR\Models\CookiesSettings',
                 'keywords' => 'gdpr cookies bar consent',
                 'order' => 990,
+                'size' => 'adaptive',
                 'permissions' => ['janvince.smallgdpr.access_cookies_settings'],
             ],
         ];
@@ -39,6 +40,7 @@ class Plugin extends PluginBase {
     public function registerComponents() {
         
         return [
+            'JanVince\SmallGDPR\Components\CookiesConfig' => 'cookiesConfig',
             'JanVince\SmallGDPR\Components\CookiesBar' => 'cookiesBar',
             'JanVince\SmallGDPR\Components\CookiesManage' => 'cookiesManage',
         ];

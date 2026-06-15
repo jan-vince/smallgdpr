@@ -1,0 +1,25 @@
+<div id="cookies-bar" class="cookies-bar"{% if sgBarReload %} data-sg-reload="1"{% endif %}>
+
+    {% if cookiesSettingsGet('cookies_bar_title') %}
+        <h3 class="title">{{ cookiesSettingsGet('cookies_bar_title') }}</h3>
+    {% endif %}
+
+    {% if cookiesSettingsGet('cookies_bar_content') %}
+        <div class="content">{{ cookiesSettingsGet('cookies_bar_content')|raw }}</div>
+    {% endif %}
+
+    <div class="buttons">
+
+        <a href="#" class="btn-accept-all" data-sg-action="accept">{{ cookiesSettingsGet('btn_accept_label', 'Accept') }}</a>
+
+        {% if sgRejectShow %}
+            <a href="#" class="btn-disable-all" data-sg-action="reject">{{ cookiesSettingsGet('btn_reject_label', 'Reject') }}</a>
+        {% endif %}
+
+        {% if sgSettingsShow %}
+            <a href="#" class="btn-settings" data-sg-action="settings">{{ cookiesSettingsGet('btn_settings_label', 'Settings') }}</a>
+        {% endif %}
+
+    </div>
+
+</div>

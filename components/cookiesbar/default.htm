@@ -1,17 +1,36 @@
+{% set tagType = cookiesSettingsGet('tag_type', 'none') %}
+{% set tagId = cookiesSettingsGet('tag_id') %}
+
+{% if sgRenderTags and tagType == 'gtm' and tagId %}
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ tagId }}"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+{% endif %}
+
+{% if cookiesSettingsGet('custom_body_code') %}
+    {{ cookiesSettingsGet('custom_body_code')|raw }}
+{% endif %}
+
+{# Per-group custom scripty s pozicí 'body' (server-side, dle uloženého souhlasu) #}
+{% partial '@run-scripts' position = 'body' %}
+
 <div id="sg-{{ __SELF__ }}">
-    {% set show = true %}
+
+    {% set showBar = true %}
+
     {% if sgCookies.consent is defined and sgCookies.consent is not empty %}
-        {% set show = false %}
+        {% set showBar = false %}
     {% elseif viewBag is defined and viewBag.property('hideCookiesBar', false) == true %}
-        {% set show = false %}
+        {% set showBar = false %}
     {% elseif page.viewBag is defined and page.viewBag.hideCookiesBar|default(false) == true %}
-        {% set show = false %}
+        {% set showBar = false %}
     {% endif %}
 
-    {% if show %}
-        {% partial __SELF__ ~ '::cookiesbar' %}
+    {% if showBar %}
+        {% partial __SELF__ ~ '::bar' %}
     {% endif %}
 
-    {% partial '@run-scripts' %}
+    {% partial __SELF__ ~ '::dialog' %}
 
 </div>

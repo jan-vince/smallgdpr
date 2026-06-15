@@ -1,0 +1,33 @@
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    window.SmallGDPR = window.SmallGDPR || {};
+    window.SmallGDPR.config = {{ sgConfig|json_encode|raw }};
+    // Consent Mode default — seedovaný z uložených souhlasů (vracející se
+    // návštěvník se souhlasem startuje rovnou granted, bez závodu s pozdním updatem).
+    gtag('consent', 'default', {{ sgConsentDefault|json_encode|raw }});
+</script>
+
+{% if sgRenderTags and sgTagType == 'ga4' and sgTagId %}
+    <!-- Google Analytics 4 (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ sgTagId }}"></script>
+    <script>gtag('js', new Date()); gtag('config', {{ sgTagId|json_encode|raw }});</script>
+{% elseif sgRenderTags and sgTagType == 'gtm' and sgTagId %}
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','{{ sgTagId }}');</script>
+    <!-- End Google Tag Manager -->
+{% endif %}
+
+{% if cookiesSettingsGet('custom_head_code') %}
+    {{ cookiesSettingsGet('custom_head_code')|raw }}
+{% endif %}
+
+{# Per-group custom scripty s pozicí 'head' (server-side, dle uloženého souhlasu) #}
+{% partial '@run-scripts' position = 'head' %}
+
+<link rel="stylesheet" href="{{ url('/plugins/janvince/smallgdpr/assets/css/smallgdpr.css') }}?v=2.0.0">
+<script src="{{ url('/plugins/janvince/smallgdpr/assets/js/smallgdpr.js') }}?v=2.0.0" defer></script>

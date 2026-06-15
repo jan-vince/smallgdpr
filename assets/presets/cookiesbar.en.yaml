@@ -1,112 +1,51 @@
-cookies_manage_title: "Manage cookies"
-cookies_manage_content: "<p>Some cookies are required for the site to function; you can decide about the rest.</p>"
+# Small GDPR v2 — default preset (English)
+# Import via Settings → Small GDPR → Import → "Import default settings".
+
+tag_type: "none"
+tag_id: ""
+production_only: 1
+consent_event_name: "cookie_consent_update"
 
 cookies_bar_title: "This site uses cookies"
-cookies_bar_add_styles: "4"
-cookies_bar_content: "<p>Some are required, others are optional.</p>"
+cookies_bar_content: "<p>Some are required, others are optional. You decide.</p>"
+cookies_bar_disable_page_reload: 1
+
+btn_accept_label: "Accept"
+btn_reject_label: "Reject"
+btn_reject_show: 1
+btn_settings_label: "Settings"
+btn_settings_show: 1
+btn_save_label: "Save selection"
+
+cookies_manage_title: "Manage cookies"
+cookies_manage_content: "<p>Some cookies are required for the site to function; you can decide about the rest.</p>"
+cookies_manage_disable_page_reload: 1
 
 cookies:
 -   title: "Necessary cookies"
     description: "<p>The necessary cookies help to make the website work properly.</p>"
     slug: "necessary"
     required: 1
-    scripts:
-    -   scripts_title: 'Google Analytics without consent'
-        scripts_run_production: 1
-        scripts_code: "<script async src='https://www.googletagmanager.com/gtag/js'></script>
-                
-                <script>window.dataLayer = window.dataLayer || [];
-
-                    function gtag(){dataLayer.push(arguments);}
-
-                    // Denied storage before consent
-
-                    gtag('consent', 'default', {
-
-                        'analytics_storage': 'denied',
-
-                        'ad_storage': 'denied',
-
-                        'ad_user_data': 'denied',
-                        
-                        'ad_personalization': 'denied'
-
-                    });
-
-                    gtag('js', new Date());
-
-                    // GA4
-
-                    gtag('config', 'G-XXXXXXX');
-
-                </script>"
+    consent_types:
+    -   "functionality_storage"
+    -   "security_storage"
+    scripts: []
 -   title: "Statistical cookies"
     description: "<p>Anonymous statistical cookies help to understand how visitors use the website.</p>"
     slug: "statistical"
     required: 0
-    scripts:
-    -   scripts_title: 'Google Analytics with consent'
-        scripts_run_production: 1
-        scripts_code: "<script>
-
-                gtag('consent', 'update', {
-
-                'analytics_storage': 'granted'
-
-                });
-
-            </script>"
-
+    consent_types:
+    -   "analytics_storage"
+    scripts: []
 -   title: "Marketing cookies"
     description: "<p>We use marketing cookies to serve you relevant ads based on your social media interests and browsing history.</p>"
     slug: "marketing"
     required: 0
-    scripts:
-    -   scripts_title: 'Google Analytics with consent'
-        scripts_run_production: 1
-        scripts_code: "<script>
-
-                gtag('consent', 'update', {
-
-                    'ad_storage': 'granted',
-
-                    'ad_user_data': 'granted',
-
-                    'ad_personalization': 'granted'
-
-                });
-
-            </script>"
-
-cookies_bar_buttons:
--   title: "Accept"
-    accept_all_cookies_btn: 1
-    url: "#"
-    url_external: 0
-    css_class: "btn btn-primary"
-    accept_all_cookies_btn_script: "
-        gtag('consent', 'update', {
-
-            'analytics_storage': 'granted',
-
-            'ad_storage': 'granted',
-
-            'ad_user_data': 'granted',
-
-            'ad_personalization': 'granted'
-
-        });"
--   title: "Reject"
-    disable_all_cookies_btn: 1
-    url: "#"
-    url_external: 0
-    css_class: "btn btn-primary"
--   title: "Settings"
-    accept_all_cookies_btn: 0
-    url: "gdpr"
-    url_external: 0
-    css_class: "btn btn-default"
-    show_modal: 1
+    consent_types:
+    -   "ad_storage"
+    -   "ad_user_data"
+    -   "ad_personalization"
+    scripts: []
 
 set_cookies_lifetime_days: 365
-ui_style: 'b5'
+set_cookies_with_locale: 0

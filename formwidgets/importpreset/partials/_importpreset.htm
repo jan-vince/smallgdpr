@@ -19,10 +19,10 @@
 
 </div>
 
-<div class="form-group span-left">
+<div class="form-group span-full">
     
     <button
-        class="btn btn-default oc-icon-upload"
+        class="btn btn-primary oc-icon-upload"
         onclick="$(this).data('request-data', {
             media_file_name: $('div[data-field-name=import_preset_media]').find('input').val(),
             path_file_name: $('#<?= $this->alias ?>-path-file-name').val(),
@@ -35,7 +35,7 @@
     </button>
 
     <button
-        class="btn btn-warning oc-icon-upload"
+        class="btn btn-danger oc-icon-upload"
         onclick="$(this).data('request-data', {
             media_file_name: '',
             path_file_name: '',

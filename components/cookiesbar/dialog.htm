@@ -1,0 +1,29 @@
+<dialog id="sg-settings-dialog" class="sg-dialog"{% if sgBarReload %} data-sg-reload="1"{% endif %}>
+
+    <div class="sg-dialog__content" data-sg-list-wrap>
+
+        <div class="sg-dialog__header">
+            {% if cookiesSettingsGet('cookies_manage_title') %}
+                <h2 class="sg-dialog__title">{{ cookiesSettingsGet('cookies_manage_title') }}</h2>
+            {% endif %}
+            <button type="button" class="sg-dialog__close" data-sg-action="close" aria-label="Close">&times;</button>
+        </div>
+
+        <div class="sg-dialog__body">
+
+            {% if cookiesSettingsGet('cookies_manage_content') %}
+                <div class="content">{{ cookiesSettingsGet('cookies_manage_content')|raw }}</div>
+            {% endif %}
+
+            {% partial '@cookies-list' customId = '-dialog' %}
+
+        </div>
+
+        <div class="sg-dialog__footer">
+            <a href="#" class="btn-accept-all" data-sg-action="accept">{{ cookiesSettingsGet('btn_accept_label', 'Accept') }}</a>
+            <a href="#" class="btn-primary" data-sg-action="save">{{ cookiesSettingsGet('btn_save_label', 'Save selection') }}</a>
+        </div>
+
+    </div>
+
+</dialog>

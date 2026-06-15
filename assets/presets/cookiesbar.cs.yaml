@@ -1,109 +1,51 @@
-cookies_manage_title: "Správa cookies"
-cookies_manage_content: "<p>Některé cookies jsou pro fungování webu nezbytné, o ostatních si můžete rozhodnout sami.</p>"
+# Small GDPR v2 — výchozí preset (čeština)
+# Import přes Nastavení → Small GDPR → Import → „Importovat výchozí nastavení".
+
+tag_type: "none"
+tag_id: ""
+production_only: 1
+consent_event_name: "cookie_consent_update"
 
 cookies_bar_title: "Tento web používá cookies"
-cookies_bar_add_styles: "4"
-cookies_bar_content: "<p>Některé jsou nutné, ostatní si můžete nastavit.</p>"
+cookies_bar_content: "<p>Některé jsou nutné, ostatní jsou volitelné. Rozhodnutí je na vás.</p>"
+cookies_bar_disable_page_reload: 1
+
+btn_accept_label: "Přijmout"
+btn_reject_label: "Odmítnout"
+btn_reject_show: 1
+btn_settings_label: "Nastavení"
+btn_settings_show: 1
+btn_save_label: "Uložit výběr"
+
+cookies_manage_title: "Správa cookies"
+cookies_manage_content: "<p>Některé cookies jsou pro fungování webu nezbytné, o ostatních si můžete rozhodnout sami.</p>"
+cookies_manage_disable_page_reload: 1
 
 cookies:
 -   title: "Funkční cookies"
     description: "<p>Funkční cookies pomáhají, aby webová stránka v pořádku fungovala.</p>"
     slug: "funkcni"
     required: 1
-    scripts:
-    -   scripts_title: 'Google Analytics without consent'
-        scripts_run_production: 1
-        scripts_code: "<script async src='https://www.googletagmanager.com/gtag/js'></script>
-                
-                <script>window.dataLayer = window.dataLayer || [];
-
-                    function gtag(){dataLayer.push(arguments);}
-
-                    // Denied storage before consent
-
-                    gtag('consent', 'default', {
-
-                        'analytics_storage': 'denied',
-
-                        'ad_storage': 'denied',
-                        
-                        'ad_user_data': 'denied',
-
-                        'ad_personalization': 'denied'
-
-                    });
-
-                    gtag('js', new Date());
-
-                    gtag('config', 'G-XXXXXXX');
-
-                </script>"
+    consent_types:
+    -   "functionality_storage"
+    -   "security_storage"
+    scripts: []
 -   title: "Statistické cookies"
     description: "<p>Anonymní statistické cookies pomáhají porozumět tomu, jak návštěvníci používají webové stránky.</p>"
     slug: "statisticke"
     required: 0
-    scripts:
-    -   scripts_title: 'Google Analytics with consent'
-        scripts_run_production: 1
-        scripts_code: "<script>
-
-                gtag('consent', 'update', {
-
-                'analytics_storage': 'granted'
-
-                });
-
-            </script>"
+    consent_types:
+    -   "analytics_storage"
+    scripts: []
 -   title: "Marketingové cookies"
-    description: "<p>Používáme marketingové cookies abychom vám mohli zobrazovat relevantní reklamy na základě vašich zájmů na sociálních sítích a historie procházení webu.</p>"
+    description: "<p>Používáme marketingové cookies, abychom vám mohli zobrazovat relevantní reklamy na základě vašich zájmů na sociálních sítích a historie procházení webu.</p>"
     slug: "marketingove"
     required: 0
-    scripts:
-    -   scripts_title: 'Google Analytics with consent'
-        scripts_run_production: 1
-        scripts_code: "<script>
-
-                gtag('consent', 'update', {
-
-                    'ad_storage': 'granted',
-
-                    'ad_user_data': 'granted',
-
-                    'ad_personalization': 'granted'
-
-                });
-
-            </script>"
-
-cookies_bar_buttons:
--   title: "Přijmout"
-    accept_all_cookies_btn: 1
-    url: "#"
-    url_external: 0
-    css_class: "btn btn-primary"
-    accept_all_cookies_btn_script: "
-        gtag('consent', 'update', {
-
-            'analytics_storage': 'granted',
-
-            'ad_storage': 'granted',
-
-            'ad_user_data': 'granted',
-
-            'ad_personalization': 'granted'
-
-        });"
--   title: "Odmítnout"
-    disable_all_cookies_btn: 1
-    url: "#"
-    url_external: 0
-    css_class: "btn btn-primary"
--   title: "Nastavení"
-    accept_all_cookies_btn: 0
-    url: "gdpr"
-    url_external: 0
-    css_class: "btn btn-default"
-    show_modal: 1
+    consent_types:
+    -   "ad_storage"
+    -   "ad_user_data"
+    -   "ad_personalization"
+    scripts: []
 
 set_cookies_lifetime_days: 365
-ui_style: 'b5'
+set_cookies_with_locale: 0
