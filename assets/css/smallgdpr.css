@@ -20,6 +20,13 @@
     --sg-radius-pill: 999px;
     --sg-shadow: 0 0.625rem 2rem -0.5rem rgba(0, 0, 0, 0.35);
     --sg-z-index: 1080;
+
+    /* Cookie list — neutral defaults so the standalone /gdpr manage page reads
+       on a normal (light) background. The dialog overrides these to its dark theme. */
+    --sg-list-label: inherit;
+    --sg-list-muted: currentColor;
+    --sg-list-border: rgba(0, 0, 0, 0.12);
+    --sg-list-input-bg: transparent;
 }
 
 /* ============================== Bar (pill) ============================== */
@@ -233,6 +240,12 @@
     background-color: var(--sg-bg);
     color: var(--sg-text);
     box-shadow: var(--sg-shadow);
+
+    /* Dark theme for the cookie list inside the dialog */
+    --sg-list-label: var(--sg-text);
+    --sg-list-muted: var(--sg-text-muted);
+    --sg-list-border: var(--sg-border);
+    --sg-list-input-bg: rgba(255, 255, 255, 0.05);
 }
 
 .sg-dialog::backdrop {
@@ -323,7 +336,7 @@
 .list-cookies .form-check {
     position: relative;
     padding: 0.875rem 0 0.875rem 2.25rem;
-    border-bottom: 1px solid var(--sg-border);
+    border-bottom: 1px solid var(--sg-list-border);
 }
 .list-cookies .form-check:first-child { padding-top: 0; }
 .list-cookies .form-check:last-child { border-bottom: none; }
@@ -337,8 +350,8 @@
     margin: 0;
     appearance: none;
     -webkit-appearance: none;
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1.5px solid var(--sg-border);
+    background-color: var(--sg-list-input-bg);
+    border: 1.5px solid var(--sg-list-border);
     border-radius: 0.375rem;
     cursor: pointer;
     transition: background-color 150ms ease, border-color 150ms ease;
@@ -364,16 +377,58 @@
 
 .list-cookies .form-check-label {
     display: block;
-    color: var(--sg-text);
+    color: var(--sg-list-label);
     font-weight: 600;
     font-size: 0.9375rem;
     cursor: pointer;
 }
 
 .list-cookies .description {
-    color: var(--sg-text-muted);
+    color: var(--sg-list-muted);
+    opacity: 0.75;
     font-size: 0.8125rem;
     line-height: 1.5;
     margin: 0.25rem 0 0;
 }
 .list-cookies .description p:last-child { margin-bottom: 0; }
+.sg-dialog .list-cookies .description { opacity: 1; }
+
+/* ============================== Manage page (/gdpr) ============================== */
+
+.cookies-manage .list-cookies {
+    margin-top: 2rem;
+}
+
+.cookies-manage__title {
+    margin-bottom: 2rem;
+}
+
+.cookies-manage__actions {
+    margin-top: 2.25rem;
+}
+
+.cookies-manage .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625rem 1.25rem;
+    border-radius: var(--sg-radius-pill);
+    background-color: var(--sg-primary);
+    color: var(--sg-primary-text);
+    border: 1.5px solid var(--sg-primary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+.cookies-manage .btn-primary:hover {
+    background-color: var(--sg-primary-hover);
+    border-color: var(--sg-primary-hover);
+    color: var(--sg-primary-text);
+}
+.cookies-manage .btn-primary:focus-visible {
+    outline: 2px solid var(--sg-primary);
+    outline-offset: 2px;
+}

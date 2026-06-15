@@ -180,3 +180,5 @@
     - 'Buttons simplified from a repeater to fixed roles (accept / reject / settings / save).'
     - 'Consent state moved to a single JS asset with a public SmallGDPR API.'
     - v200_migration.php
+2.0.1:
+    - 'Fixed Manage cookies (/gdpr) styling on light backgrounds; bumped asset cache-busting version.'

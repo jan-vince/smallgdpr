@@ -1,7 +1,7 @@
 {
     "name": "janvince/smallgdpr-plugin",
     "type": "october-plugin",
-    "description": "None",
+    "description": "Cookie consent bar for October CMS with native Google Consent Mode v2.",
     "require": {
         "composer/installers": "~1.0"
     }
