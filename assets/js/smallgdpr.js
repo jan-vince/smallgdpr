@@ -1,11 +1,11 @@
 /**
  * Small GDPR v2 — consent engine (vanilla, no dependencies).
  *
- * Čte/zapisuje per-kategorie cookies, drží Consent Mode v2 signály
- * (gtag consent update) a posílá dataLayer event pro non-Google tagy.
- * Konfiguraci dostává z window.SmallGDPR.config (vykreslí head komponenta).
+ * Reads/writes per-category cookies, maintains the Consent Mode v2 signals
+ * (gtag consent update) and pushes a dataLayer event for non-Google tags.
+ * Configuration comes from window.SmallGDPR.config (rendered by the head component).
  *
- * Veřejné API: SmallGDPR.get/set/acceptAll/rejectAll/hasDecision/apply/openSettings
+ * Public API: SmallGDPR.get/set/acceptAll/rejectAll/hasDecision/apply/openSettings
  */
 (function (window, document) {
     'use strict';
@@ -51,7 +51,7 @@
         return PREFIX + '-' + slug;
     }
 
-    // --- stav ------------------------------------------------------------
+    // --- state -----------------------------------------------------------
 
     function isRequired(slug) {
         for (var i = 0; i < GROUPS.length; i++) {
@@ -74,7 +74,7 @@
         return readCookie(key('consent')) === '1';
     }
 
-    // --- consent objekt --------------------------------------------------
+    // --- consent object --------------------------------------------------
 
     function buildConsent(state) {
         var consent = {};
@@ -90,7 +90,7 @@
         return consent;
     }
 
-    // --- aplikace signálů ------------------------------------------------
+    // --- applying signals ------------------------------------------------
 
     function apply(state) {
         state = state || getState();
@@ -106,10 +106,10 @@
             document.dispatchEvent(new CustomEvent('smallgdpr:consent', {
                 detail: { state: state, consent: consent }
             }));
-        } catch (e) { /* starší prohlížeče bez CustomEvent konstruktoru */ }
+        } catch (e) { /* older browsers without the CustomEvent constructor */ }
     }
 
-    // --- perzistence -----------------------------------------------------
+    // --- persistence -----------------------------------------------------
 
     function persist(state) {
         writeCookie(key('consent'), '1', LIFETIME);
@@ -257,7 +257,7 @@
 
         var d = getDialog();
         if (d) {
-            // Klik na pozadí (backdrop) zavře dialog
+            // Click on the backdrop closes the dialog
             d.addEventListener('click', function (e) {
                 if (e.target === d) {
                     closeSettings();
@@ -265,8 +265,8 @@
             });
         }
 
-        // Persistované rozhodnutí znovu aplikujeme při každém page loadu
-        // (consent update + dataLayer event), aby GTM/GA viděly správný stav.
+        // Re-apply the persisted decision on every page load
+        // (consent update + dataLayer event) so GTM/GA see the correct state.
         if (hasDecision()) {
             apply();
         }

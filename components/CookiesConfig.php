@@ -6,9 +6,9 @@ use Cms\Classes\ComponentBase;
 use JanVince\SmallGDPR\Models\CookiesSettings;
 
 /**
- * Head komponenta — vykreslí Consent Mode základ (dataLayer + gtag stub +
- * consent default seedovaný z cookies) + loader tagu (GA4/GTM dle nastavení) +
- * vlastní head kód + načte plugin JS. Patří co nejvýš do <head>.
+ * Head component — renders the Consent Mode base (dataLayer + gtag stub +
+ * consent default seeded from cookies) + the tag loader (GA4/GTM per settings) +
+ * custom head code + loads the plugin JS. Belongs as high as possible in <head>.
  */
 class CookiesConfig extends ComponentBase
 {
@@ -59,7 +59,7 @@ class CookiesConfig extends ComponentBase
         $this->page['sgTagId'] = CookiesSettings::getTagId();
         $this->page['sgRenderTags'] = CookiesSettings::shouldRenderTags();
 
-        // Pro per-group head scripty (@run-scripts) je potřeba stav cookies
+        // Per-group head scripts (@run-scripts) need the cookie state
         $this->page['sgCookies'] = CookiesSettings::getSGCookies();
     }
 }

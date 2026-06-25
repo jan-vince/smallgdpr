@@ -182,3 +182,6 @@
     - v200_migration.php
 2.0.1:
     - 'Fixed Manage cookies (/gdpr) styling on light backgrounds; bumped asset cache-busting version.'
+2.0.2:
+    - 'Compatibility fix: settings page no longer throws "undefined method formBeforeSave" when saving a translatable field via the multisite translate popup (RainLab.Translate v2 + Multisite on newer OctoberCMS). Thanks @mcoredev.'
+    - 'All code comments translated to English.'

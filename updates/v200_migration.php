@@ -7,14 +7,14 @@ use October\Rain\Database\Updates\Migration;
 use Log;
 
 /**
- * Migrace na v2.0.0 — best-effort přenos existujícího nastavení do nového schématu.
+ * Migration to v2.0.0 — best-effort transfer of existing settings into the new schema.
  *
- * - doplní consent_types skupinám podle slugu (statistical→analytics, marketing→ads, required→functionality/security)
- * - převezme texty tlačítek ze starého cookies_bar_buttons repeateru
- * - nastaví výchozí hodnoty nových polí (tag_type, production_only, consent_event_name, disable reload)
+ * - fills consent_types for groups based on the slug (statistical→analytics, marketing→ads, required→functionality/security)
+ * - carries over the button labels from the old cookies_bar_buttons repeater
+ * - sets default values for the new fields (tag_type, production_only, consent_event_name, disable reload)
  *
- * Nový obsah (loadery atd.) si admin doplní — staré nalepené GA/GTM snippety
- * zůstanou ve scripts skupin, ale doporučujeme přejít na pole Tag ID.
+ * New content (loaders etc.) is filled in by the admin — old pasted GA/GTM snippets
+ * remain in the group scripts, but switching to the Tag ID field is recommended.
  */
 class v200_migration extends Migration
 {
@@ -38,11 +38,11 @@ class v200_migration extends Migration
 
     public function down()
     {
-        // Nevratná migrace
+        // Irreversible migration
     }
 
     /**
-     * Doplní consent_types skupinám, které je ještě nemají.
+     * Fills consent_types for groups that do not have them yet.
      */
     protected function migrateCookieGroups(CookiesSettings $settings): void
     {
@@ -66,7 +66,7 @@ class v200_migration extends Migration
     }
 
     /**
-     * Heuristika slug → Google consent typy.
+     * Heuristic slug → Google consent types.
      *
      * @param array $group
      * @return string[]
@@ -91,7 +91,7 @@ class v200_migration extends Migration
     }
 
     /**
-     * Převezme texty tlačítek ze starého repeateru cookies_bar_buttons.
+     * Carries over the button labels from the old cookies_bar_buttons repeater.
      */
     protected function migrateButtonLabels(CookiesSettings $settings): void
     {
@@ -118,7 +118,7 @@ class v200_migration extends Migration
     }
 
     /**
-     * Výchozí hodnoty nových polí.
+     * Default values for the new fields.
      */
     protected function setDefaults(CookiesSettings $settings): void
     {

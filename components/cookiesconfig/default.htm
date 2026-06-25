@@ -3,8 +3,8 @@
     function gtag(){ dataLayer.push(arguments); }
     window.SmallGDPR = window.SmallGDPR || {};
     window.SmallGDPR.config = {{ sgConfig|json_encode|raw }};
-    // Consent Mode default — seedovaný z uložených souhlasů (vracející se
-    // návštěvník se souhlasem startuje rovnou granted, bez závodu s pozdním updatem).
+    // Consent Mode default — seeded from stored consent (a returning visitor
+    // with consent starts as granted, avoiding a race with the late update).
     gtag('consent', 'default', {{ sgConsentDefault|json_encode|raw }});
 </script>
 
@@ -26,7 +26,7 @@
     {{ cookiesSettingsGet('custom_head_code')|raw }}
 {% endif %}
 
-{# Per-group custom scripty s pozicí 'head' (server-side, dle uloženého souhlasu) #}
+{# Per-group custom scripts with 'head' position (server-side, based on stored consent) #}
 {% partial '@run-scripts' position = 'head' %}
 
 <link rel="stylesheet" href="{{ url('/plugins/janvince/smallgdpr/assets/css/smallgdpr.css') }}?v=2.0.1">

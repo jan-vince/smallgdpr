@@ -12,7 +12,7 @@
     {{ cookiesSettingsGet('custom_body_code')|raw }}
 {% endif %}
 
-{# Per-group custom scripty s pozicí 'body' (server-side, dle uloženého souhlasu) #}
+{# Per-group custom scripts with 'body' position (server-side, based on stored consent) #}
 {% partial '@run-scripts' position = 'body' %}
 
 <div id="sg-{{ __SELF__ }}">

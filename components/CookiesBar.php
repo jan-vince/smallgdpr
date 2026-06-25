@@ -33,12 +33,12 @@ class CookiesBar extends ComponentBase
 
     public function onRun() {
 
-        // Styly i JS načítá head komponenta cookiesConfig — tady stačí stav cookies.
+        // Styles and JS are loaded by the cookiesConfig head component — only the cookie state is needed here.
         $this->page['sgCookies'] = CookiesSettings::getSGCookies();
         $this->page['sgCookiesLocalePrefix'] = CookiesSettings::getSGCookiesLocalePrefix();
         $this->page['sgRenderTags'] = CookiesSettings::shouldRenderTags();
 
-        // Booleany čteme přímo (Twig helper cookiesSettingsGet coalescuje '0' na default)
+        // Read booleans directly (the cookiesSettingsGet Twig helper coalesces '0' to the default)
         $this->page['sgRejectShow'] = (bool) CookiesSettings::get('btn_reject_show', true);
         $this->page['sgSettingsShow'] = (bool) CookiesSettings::get('btn_settings_show', true);
         $this->page['sgBarReload'] = !((bool) CookiesSettings::get('cookies_bar_disable_page_reload', true));

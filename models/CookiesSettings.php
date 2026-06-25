@@ -32,7 +32,7 @@ class CookiesSettings extends Model {
     ];
 
     /**
-     * Pevný číselník Google Consent Mode v2 typů (pro mapování skupin cookies).
+     * Fixed list of Google Consent Mode v2 types (for mapping cookie groups).
      *
      * @var string[]
      */
@@ -100,8 +100,8 @@ class CookiesSettings extends Model {
     }
 
     /**
-     * Mapování slug skupiny → pole Google Consent Mode typů.
-     * Slouží frontend JS k sestavení consent update objektu při změně souhlasu.
+     * Maps a group slug → array of Google Consent Mode types.
+     * Used by the frontend JS to build the consent update object on consent change.
      *
      * @return array<string, string[]>
      */
@@ -124,11 +124,11 @@ class CookiesSettings extends Model {
     }
 
     /**
-     * Výchozí stav Google consentu odvozený z aktuálně aktivních skupin cookies.
-     * Použije se pro gtag('consent', 'default', ...) ještě před načtením tagů
-     * (vracející se návštěvník se souhlasem startuje rovnou 'granted').
+     * Default Google consent state derived from the currently active cookie groups.
+     * Used for gtag('consent', 'default', ...) before the tags are loaded
+     * (a returning visitor with consent starts as 'granted').
      *
-     * @return array<string, string> typ => 'granted'|'denied'
+     * @return array<string, string> type => 'granted'|'denied'
      */
     static function getConsentDefaults() {
 
@@ -152,7 +152,7 @@ class CookiesSettings extends Model {
     }
 
     /**
-     * Typ integrace tagu: none|ga4|gtm.
+     * Tag integration type: none|ga4|gtm.
      */
     static function getTagType() {
 
@@ -160,7 +160,7 @@ class CookiesSettings extends Model {
     }
 
     /**
-     * ID tagu (G-… pro GA4, GTM-… pro Tag Manager).
+     * Tag ID (G-… for GA4, GTM-… for Tag Manager).
      */
     static function getTagId() {
 
@@ -168,8 +168,8 @@ class CookiesSettings extends Model {
     }
 
     /**
-     * Má se vykreslit loader tagu (GA4/GTM) a noscript?
-     * Při zapnutém "production_only" jen v produkčním prostředí.
+     * Should the tag loader (GA4/GTM) and noscript be rendered?
+     * When "production_only" is enabled, only in the production environment.
      */
     static function shouldRenderTags() {
 

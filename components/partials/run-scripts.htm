@@ -1,7 +1,7 @@
 {#
-    Per-group custom scripty (advanced). Vykreslí se server-side, jen když je
-    skupina nezbytná nebo uživatelem odsouhlasená. Filtruje se podle pozice
-    (head/body) — head volá komponenta cookiesConfig, body komponenta cookiesBar.
+    Per-group custom scripts (advanced). Rendered server-side, only when the
+    group is required or has been consented to by the user. Filtered by position
+    (head/body) — head is called by the cookiesConfig component, body by cookiesBar.
 #}
 {% set position = position|default('body') %}
 
@@ -15,7 +15,7 @@
 
                 {% if script.scripts_disable in [0, '0', false, null] and (script.scripts_position|default('body')) == position %}
 
-                    {# Volitelné omezení na konkrétní stránky #}
+                    {# Optional restriction to specific pages #}
                     {% set runThisPage = true %}
                     {% if script.scripts_run_pages and script.scripts_run_pages_list|length %}
                         {% set runThisPage = false %}
@@ -26,7 +26,7 @@
                         {% endfor %}
                     {% endif %}
 
-                    {# Volitelné omezení jen na produkci #}
+                    {# Optional restriction to production only #}
                     {% set runThisEnv = (not script.scripts_run_production) or (this.environment == 'production') %}
 
                     {% if runThisPage and runThisEnv %}

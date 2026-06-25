@@ -17,7 +17,20 @@ use Storage;
 class Plugin extends PluginBase {
 
     public function boot() {
-        // dump( CookiesSettings::get('cookies') );
+        // Compat: the translate globe popup (HasTranslatable) calls formBeforeSave()/
+        // formAfterSave() on the settings controller, which System\Controllers\Settings lacks.
+        // Add no-op stubs only when missing → the patch disables itself once core fixes this.
+        if (class_exists(\System\Controllers\Settings::class)) {
+            \System\Controllers\Settings::extend(function ($controller) {
+                if (!$controller->methodExists('formBeforeSave')) {
+                    $controller->addDynamicMethod('formBeforeSave', function ($model) {});
+                }
+
+                if (!$controller->methodExists('formAfterSave')) {
+                    $controller->addDynamicMethod('formAfterSave', function ($model) {});
+                }
+            });
+        }
     }
 
     public function registerSettings() {
