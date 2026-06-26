@@ -3,6 +3,6 @@
     "type": "october-plugin",
     "description": "Cookie consent bar for October CMS with native Google Consent Mode v2.",
     "require": {
-        "composer/installers": "~1.0|~2.0"
+        "composer/installers": "^1.0 || ^2.0"
     }
 }
